@@ -1,0 +1,20 @@
+.game-timeline {
+  @apply w-full px-4 py-2 overflow-x-auto;
+
+  .timeline-wrapper{
+    @apply w-full h-12 relative;
+    
+    .timeline-item {
+      @apply absolute;
+
+      &.timeline-kill-line {
+        @apply h-full w-px;
+      }
+
+      &.timeline-image {
+        @apply h-8 w-8 top-2 -translate-x-1/2;
+      }
+    }
+  }
+
+}

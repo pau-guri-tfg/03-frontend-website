@@ -1,5 +1,8 @@
 import { useEffect } from 'react';
 import './App.css'
+import GameTimeline from './components/GameTimeline';
+import Events from "./sample_data/events.json";
+import { GameEvent } from './@types/types';
 
 function App() {
   useEffect(() => {
@@ -12,7 +15,7 @@ function App() {
 
   return (
     <main>
-
+      <GameTimeline events={Events.Events as GameEvent[]} players={[]} gameTime={1363} />
     </main>
   )
 }
