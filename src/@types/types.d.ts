@@ -1,6 +1,24 @@
 export type GameEventName = "GameStart" | "GameEnd" | "MinionsSpawning" | "TurretKilled" | "FirstBrick" | "InhibKilled" | "DragonKill" | "HeraldKill" | "BaronKill" | "ChampionKill" | "Multikill" | "Ace";
 export type GameTeamName = "CHAOS" | "ORDER";
 
+export type GameData = {
+  _id: string;
+  gameMode: string;
+  gameTime: number;
+  mapName: string;
+  mapNumber: number;
+  mapTerrain: string;
+  gameStartTime: number;
+  bannedChampions: string[];
+  gameId: string;
+}
+
+type EventsDocument = {
+  _id: string;
+  Events: GameEvent[];
+  gameId: string;
+};
+
 export type GameEvent = {
   EventID: number;
   EventName: GameEventName;
@@ -13,6 +31,7 @@ export type GameEvent = {
 }
 
 export type GamePlayer = {
+  _id: string;
   championName: string;
   isBot: boolean;
   isDead: boolean;

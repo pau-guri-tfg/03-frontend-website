@@ -3,15 +3,18 @@ import './App.css'
 import GameTimeline from './components/GameTimeline';
 import Events from "./sample_data/events.json";
 import { GameEvent } from './@types/types';
+import { useDataReceiver } from './useDataReceiver';
 
 function App() {
-  useEffect(() => {
-    const url: string = import.meta.env.VITE_EVENT_STREAM_URL;
-    const eventSource = new EventSource(url);
-    eventSource.onmessage = (event) => {
-      console.log(event);
-    }
-  }, []);
+  const { gamedata, players, events } = useDataReceiver();
+
+  if (gamedata === null || players === null || events === null) {
+    return (
+      <main>
+        <h1>Loading...</h1>
+      </main>
+    )
+  }
 
   return (
     <main>
