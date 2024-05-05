@@ -31,7 +31,7 @@ export function useDataReceiver() {
   }
 
   useEffect(() => {
-    const url: string = import.meta.env.VITE_BACKEND_URL + "/database/event-stream";
+    const url: string = import.meta.env.VITE_BACKEND_URL + "/games/event-stream";
     const eventSource = new EventSource(url);
 
     eventSource.addEventListener("gamedata", (event) => {
