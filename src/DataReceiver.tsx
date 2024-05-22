@@ -1,10 +1,16 @@
-import { useEffect, useState } from "react";
-import { EventsDocument, GameData, GameEvent, GamePlayer } from "./@types/types";
+import { createContext, useEffect, useState } from "react";
 import { ChangeStreamInsertDocument, ChangeStreamReplaceDocument, ChangeStreamUpdateDocument, Document } from "mongodb";
 import { AxiosResponse } from "axios";
 import { fetchGameEndpoint } from "./database";
 
-export function useDataReceiver() {
+type DataContextType = {
+  gamedata: GameData | null;
+  players: GamePlayer[] | null;
+  events: GameEvent[] | null;
+}
+export const DataContext = createContext<DataContextType>({ gamedata: null, players: null, events: null });
+
+export function DataReceiver({ children }: { children: React.ReactNode }) {
   const [gamedata, setGamedata] = useState<GameData | null>(null);
   const [players, setPlayers] = useState<GamePlayer[] | null>(null);
   const [events, setEvents] = useState<GameEvent[] | null>(null);
@@ -25,7 +31,7 @@ export function useDataReceiver() {
     if (events === null) {
       fetchGameEndpoint(gameId, "events")
         .then((response: AxiosResponse) => {
-          setEvents(response.data);
+          setEvents(response.data.Events);
         });
     }
   }
@@ -80,5 +86,9 @@ export function useDataReceiver() {
     });
   }, []);
 
-  return { gamedata, players, events };
+  return (
+    <DataContext.Provider value={{ gamedata, players, events }}>
+      {children}
+    </DataContext.Provider>
+  )
 }

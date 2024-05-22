@@ -1,5 +1,3 @@
-import { GameEventName, GameTeamName } from "../@types/types";
-
 import nexusBlue from "./timeline-icons/nexus-blue.png";
 import nexusRed from "./timeline-icons/nexus-red.png";
 import towerBlue from "./timeline-icons/tower-blue.png";
@@ -30,6 +28,7 @@ export function getTimelineIcon(eventName: GameEventName, teamName: GameTeamName
     case "BaronKill":
       return teamName === "ORDER" ? baronBlue : baronRed;
     case "Ace":
+    case "FirstBlood":
       return teamName === "ORDER" ? deadBlue : deadRed;
     default:
       return null;

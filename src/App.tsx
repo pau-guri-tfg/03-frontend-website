@@ -1,25 +1,40 @@
-import { useEffect } from 'react';
 import './App.css'
 import GameTimeline from './components/GameTimeline';
-import Events from "./sample_data/events.json";
-import { GameEvent } from './@types/types';
-import { useDataReceiver } from './useDataReceiver';
+import { DataReceiver } from './DataReceiver';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import Home from './screens/Home';
+import Matches from './screens/Matches';
+import Champions from './screens/Champions';
+import Summoner from './screens/Summoner';
 
 function App() {
-  const { gamedata, players, events } = useDataReceiver();
 
-  if (gamedata === null || players === null || events === null) {
-    return (
-      <main>
-        <h1>Loading...</h1>
-      </main>
-    )
-  }
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <Home />,
+    },
+    {
+      path: '/matches',
+      element: <Matches />,
+    },
+    {
+      path: '/champions',
+      element: <Champions />,
+    },
+    {
+      path: '/summoner/:gameName/:tagLine',
+      element: <Summoner />,
+    }
+  ])
 
   return (
-    <main>
-      <GameTimeline events={Events.Events as GameEvent[]} players={[]} gameTime={1363} />
-    </main>
+    <DataReceiver>
+      <RouterProvider router={router} />
+      {/* <main>
+        <GameTimeline events={Events.Events as GameEvent[]} players={[]} gameTime={1363} />
+      </main> */}
+    </DataReceiver>
   )
 }
 

@@ -1,7 +1,8 @@
-export type GameEventName = "GameStart" | "GameEnd" | "MinionsSpawning" | "TurretKilled" | "FirstBrick" | "InhibKilled" | "DragonKill" | "HeraldKill" | "BaronKill" | "ChampionKill" | "Multikill" | "Ace";
-export type GameTeamName = "CHAOS" | "ORDER";
+type GameEventName = "GameStart" | "GameEnd" | "MinionsSpawning" | "FirstBlood" | "TurretKilled" | "FirstBrick" | "InhibKilled" | "DragonKill" | "HeraldKill" | "BaronKill" | "ChampionKill" | "Multikill" | "Ace";
+type GameTeamName = "CHAOS" | "ORDER";
+type GameLane = "TOP" | "MID" | "BOT" | "JUN";
 
-export type GameData = {
+type GameData = {
   _id: string;
   gameMode: string;
   gameTime: number;
@@ -19,7 +20,7 @@ type EventsDocument = {
   gameId: string;
 };
 
-export type GameEvent = {
+type GameEvent = {
   EventID: number;
   EventName: GameEventName;
   EventTime: number;
@@ -30,7 +31,7 @@ export type GameEvent = {
   Acer?: string;
 }
 
-export type GamePlayer = {
+type GamePlayer = {
   _id: string;
   championName: string;
   isBot: boolean;
@@ -39,7 +40,11 @@ export type GamePlayer = {
   level: number;
   position: string;
   rawChampionName: string;
+  rawSkinName: string;
   respawnTimer: number;
+  riotId: string;
+  riotIdGameName: string;
+  riotIdTagLine: string;
   runes: {
     keystone: PlayerRune;
     primaryRuneTree: PlayerRune;
@@ -58,11 +63,11 @@ export type GamePlayer = {
     summonerSpellOne: PlayerSpell;
     summonerSpellTwo: PlayerSpell;
   };
-  team: string;
+  team: GameTeamName;
   gameId: string;
 };
 
-export type PlayerItem = {
+type PlayerItem = {
   canUse: boolean;
   consumable: boolean;
   count: number;
@@ -74,15 +79,26 @@ export type PlayerItem = {
   slot: number;
 }
 
-export type PlayerRune = {
+type PlayerRune = {
   displayName: string;
   id: number;
   rawDescription: string;
   rawDisplayName: string;
 }
 
-export type PlayerSpell = {
+type PlayerSpell = {
   displayName: string;
   rawDescription: string;
   rawDisplayName: string;
 }
+
+type GameBuilding = | {
+  type: "TURRET";
+  team: GameTeamName;
+  lane: GameLane;
+  position: string;
+} | {
+  type: "INHIB";
+  team: GameTeamName;
+  lane: GameLane;
+};
