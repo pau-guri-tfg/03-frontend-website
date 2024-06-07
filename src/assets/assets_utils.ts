@@ -29,7 +29,7 @@ export function getTimelineIcon(eventName: GameEventName, teamName: GameTeamName
       return teamName === "ORDER" ? baronBlue : baronRed;
     case "Ace":
     case "FirstBlood":
-      return teamName === "ORDER" ? deadBlue : deadRed;
+      return teamName === "ORDER" ? deadRed : deadBlue;
     default:
       return null;
   }

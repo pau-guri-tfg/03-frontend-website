@@ -6,6 +6,7 @@ import Home from './screens/Home';
 import Matches from './screens/Matches';
 import Champions from './screens/Champions';
 import Summoner from './screens/Summoner';
+import Header from './components/Header';
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
 
   return (
     <DataReceiver>
+      <Header />
       <RouterProvider router={router} />
       {/* <main>
         <GameTimeline events={Events.Events as GameEvent[]} players={[]} gameTime={1363} />

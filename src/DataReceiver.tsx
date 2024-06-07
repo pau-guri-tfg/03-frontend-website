@@ -3,6 +3,10 @@ import { ChangeStreamInsertDocument, ChangeStreamReplaceDocument, ChangeStreamUp
 import { AxiosResponse } from "axios";
 import { fetchGameEndpoint } from "./database";
 
+import SampleGameData from "./sample_data/gamedata.json";
+import SamplePlayers from "./sample_data/players.json";
+import SampleEvents from "./sample_data/events.json";
+
 type DataContextType = {
   gamedata: GameData | null;
   players: GamePlayer[] | null;
@@ -37,6 +41,11 @@ export function DataReceiver({ children }: { children: React.ReactNode }) {
   }
 
   useEffect(() => {
+    // sample data
+    setGamedata(SampleGameData);
+    setPlayers(SamplePlayers);
+    setEvents(SampleEvents.Events);
+
     const url: string = import.meta.env.VITE_BACKEND_URL + "/games/event-stream";
     const eventSource = new EventSource(url);
 

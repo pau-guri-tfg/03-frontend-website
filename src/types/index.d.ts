@@ -1,9 +1,9 @@
-type GameEventName = "GameStart" | "GameEnd" | "MinionsSpawning" | "FirstBlood" | "TurretKilled" | "FirstBrick" | "InhibKilled" | "DragonKill" | "HeraldKill" | "BaronKill" | "ChampionKill" | "Multikill" | "Ace";
-type GameTeamName = "CHAOS" | "ORDER";
+type GameEventName = string | "GameStart" | "GameEnd" | "MinionsSpawning" | "FirstBlood" | "TurretKilled" | "FirstBrick" | "InhibKilled" | "DragonKill" | "HeraldKill" | "BaronKill" | "ChampionKill" | "Multikill" | "Ace";
+type GameTeamName = string | "CHAOS" | "ORDER";
 type GameLane = "TOP" | "MID" | "BOT" | "JUN";
 
 type GameData = {
-  _id: string;
+  _id: any;
   gameMode: string;
   gameTime: number;
   mapName: string;
@@ -15,7 +15,7 @@ type GameData = {
 }
 
 type EventsDocument = {
-  _id: string;
+  _id: any;
   Events: GameEvent[];
   gameId: string;
 };
@@ -32,7 +32,7 @@ type GameEvent = {
 }
 
 type GamePlayer = {
-  _id: string;
+  _id: any;
   championName: string;
   isBot: boolean;
   isDead: boolean;
@@ -40,7 +40,7 @@ type GamePlayer = {
   level: number;
   position: string;
   rawChampionName: string;
-  rawSkinName: string;
+  rawSkinName?: string;
   respawnTimer: number;
   riotId: string;
   riotIdGameName: string;

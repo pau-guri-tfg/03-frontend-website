@@ -1,0 +1,13 @@
+{
+  "_id": {
+    "$oid": "664e28d69f8e071c17f62bcb"
+  },
+  "gameMode": "CLASSIC",
+  "gameTime": 1461.4835205078125,
+  "mapName": "Map11",
+  "mapNumber": 11,
+  "mapTerrain": "Default",
+  "gameStartTime": 1716397583323,
+  "bannedChampions": [],
+  "gameId": "6948313648"
+}

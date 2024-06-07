@@ -1,0 +1,456 @@
+[
+  {
+    "_id": {
+      "$oid": "664e28d69f8e071c17f62bc7"
+    },
+    "championName": "Garen",
+    "isBot": false,
+    "isDead": false,
+    "items": [
+      {
+        "canUse": true,
+        "consumable": false,
+        "count": 1,
+        "displayName": "Stealth Ward",
+        "itemID": 3340,
+        "price": 0,
+        "rawDescription": "GeneratedTip_Item_3340_Description",
+        "rawDisplayName": "Item_3340_Name",
+        "slot": 6
+      }
+    ],
+    "level": 10,
+    "position": "",
+    "rawChampionName": "game_character_displayname_Garen",
+    "rawSkinName": "game_character_skin_displayname_Garen_14",
+    "respawnTimer": 0,
+    "riotId": "pauX#2002",
+    "riotIdGameName": "pauX",
+    "riotIdTagLine": "2002",
+    "runes": {
+      "keystone": {
+        "displayName": "Conqueror",
+        "id": 8010,
+        "rawDescription": "perk_tooltip_Conqueror",
+        "rawDisplayName": "perk_displayname_Conqueror"
+      },
+      "primaryRuneTree": {
+        "displayName": "Precision",
+        "id": 8000,
+        "rawDescription": "perkstyle_tooltip_7201",
+        "rawDisplayName": "perkstyle_displayname_7201"
+      },
+      "secondaryRuneTree": {
+        "displayName": "Resolve",
+        "id": 8400,
+        "rawDescription": "perkstyle_tooltip_7204",
+        "rawDisplayName": "perkstyle_displayname_7204"
+      }
+    },
+    "scores": {
+      "assists": 0,
+      "creepScore": 0,
+      "deaths": 8,
+      "kills": 0,
+      "wardScore": 0
+    },
+    "skinID": 14,
+    "skinName": "Demacia Vice Garen",
+    "summonerName": "pauX#2002",
+    "summonerSpells": {
+      "summonerSpellOne": {
+        "displayName": "Flash",
+        "rawDescription": "GeneratedTip_SummonerSpell_SummonerFlash_Description",
+        "rawDisplayName": "GeneratedTip_SummonerSpell_SummonerFlash_DisplayName"
+      },
+      "summonerSpellTwo": {
+        "displayName": "Smite",
+        "rawDescription": "GeneratedTip_SummonerSpell_SummonerSmite_Description",
+        "rawDisplayName": "GeneratedTip_SummonerSpell_SummonerSmite_DisplayName"
+      }
+    },
+    "team": "ORDER",
+    "puuid": "3VIhInE--HSUXsES_W7vGUIuiYM3xYjuN0lBka8NIhNtXwTAsJctmxMttcN3mE-rVc7reMVj4V1wcw",
+    "summonerId": "qd35QSs9Ju4GLzWrz14NQKJLvcbPOg7py44BoQs0Vwqe8zs",
+    "profileIconId": 4881,
+    "gameId": "6948313648"
+  },
+  {
+    "_id": {
+      "$oid": "664e28d69f8e071c17f62bc8"
+    },
+    "championName": "Shyvana",
+    "isBot": true,
+    "isDead": false,
+    "items": [
+      {
+        "canUse": false,
+        "consumable": false,
+        "count": 1,
+        "displayName": "Doran's Blade",
+        "itemID": 1055,
+        "price": 450,
+        "rawDescription": "GeneratedTip_Item_1055_Description",
+        "rawDisplayName": "Item_1055_Name",
+        "slot": 0
+      },
+      {
+        "canUse": false,
+        "consumable": false,
+        "count": 1,
+        "displayName": "Dagger",
+        "itemID": 1042,
+        "price": 300,
+        "rawDescription": "GeneratedTip_Item_1042_Description",
+        "rawDisplayName": "Item_1042_Name",
+        "slot": 1
+      },
+      {
+        "canUse": false,
+        "consumable": false,
+        "count": 1,
+        "displayName": "Sundered Sky",
+        "itemID": 6610,
+        "price": 850,
+        "rawDescription": "GeneratedTip_Item_6610_Description",
+        "rawDisplayName": "Item_6610_Name",
+        "slot": 2
+      },
+      {
+        "canUse": false,
+        "consumable": false,
+        "count": 1,
+        "displayName": "Boots",
+        "itemID": 1001,
+        "price": 300,
+        "rawDescription": "GeneratedTip_Item_1001_Description",
+        "rawDisplayName": "Item_1001_Name",
+        "slot": 3
+      },
+      {
+        "canUse": false,
+        "consumable": false,
+        "count": 1,
+        "displayName": "Cloth Armor",
+        "itemID": 1029,
+        "price": 300,
+        "rawDescription": "GeneratedTip_Item_1029_Description",
+        "rawDisplayName": "Item_1029_Name",
+        "slot": 4
+      },
+      {
+        "canUse": false,
+        "consumable": false,
+        "count": 1,
+        "displayName": "Glowing Mote",
+        "itemID": 2022,
+        "price": 250,
+        "rawDescription": "GeneratedTip_Item_2022_Description",
+        "rawDisplayName": "Item_2022_Name",
+        "slot": 5
+      },
+      {
+        "canUse": true,
+        "consumable": false,
+        "count": 1,
+        "displayName": "Stealth Ward",
+        "itemID": 3340,
+        "price": 0,
+        "rawDescription": "GeneratedTip_Item_3340_Description",
+        "rawDisplayName": "Item_3340_Name",
+        "slot": 6
+      }
+    ],
+    "level": 12,
+    "position": "TOP",
+    "rawChampionName": "game_character_displayname_Shyvana",
+    "respawnTimer": 0,
+    "riotId": "Shyvana#BOT",
+    "riotIdGameName": "Shyvana",
+    "riotIdTagLine": "BOT",
+    "runes": {
+      "keystone": {
+        "displayName": "Grasp of the Undying",
+        "id": 8437,
+        "rawDescription": "perk_tooltip_GraspOfTheUndying",
+        "rawDisplayName": "perk_displayname_GraspOfTheUndying"
+      },
+      "primaryRuneTree": {
+        "displayName": "Resolve",
+        "id": 8400,
+        "rawDescription": "perkstyle_tooltip_7204",
+        "rawDisplayName": "perkstyle_displayname_7204"
+      },
+      "secondaryRuneTree": {
+        "displayName": "Sorcery",
+        "id": 8200,
+        "rawDescription": "perkstyle_tooltip_7202",
+        "rawDisplayName": "perkstyle_displayname_7202"
+      }
+    },
+    "scores": {
+      "assists": 0,
+      "creepScore": 90,
+      "deaths": 0,
+      "kills": 0,
+      "wardScore": 0
+    },
+    "skinID": 0,
+    "summonerName": "Shyvana#BOT",
+    "summonerSpells": {
+      "summonerSpellOne": {
+        "displayName": "Ghost",
+        "rawDescription": "GeneratedTip_SummonerSpell_SummonerHaste_Description",
+        "rawDisplayName": "GeneratedTip_SummonerSpell_SummonerHaste_DisplayName"
+      },
+      "summonerSpellTwo": {
+        "displayName": "Heal",
+        "rawDescription": "GeneratedTip_SummonerSpell_SummonerHeal_Description",
+        "rawDisplayName": "GeneratedTip_SummonerSpell_SummonerHeal_DisplayName"
+      }
+    },
+    "team": "ORDER",
+    "gameId": "6948313648"
+  },
+  {
+    "_id": {
+      "$oid": "664e28d69f8e071c17f62bc9"
+    },
+    "championName": "Wukong",
+    "isBot": true,
+    "isDead": false,
+    "items": [
+      {
+        "canUse": false,
+        "consumable": false,
+        "count": 1,
+        "displayName": "Doran's Shield",
+        "itemID": 1054,
+        "price": 450,
+        "rawDescription": "GeneratedTip_Item_1054_Description",
+        "rawDisplayName": "Item_1054_Name",
+        "slot": 0
+      },
+      {
+        "canUse": false,
+        "consumable": false,
+        "count": 1,
+        "displayName": "Eclipse",
+        "itemID": 6692,
+        "price": 475,
+        "rawDescription": "GeneratedTip_Item_6692_Description",
+        "rawDisplayName": "Item_6692_Name",
+        "slot": 1
+      },
+      {
+        "canUse": true,
+        "consumable": false,
+        "count": 1,
+        "displayName": "Tiamat",
+        "itemID": 3077,
+        "price": 500,
+        "rawDescription": "GeneratedTip_Item_3077_Description",
+        "rawDisplayName": "Item_3077_Name",
+        "slot": 2
+      },
+      {
+        "canUse": false,
+        "consumable": false,
+        "count": 1,
+        "displayName": "Plated Steelcaps",
+        "itemID": 3047,
+        "price": 400,
+        "rawDescription": "GeneratedTip_Item_3047_Description",
+        "rawDisplayName": "Item_3047_Name",
+        "slot": 3
+      },
+      {
+        "canUse": false,
+        "consumable": false,
+        "count": 1,
+        "displayName": "Glowing Mote",
+        "itemID": 2022,
+        "price": 250,
+        "rawDescription": "GeneratedTip_Item_2022_Description",
+        "rawDisplayName": "Item_2022_Name",
+        "slot": 4
+      },
+      {
+        "canUse": false,
+        "consumable": false,
+        "count": 1,
+        "displayName": "Vampiric Scepter",
+        "itemID": 1053,
+        "price": 550,
+        "rawDescription": "GeneratedTip_Item_1053_Description",
+        "rawDisplayName": "Item_1053_Name",
+        "slot": 5
+      },
+      {
+        "canUse": true,
+        "consumable": false,
+        "count": 1,
+        "displayName": "Stealth Ward",
+        "itemID": 3340,
+        "price": 0,
+        "rawDescription": "GeneratedTip_Item_3340_Description",
+        "rawDisplayName": "Item_3340_Name",
+        "slot": 6
+      }
+    ],
+    "level": 13,
+    "position": "TOP",
+    "rawChampionName": "game_character_displayname_MonkeyKing",
+    "respawnTimer": 0,
+    "riotId": "MonkeyKing#BOT",
+    "riotIdGameName": "MonkeyKing",
+    "riotIdTagLine": "BOT",
+    "runes": {
+      "keystone": {
+        "displayName": "Grasp of the Undying",
+        "id": 8437,
+        "rawDescription": "perk_tooltip_GraspOfTheUndying",
+        "rawDisplayName": "perk_displayname_GraspOfTheUndying"
+      },
+      "primaryRuneTree": {
+        "displayName": "Resolve",
+        "id": 8400,
+        "rawDescription": "perkstyle_tooltip_7204",
+        "rawDisplayName": "perkstyle_displayname_7204"
+      },
+      "secondaryRuneTree": {
+        "displayName": "Sorcery",
+        "id": 8200,
+        "rawDescription": "perkstyle_tooltip_7202",
+        "rawDisplayName": "perkstyle_displayname_7202"
+      }
+    },
+    "scores": {
+      "assists": 1,
+      "creepScore": 90,
+      "deaths": 0,
+      "kills": 3,
+      "wardScore": 0
+    },
+    "skinID": 0,
+    "summonerName": "MonkeyKing#BOT",
+    "summonerSpells": {
+      "summonerSpellOne": {
+        "displayName": "Ghost",
+        "rawDescription": "GeneratedTip_SummonerSpell_SummonerHaste_Description",
+        "rawDisplayName": "GeneratedTip_SummonerSpell_SummonerHaste_DisplayName"
+      },
+      "summonerSpellTwo": {
+        "displayName": "Heal",
+        "rawDescription": "GeneratedTip_SummonerSpell_SummonerHeal_Description",
+        "rawDisplayName": "GeneratedTip_SummonerSpell_SummonerHeal_DisplayName"
+      }
+    },
+    "team": "CHAOS",
+    "gameId": "6948313648"
+  },
+  {
+    "_id": {
+      "$oid": "664e28d69f8e071c17f62bca"
+    },
+    "championName": "Nidalee",
+    "isBot": true,
+    "isDead": false,
+    "items": [
+      {
+        "canUse": false,
+        "consumable": false,
+        "count": 1,
+        "displayName": "Doran's Ring",
+        "itemID": 1056,
+        "price": 400,
+        "rawDescription": "GeneratedTip_Item_1056_Description",
+        "rawDisplayName": "Item_1056_Name",
+        "slot": 0
+      },
+      {
+        "canUse": false,
+        "consumable": false,
+        "count": 1,
+        "displayName": "Stormsurge",
+        "itemID": 4646,
+        "price": 950,
+        "rawDescription": "GeneratedTip_Item_4646_Description",
+        "rawDisplayName": "Item_4646_Name",
+        "slot": 1
+      },
+      {
+        "canUse": false,
+        "consumable": false,
+        "count": 1,
+        "displayName": "Glowing Mote",
+        "itemID": 2022,
+        "price": 250,
+        "rawDescription": "GeneratedTip_Item_2022_Description",
+        "rawDisplayName": "Item_2022_Name",
+        "slot": 2
+      },
+      {
+        "canUse": true,
+        "consumable": false,
+        "count": 1,
+        "displayName": "Stealth Ward",
+        "itemID": 3340,
+        "price": 0,
+        "rawDescription": "GeneratedTip_Item_3340_Description",
+        "rawDisplayName": "Item_3340_Name",
+        "slot": 6
+      }
+    ],
+    "level": 14,
+    "position": "TOP",
+    "rawChampionName": "game_character_displayname_Nidalee",
+    "respawnTimer": 0,
+    "riotId": "Nidalee#BOT",
+    "riotIdGameName": "Nidalee",
+    "riotIdTagLine": "BOT",
+    "runes": {
+      "keystone": {
+        "displayName": "Electrocute",
+        "id": 8112,
+        "rawDescription": "perk_tooltip_Electrocute",
+        "rawDisplayName": "perk_displayname_Electrocute"
+      },
+      "primaryRuneTree": {
+        "displayName": "Domination",
+        "id": 8100,
+        "rawDescription": "perkstyle_tooltip_7200",
+        "rawDisplayName": "perkstyle_displayname_7200"
+      },
+      "secondaryRuneTree": {
+        "displayName": "Precision",
+        "id": 8000,
+        "rawDescription": "perkstyle_tooltip_7201",
+        "rawDisplayName": "perkstyle_displayname_7201"
+      }
+    },
+    "scores": {
+      "assists": 0,
+      "creepScore": 90,
+      "deaths": 0,
+      "kills": 3,
+      "wardScore": 0
+    },
+    "skinID": 0,
+    "summonerName": "Nidalee#BOT",
+    "summonerSpells": {
+      "summonerSpellOne": {
+        "displayName": "Ghost",
+        "rawDescription": "GeneratedTip_SummonerSpell_SummonerHaste_Description",
+        "rawDisplayName": "GeneratedTip_SummonerSpell_SummonerHaste_DisplayName"
+      },
+      "summonerSpellTwo": {
+        "displayName": "Heal",
+        "rawDescription": "GeneratedTip_SummonerSpell_SummonerHeal_Description",
+        "rawDisplayName": "GeneratedTip_SummonerSpell_SummonerHeal_DisplayName"
+      }
+    },
+    "team": "CHAOS",
+    "gameId": "6948313648"
+  }
+]
