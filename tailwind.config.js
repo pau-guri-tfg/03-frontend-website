@@ -22,7 +22,13 @@ export default {
       fontFamily: {
         sans: ['Kanit', 'sans-serif'],
         serif: ['Halant', 'serif'],
-      }
+      },
+      boxShadow: {
+        'big': '0px 4px 20px rgba(0, 0, 0, 0.3)',
+      },
+      dropShadow: {
+        'big': '0px 4px 20px rgba(0, 0, 0, 0.3)',
+      },
     },
   },
   plugins: [],

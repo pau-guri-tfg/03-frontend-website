@@ -8,7 +8,7 @@ export default function Home() {
   const { events, players, gamedata } = useContext(DataContext);
 
   return (
-    <main className="container">
+    <main className="container pt-14">
       {gamedata && players ?
         <>
           {events && players && gamedata &&

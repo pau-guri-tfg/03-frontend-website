@@ -29,6 +29,7 @@ type GameEvent = {
   Assisters?: string[];
   VictimName?: string;
   Acer?: string;
+  TurretKilled?: string;
 }
 
 type GamePlayer = {

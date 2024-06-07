@@ -17,7 +17,6 @@ export function getTimelineIcon(eventName: GameEventName, teamName: GameTeamName
     case "GameEnd":
       return teamName === "ORDER" ? nexusBlue : nexusRed;
     case "TurretKilled":
-    case "FirstBrick":
       return teamName === "ORDER" ? towerBlue : towerRed;
     case "InhibKilled":
       return teamName === "ORDER" ? inhibitorBlue : inhibitorRed;
@@ -28,7 +27,6 @@ export function getTimelineIcon(eventName: GameEventName, teamName: GameTeamName
     case "BaronKill":
       return teamName === "ORDER" ? baronBlue : baronRed;
     case "Ace":
-    case "FirstBlood":
       return teamName === "ORDER" ? deadRed : deadBlue;
     default:
       return null;

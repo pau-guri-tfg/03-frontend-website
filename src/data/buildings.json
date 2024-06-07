@@ -1,164 +1,164 @@
 {
   "Turret_T2_L_03_A": {
     "type": "TURRET",
-    "team": "ORDER",
+    "team": "CHAOS",
     "lane": "TOP",
     "position": "Outer"
   },
   "Turret_T2_C_05_A": {
     "type": "TURRET",
-    "team": "ORDER",
+    "team": "CHAOS",
     "lane": "MID",
     "position": "Outer"
   },
   "Turret_T2_R_03_A": {
     "type": "TURRET",
-    "team": "ORDER",
+    "team": "CHAOS",
     "lane": "BOT",
     "position": "Outer"
   },
   "Turret_T2_L_02_A": {
     "type": "TURRET",
-    "team": "ORDER",
+    "team": "CHAOS",
     "lane": "TOP",
     "position": "Inner"
   },
   "Turret_T2_C_04_A": {
     "type": "TURRET",
-    "team": "ORDER",
+    "team": "CHAOS",
     "lane": "MID",
     "position": "Inner"
   },
   "Turret_T2_R_02_A": {
     "type": "TURRET",
-    "team": "ORDER",
+    "team": "CHAOS",
     "lane": "BOT",
     "position": "Inner"
   },
   "Turret_T2_L_01_A": {
     "type": "TURRET",
-    "team": "ORDER",
+    "team": "CHAOS",
     "lane": "TOP",
     "position": "Inhib"
   },
   "Turret_T2_C_03_A": {
     "type": "TURRET",
-    "team": "ORDER",
+    "team": "CHAOS",
     "lane": "MID",
     "position": "Inhib"
   },
   "Turret_T2_R_01_A": {
     "type": "TURRET",
-    "team": "ORDER",
+    "team": "CHAOS",
     "lane": "BOT",
     "position": "Inhib"
   },
   "Turret_T2_C_02_A": {
     "type": "TURRET",
-    "team": "ORDER",
+    "team": "CHAOS",
     "lane": "TOP",
     "position": "Nexus"
   },
   "Turret_T2_C_01_A": {
     "type": "TURRET",
-    "team": "ORDER",
+    "team": "CHAOS",
     "lane": "BOT",
     "position": "Nexus"
   },
   "Barracks_T2_L1": {
     "type": "INHIB",
-    "team": "ORDER",
+    "team": "CHAOS",
     "lane": "TOP"
   },
   "Barracks_T2_C1": {
     "type": "INHIB",
-    "team": "ORDER",
+    "team": "CHAOS",
     "lane": "MID"
   },
   "Barracks_T2_R1": {
     "type": "INHIB",
-    "team": "ORDER",
+    "team": "CHAOS",
     "lane": "BOT"
   },
   "Turret_T1_L_03_A": {
     "type": "TURRET",
-    "team": "CHAOS",
+    "team": "ORDER",
     "lane": "TOP",
     "position": "Outer"
   },
   "Turret_T1_C_05_A": {
     "type": "TURRET",
-    "team": "CHAOS",
+    "team": "ORDER",
     "lane": "MID",
     "position": "Outer"
   },
   "Turret_T1_R_03_A": {
     "type": "TURRET",
-    "team": "CHAOS",
+    "team": "ORDER",
     "lane": "BOT",
     "position": "Outer"
   },
   "Turret_T1_L_02_A": {
     "type": "TURRET",
-    "team": "CHAOS",
+    "team": "ORDER",
     "lane": "TOP",
     "position": "Inner"
   },
   "Turret_T1_C_04_A": {
     "type": "TURRET",
-    "team": "CHAOS",
+    "team": "ORDER",
     "lane": "MID",
     "position": "Inner"
   },
   "Turret_T1_R_02_A": {
     "type": "TURRET",
-    "team": "CHAOS",
+    "team": "ORDER",
     "lane": "BOT",
     "position": "Inner"
   },
   "Turret_T1_L_01_A": {
     "type": "TURRET",
-    "team": "CHAOS",
+    "team": "ORDER",
     "lane": "TOP",
     "position": "Inhib"
   },
   "Turret_T1_C_03_A": {
     "type": "TURRET",
-    "team": "CHAOS",
+    "team": "ORDER",
     "lane": "MID",
     "position": "Inhib"
   },
   "Turret_T1_R_01_A": {
     "type": "TURRET",
-    "team": "CHAOS",
+    "team": "ORDER",
     "lane": "BOT",
     "position": "Inhib"
   },
   "Turret_T1_C_02_A": {
     "type": "TURRET",
-    "team": "CHAOS",
+    "team": "ORDER",
     "lane": "TOP",
     "position": "Nexus"
   },
   "Turret_T1_C_01_A": {
     "type": "TURRET",
-    "team": "CHAOS",
+    "team": "ORDER",
     "lane": "BOT",
     "position": "Nexus"
   },
   "Barracks_T1_L1": {
     "type": "INHIB",
-    "team": "CHAOS",
+    "team": "ORDER",
     "lane": "TOP"
   },
   "Barracks_T1_C1": {
     "type": "INHIB",
-    "team": "CHAOS",
+    "team": "ORDER",
     "lane": "MID"
   },
   "Barracks_T1_R1": {
     "type": "INHIB",
-    "team": "CHAOS",
+    "team": "ORDER",
     "lane": "BOT"
   }
 }
