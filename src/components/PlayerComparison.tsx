@@ -1,9 +1,13 @@
 import React, { MouseEventHandler, useEffect, useState } from 'react'
 import { Bar, BarChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
+import { NameType } from 'recharts/types/component/DefaultTooltipContent';
+import { ContentType } from 'recharts/types/component/Tooltip';
+import { ValueType } from 'tailwindcss/types/config';
 
 type ChartData = {
   name: string;
-  [key: string]: any;
+  tooltipText: string;
+  value: number;
 }[];
 
 export default function PlayerComparison({ players }: { players: GamePlayer[] }) {
@@ -11,6 +15,10 @@ export default function PlayerComparison({ players }: { players: GamePlayer[] })
   const [chaosPlayers, setChaosPlayers] = useState<GamePlayer[]>([]);
 
   const [selectedPlayers, setSelectedPlayers] = useState<GamePlayer[]>([]);
+
+  // const [deathsData, setDeathsData] = useState<ChartData>([]);
+  // const [killsData, setKillsData] = useState<ChartData>([]);
+  // const [assistsData, setAssistsData] = useState<ChartData>([]);
 
   useEffect(() => {
     const orderPlayers = players.filter(player => player.team === "ORDER");
@@ -29,34 +37,100 @@ export default function PlayerComparison({ players }: { players: GamePlayer[] })
     }
   }
 
-  const getSelectedPlayerData = (): ChartData => {
-    let data: ChartData = [{ name: 'Kills' }, { name: 'Deaths' }, { name: 'Assists' }];
-
+  const getPlayerKills = (): ChartData => {
+    let data: ChartData = [];
     selectedPlayers.map(player => {
-      data[0][player.riotIdGameName] = player.scores.kills;
-      data[1][player.riotIdGameName] = player.scores.deaths;
-      data[2][player.riotIdGameName] = player.scores.assists;
+      data.push({ name: player.riotIdGameName, value: player.scores.kills, tooltipText: "kills" });
     });
-
     return data;
   }
+  const getPlayerDeaths = (): ChartData => {
+    let data: ChartData = [];
+    selectedPlayers.map(player => {
+      data.push({ name: player.riotIdGameName, value: player.scores.deaths, tooltipText: "deaths" });
+    });
+    return data;
+  }
+  const getPlayerAssists = (): ChartData => {
+    let data: ChartData = [];
+    selectedPlayers.map(player => {
+      data.push({ name: player.riotIdGameName, value: player.scores.assists, tooltipText: "assists" });
+    });
+    return data;
+  }
+  // const getPlayerCreepScore = (): ChartData => {
+  //   let data: ChartData = [];
+  //   selectedPlayers.map(player => {
+  //     data.push({ name: player.riotIdGameName, value: player.scores.creepScore, tooltipText: "creep score" });
+  //   });
+  //   return data;
+  // }
+  // const getPlayerWardScore = (): ChartData => {
+  //   let data: ChartData = [];
+  //   selectedPlayers.map(player => {
+  //     data.push({ name: player.riotIdGameName, value: player.scores.wardScore, tooltipText: "ward score" });
+  //   });
+  //   return data;
+  // }
 
   useEffect(() => {
     console.log(selectedPlayers);
   }, [selectedPlayers]);
 
   return (
-    <div>
-      <ResponsiveContainer width='100%' height={300}>
-        <BarChart data={getSelectedPlayerData()}>
-          <XAxis dataKey='name' />
-          <YAxis />
-          <Tooltip />
-          {selectedPlayers.map(player => (
-            <Bar key={player.riotIdGameName} dataKey={player.riotIdGameName} fill={player.team === 'ORDER' ? '#1a78ae' : '#d32f2f'} />
-          ))}
-        </BarChart>
-      </ResponsiveContainer>
+    <div className='container flex flex-col gap-3'>
+      <h2 className="py-2 font-serif text-3xl font-semibold leading-none">Summoner stats</h2>
+      <div className='flex flex-wrap justify-center'>
+        <div className='w-1/3 px-3 min-w-[400px] flex flex-col'>
+          <h3 className='font-sans text-xl text-gold'>Kills</h3>
+          <ResponsiveContainer width="100%" height={250}>
+            <BarChart layout='vertical' data={getPlayerKills()}>
+              <XAxis type="number" allowDecimals={false} />
+              <YAxis type="category" dataKey="name" />
+              <Tooltip content={<CustomTooltip />} />
+              <Bar dataKey={"value"} className="fill-gold" />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+        <div className='w-1/3 px-3 min-w-[400px] flex flex-col'>
+          <h3 className='font-sans text-xl text-gold'>Deaths</h3>
+          <ResponsiveContainer width="100%" height={250}>
+            <BarChart layout='vertical' data={getPlayerDeaths()}>
+              <XAxis type="number" allowDecimals={false} />
+              <YAxis type="category" dataKey="name" />
+              <Tooltip content={<CustomTooltip />} />
+              <Bar dataKey={"value"} className="fill-gold" />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+        <div className='w-1/3 px-3 min-w-[400px] flex flex-col'>
+          <h3 className='font-sans text-xl text-gold'>Assists</h3>
+          <ResponsiveContainer width="100%" height={250}>
+            <BarChart layout='vertical' data={getPlayerAssists()}>
+              <XAxis type="number" allowDecimals={false} />
+              <YAxis type="category" dataKey="name" />
+              <Tooltip content={<CustomTooltip />} />
+              <Bar dataKey={"value"} className="fill-gold" />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+        {/* <ResponsiveContainer width='20%' minWidth={400} height={250} >
+          <BarChart layout='vertical' data={getPlayerCreepScore()}>
+            <XAxis type="number" allowDecimals={false} />
+            <YAxis type="category" dataKey="name" />
+            <Tooltip content={<CustomTooltip />} />
+            <Bar dataKey={"value"} className="fill-gold" />
+          </BarChart>
+        </ResponsiveContainer>
+        <ResponsiveContainer width='20%' minWidth={400} height={250} >
+          <BarChart layout='vertical' data={getPlayerWardScore()}>
+            <XAxis type="number" allowDecimals={false} />
+            <YAxis type="category" dataKey="name" />
+            <Tooltip content={<CustomTooltip />} />
+            <Bar dataKey={"value"} className="fill-gold" />
+          </BarChart>
+        </ResponsiveContainer> */}
+      </div>
       <div className='flex flex-col'>
         {Array.from({ length: Math.max(orderPlayers.length, chaosPlayers.length) }).map((_, index) => {
           return (
@@ -79,6 +153,21 @@ export default function PlayerComparison({ players }: { players: GamePlayer[] })
           )
         })}
       </div>
-    </div >
+    </div>
   )
 }
+
+const CustomTooltip = ({ active, payload, label }: any) => {
+  if (active && payload && payload.length) {
+    return (
+      <div className="flex gap-3 p-3 bg-dark-blue rounded-3xl">
+        <span className="label text-white/40">{label}</span>
+        <div>
+          <span className='font-serif text-xl font-bold'>{payload[0].value}</span> <span>{payload[0].payload.tooltipText}</span>
+        </div>
+      </div>
+    );
+  }
+
+  return null;
+};

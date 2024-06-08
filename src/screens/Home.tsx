@@ -8,12 +8,14 @@ export default function Home() {
   const { events, players, gamedata } = useContext(DataContext);
 
   return (
-    <main className="container pt-14">
+    <main className="flex flex-col gap-8 pt-14">
       {gamedata && players ?
         <>
           {events && players && gamedata &&
             <>
-              <GameStats players={players} gamedata={gamedata} events={events} />
+              <div className="container">
+                <GameStats players={players} gamedata={gamedata} events={events} />
+              </div>
               <GameTimeline events={events} players={players} gameTime={gamedata.gameTime} />
             </>
           }

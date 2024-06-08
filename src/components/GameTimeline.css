@@ -1,0 +1,5 @@
+/* Custom scrollbar */
+.timeline-scroll-div {
+  scrollbar-width: thin;
+  scrollbar-color: #FFFFFF66 transparent;
+}

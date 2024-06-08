@@ -42,9 +42,9 @@ export function DataReceiver({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     // sample data
-    setGamedata(SampleGameData);
-    setPlayers(SamplePlayers);
-    setEvents(SampleEvents.Events);
+    // setGamedata(SampleGameData);
+    // setPlayers(SamplePlayers);
+    // setEvents(SampleEvents.Events);
 
     const url: string = import.meta.env.VITE_BACKEND_URL + "/games/event-stream";
     const eventSource = new EventSource(url);

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import BlueTurret from '../assets/timeline-icons/tower-blue.png';
 import RedTurret from '../assets/timeline-icons/tower-red.png';
 import identifyBuilding from '../utils/identifyBuilding';
+import { formatDate, formatDuration, formatTime } from '../utils/timeFormatter';
 
 export default function GameStats({ players, gamedata, events }: { players: GamePlayer[], gamedata: GameData, events: GameEvent[] }) {
   const [globalScore, setGlobalScore] = useState<[number, number]>([0, 0]);
@@ -20,14 +21,9 @@ export default function GameStats({ players, gamedata, events }: { players: Game
   useEffect(() => {
     if (!gamedata) return;
 
-    const date = new Date(gamedata.gameStartTime);
-    //const formattedDate = date.toLocaleDateString();
-    const formattedTime = date.toLocaleTimeString();
-    setFormattedStartTime(`${formattedTime}`);
+    setFormattedStartTime(formatTime(gamedata.gameStartTime));
 
-    const gameMinutes = Math.floor(gamedata.gameTime / 60);
-    const gameSeconds = Math.floor(gamedata.gameTime % 60);
-    setFormatedGameTime(`${gameMinutes}:${gameSeconds}`);
+    setFormatedGameTime(formatDuration(gamedata.gameTime));
   }, [gamedata]);
 
   useEffect(() => {
@@ -56,21 +52,21 @@ export default function GameStats({ players, gamedata, events }: { players: Game
       <div className='flex items-center justify-between gap-3 w-full max-w-[400px] mx-auto'>
         <div className='flex items-center gap-1'>
           <img src={BlueTurret} alt='blue-turret' className='w-9 h-9' />
-          <span className='font-serif text-2xl font-bold'>{globalTurretScore[0]}</span>
+          <span className='font-serif text-2xl font-bold leading-none'>{globalTurretScore[0]}</span>
         </div>
         <div className='flex items-center gap-2.5'>
           <span
             className='font-serif text-6xl font-bold leading-none text-riot-blue'
-            style={{ textShadow: globalScore[0] > globalScore[1] ? "0px 4px 20px #0096A866" : "none" }}
+            style={{ textShadow: globalScore[0] > globalScore[1] ? "0px 4px 20px #0096A8AA" : "none" }}
           >{globalScore[0]}</span>
           <span className='text-xl leading-none text-white/40'>vs</span>
           <span
             className='font-serif text-6xl font-bold leading-none text-riot-red'
-            style={{ textShadow: globalScore[1] > globalScore[0] ? "0px 4px 20px #C6213966" : "none" }}
+            style={{ textShadow: globalScore[1] > globalScore[0] ? "0px 4px 20px #C62139AA" : "none" }}
           >{globalScore[1]}</span>
         </div>
         <div className='flex items-center gap-1'>
-          <span className='font-serif text-2xl font-bold'>{globalTurretScore[1]}</span>
+          <span className='font-serif text-2xl font-bold leading-none'>{globalTurretScore[1]}</span>
           <img src={RedTurret} alt='blue-turret' className='w-9 h-9' />
         </div>
       </div>
