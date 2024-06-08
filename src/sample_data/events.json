@@ -1,146 +1,314 @@
 {
   "_id": {
-    "$oid": "664e28d6e3008cbb8c2bc1bf"
+    "$oid": "6664470caee2505f0eefaf13"
   },
   "Events": [
     {
       "EventID": 0,
       "EventName": "GameStart",
-      "EventTime": 0.024082699790596962
+      "EventTime": 0.02913830056786537
     },
     {
       "EventID": 1,
       "EventName": "MinionsSpawning",
-      "EventTime": 65.03470611572266
+      "EventTime": 65.03083038330078
     },
     {
       "Assisters": [],
       "EventID": 2,
       "EventName": "ChampionKill",
-      "EventTime": 186.8153533935547,
-      "KillerName": "MonkeyKing",
+      "EventTime": 146.8039093017578,
+      "KillerName": "Taric Bot",
       "VictimName": "pauX"
     },
     {
       "EventID": 3,
       "EventName": "FirstBlood",
-      "EventTime": 186.8153533935547,
-      "Recipient": "MonkeyKing"
+      "EventTime": 146.8039093017578,
+      "Recipient": "Taric Bot"
     },
     {
-      "Assisters": [],
+      "Assisters": [
+        "Galio Bot"
+      ],
       "EventID": 4,
       "EventName": "ChampionKill",
-      "EventTime": 249.2174835205078,
-      "KillerName": "Nidalee",
-      "VictimName": "pauX"
-    },
-    {
-      "Assisters": [],
-      "EventID": 5,
-      "EventName": "ChampionKill",
-      "EventTime": 369.6321716308594,
-      "KillerName": "MonkeyKing",
-      "VictimName": "pauX"
-    },
-    {
-      "Assisters": [],
-      "EventID": 6,
-      "EventName": "ChampionKill",
-      "EventTime": 413.04302978515625,
-      "KillerName": "Turret_T2_C_05_A",
-      "VictimName": "pauX"
-    },
-    {
-      "Assisters": [],
-      "EventID": 7,
-      "EventName": "ChampionKill",
-      "EventTime": 503.33673095703125,
-      "KillerName": "Turret_T2_C_05_A",
-      "VictimName": "pauX"
-    },
-    {
-      "Assisters": [],
-      "EventID": 8,
-      "EventName": "ChampionKill",
-      "EventTime": 635.8531494140625,
-      "KillerName": "Nidalee",
+      "EventTime": 263.3302307128906,
+      "KillerName": "Shyvana Bot",
       "VictimName": "pauX"
     },
     {
       "Assisters": [
-        "Shyvana"
+        "Shyvana Bot"
       ],
-      "EventID": 9,
-      "EventName": "TurretKilled",
-      "EventTime": 931.2550048828125,
-      "KillerName": "Minion_T100L0S28N0174",
-      "TurretKilled": "Turret_T2_R_03_A"
-    },
-    {
-      "EventID": 10,
-      "EventName": "FirstBrick",
-      "EventTime": 931.2550048828125,
-      "KillerName": "Minion_T100L0S28N0174"
-    },
-    {
-      "Assisters": [],
-      "EventID": 11,
-      "EventName": "TurretKilled",
-      "EventTime": 962.175048828125,
-      "KillerName": "Nidalee",
-      "TurretKilled": "Turret_T1_L_03_A"
-    },
-    {
-      "Assisters": [],
-      "EventID": 12,
+      "EventID": 5,
       "EventName": "ChampionKill",
-      "EventTime": 983.1474609375,
-      "KillerName": "MonkeyKing",
+      "EventTime": 380.9937744140625,
+      "KillerName": "Galio Bot",
+      "VictimName": "pauX"
+    },
+    {
+      "Assisters": [
+        "Veigar Bot"
+      ],
+      "EventID": 6,
+      "EventName": "ChampionKill",
+      "EventTime": 401.3846740722656,
+      "KillerName": "Shen Bot",
+      "VictimName": "Brand Bot"
+    },
+    {
+      "Assisters": [
+        "Morgana Bot"
+      ],
+      "EventID": 7,
+      "EventName": "ChampionKill",
+      "EventTime": 500.919189453125,
+      "KillerName": "pauX",
+      "VictimName": "Galio Bot"
+    },
+    {
+      "Assisters": [
+        "Morgana Bot",
+        "Trundle Bot"
+      ],
+      "EventID": 8,
+      "EventName": "ChampionKill",
+      "EventTime": 552.0975341796875,
+      "KillerName": "pauX",
+      "VictimName": "Galio Bot"
+    },
+    {
+      "Assisters": [],
+      "EventID": 9,
+      "EventName": "ChampionKill",
+      "EventTime": 743.1469116210938,
+      "KillerName": "Brand Bot",
       "VictimName": "pauX"
     },
     {
       "Assisters": [],
+      "EventID": 10,
+      "EventName": "TurretKilled",
+      "EventTime": 830.702392578125,
+      "KillerName": "Taric Bot",
+      "TurretKilled": "Turret_T1_C_05_A"
+    },
+    {
+      "EventID": 11,
+      "EventName": "FirstBrick",
+      "EventTime": 830.702392578125,
+      "KillerName": "Taric Bot"
+    },
+    {
+      "Assisters": [
+        "Leona Bot"
+      ],
+      "EventID": 12,
+      "EventName": "ChampionKill",
+      "EventTime": 887.5070190429688,
+      "KillerName": "Brand Bot",
+      "VictimName": "pauX"
+    },
+    {
+      "Assisters": [
+        "Leona Bot"
+      ],
       "EventID": 13,
       "EventName": "TurretKilled",
-      "EventTime": 1048.0595703125,
-      "KillerName": "Minion_T200L0S32N0202",
+      "EventTime": 920.888671875,
+      "KillerName": "Minion_T200L0S27N0167",
       "TurretKilled": "Turret_T1_R_03_A"
     },
     {
-      "Assisters": [],
+      "Assisters": [
+        "Leona Bot"
+      ],
       "EventID": 14,
-      "EventName": "TurretKilled",
-      "EventTime": 1155.055908203125,
-      "KillerName": "MonkeyKing",
-      "TurretKilled": "Turret_T1_R_02_A"
+      "EventName": "ChampionKill",
+      "EventTime": 956.3193359375,
+      "KillerName": "Brand Bot",
+      "VictimName": "pauX"
     },
     {
       "Assisters": [],
       "EventID": 15,
       "EventName": "TurretKilled",
-      "EventTime": 1278.5831298828125,
-      "KillerName": "Minion_T200L1S40N0254",
-      "TurretKilled": "Turret_T1_C_05_A"
+      "EventTime": 1015.8562622070312,
+      "KillerName": "Minion_T100L2S31N0194",
+      "TurretKilled": "Turret_T2_L_03_A"
+    },
+    {
+      "Assisters": [],
+      "EventID": 16,
+      "EventName": "ChampionKill",
+      "EventTime": 1053.7115478515625,
+      "KillerName": "Veigar Bot",
+      "VictimName": "Taric Bot"
     },
     {
       "Assisters": [
-        "MonkeyKing"
+        "Morgana Bot"
       ],
-      "EventID": 16,
+      "EventID": 17,
       "EventName": "ChampionKill",
-      "EventTime": 1320.05224609375,
-      "KillerName": "Nidalee",
+      "EventTime": 1068.4697265625,
+      "KillerName": "Trundle Bot",
+      "VictimName": "Galio Bot"
+    },
+    {
+      "Assisters": [
+        "Brand Bot"
+      ],
+      "EventID": 18,
+      "EventName": "ChampionKill",
+      "EventTime": 1074.77294921875,
+      "KillerName": "Leona Bot",
       "VictimName": "pauX"
     },
     {
       "Assisters": [],
-      "EventID": 17,
+      "EventID": 19,
       "EventName": "TurretKilled",
-      "EventTime": 1338.427490234375,
-      "KillerName": "Minion_T200L2S41N0261",
+      "EventTime": 1167.30419921875,
+      "KillerName": "Galio Bot",
+      "TurretKilled": "Turret_T1_L_03_A"
+    },
+    {
+      "Assisters": [
+        "Brand Bot"
+      ],
+      "EventID": 20,
+      "EventName": "TurretKilled",
+      "EventTime": 1184.4376220703125,
+      "KillerName": "Taric Bot",
+      "TurretKilled": "Turret_T1_C_04_A"
+    },
+    {
+      "Assisters": [
+        "Morgana Bot"
+      ],
+      "EventID": 21,
+      "EventName": "ChampionKill",
+      "EventTime": 1191.32080078125,
+      "KillerName": "Trundle Bot",
+      "VictimName": "Galio Bot"
+    },
+    {
+      "Assisters": [
+        "Leona Bot",
+        "Shyvana Bot"
+      ],
+      "EventID": 22,
+      "EventName": "ChampionKill",
+      "EventTime": 1239.349853515625,
+      "KillerName": "Taric Bot",
+      "VictimName": "Morgana Bot"
+    },
+    {
+      "Assisters": [
+        "Leona Bot",
+        "Galio Bot",
+        "Taric Bot",
+        "Shyvana Bot"
+      ],
+      "EventID": 23,
+      "EventName": "ChampionKill",
+      "EventTime": 1316.5218505859375,
+      "KillerName": "Brand Bot",
+      "VictimName": "pauX"
+    },
+    {
+      "Assisters": [
+        "Leona Bot",
+        "Taric Bot",
+        "Brand Bot"
+      ],
+      "EventID": 24,
+      "EventName": "ChampionKill",
+      "EventTime": 1372.906005859375,
+      "KillerName": "Galio Bot",
+      "VictimName": "pauX"
+    },
+    {
+      "Assisters": [
+        "Shen Bot",
+        "Veigar Bot"
+      ],
+      "EventID": 25,
+      "EventName": "ChampionKill",
+      "EventTime": 1423.521484375,
+      "KillerName": "Trundle Bot",
+      "VictimName": "Brand Bot"
+    },
+    {
+      "Assisters": [
+        "Shen Bot",
+        "Trundle Bot"
+      ],
+      "EventID": 26,
+      "EventName": "ChampionKill",
+      "EventTime": 1476.3084716796875,
+      "KillerName": "Morgana Bot",
+      "VictimName": "Galio Bot"
+    },
+    {
+      "Assisters": [
+        "Shen Bot"
+      ],
+      "EventID": 27,
+      "EventName": "ChampionKill",
+      "EventTime": 1497.5101318359375,
+      "KillerName": "Morgana Bot",
+      "VictimName": "Brand Bot"
+    },
+    {
+      "Assisters": [],
+      "EventID": 28,
+      "EventName": "ChampionKill",
+      "EventTime": 1499.2127685546875,
+      "KillerName": "Shyvana Bot",
+      "VictimName": "pauX"
+    },
+    {
+      "Assisters": [
+        "Leona Bot",
+        "Galio Bot"
+      ],
+      "EventID": 29,
+      "EventName": "ChampionKill",
+      "EventTime": 1548.00927734375,
+      "KillerName": "Taric Bot",
+      "VictimName": "Shen Bot"
+    },
+    {
+      "Assisters": [],
+      "EventID": 30,
+      "EventName": "TurretKilled",
+      "EventTime": 1554.078369140625,
+      "KillerName": "Shyvana Bot",
       "TurretKilled": "Turret_T1_L_02_A"
+    },
+    {
+      "Assisters": [
+        "Leona Bot",
+        "Galio Bot",
+        "Brand Bot"
+      ],
+      "EventID": 31,
+      "EventName": "ChampionKill",
+      "EventTime": 1648.7867431640625,
+      "KillerName": "Taric Bot",
+      "VictimName": "pauX"
+    },
+    {
+      "Assisters": [],
+      "EventID": 32,
+      "EventName": "ChampionKill",
+      "EventTime": 1686.095458984375,
+      "KillerName": "Morgana Bot",
+      "VictimName": "Shyvana Bot"
     }
   ],
-  "gameId": "6948313648"
+  "gameId": "6966720372"
 }

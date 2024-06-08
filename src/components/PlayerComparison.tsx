@@ -1,8 +1,6 @@
 import React, { MouseEventHandler, useEffect, useState } from 'react'
 import { Bar, BarChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
-import { NameType } from 'recharts/types/component/DefaultTooltipContent';
-import { ContentType } from 'recharts/types/component/Tooltip';
-import { ValueType } from 'tailwindcss/types/config';
+import useTeams from '../utils/useTeams';
 
 type ChartData = {
   name: string;
@@ -11,24 +9,13 @@ type ChartData = {
 }[];
 
 export default function PlayerComparison({ players }: { players: GamePlayer[] }) {
-  const [orderPlayers, setOrderPlayers] = useState<GamePlayer[]>([]);
-  const [chaosPlayers, setChaosPlayers] = useState<GamePlayer[]>([]);
+  const { orderPlayers, chaosPlayers } = useTeams({ players });
 
   const [selectedPlayers, setSelectedPlayers] = useState<string[]>([]);
 
   const [killsData, setKillsData] = useState<ChartData>([]);
   const [deathsData, setDeathsData] = useState<ChartData>([]);
   const [assistsData, setAssistsData] = useState<ChartData>([]);
-
-  useEffect(() => {
-    const orderPlayers = players.filter(player => player.team === "ORDER");
-    const chaosPlayers = players.filter(player => player.team === "CHAOS");
-
-    setOrderPlayers(orderPlayers);
-    setChaosPlayers(chaosPlayers);
-
-    updateData();
-  }, [players]);
 
   useEffect(() => {
     updateData();

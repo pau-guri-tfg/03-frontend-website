@@ -3,6 +3,7 @@ import GameTimeline from "../components/GameTimeline";
 import { DataContext } from "../DataReceiver";
 import PlayerComparison from "../components/PlayerComparison";
 import GameStats from "../components/GameStats";
+import PlayerStats from "../components/PlayerStats";
 
 export default function Home() {
   const { events, players, gamedata } = useContext(DataContext);
@@ -19,7 +20,8 @@ export default function Home() {
               <GameTimeline events={events} players={players} gameTime={gamedata.gameTime} />
             </>
           }
-          {players && <PlayerComparison players={players} />}
+          {/* {players && <PlayerComparison players={players} />} */}
+          {players && <PlayerStats players={players} />}
         </>
         :
         <p>No game data available</p>
