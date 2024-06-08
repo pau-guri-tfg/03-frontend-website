@@ -14,11 +14,11 @@ export default function PlayerComparison({ players }: { players: GamePlayer[] })
   const [orderPlayers, setOrderPlayers] = useState<GamePlayer[]>([]);
   const [chaosPlayers, setChaosPlayers] = useState<GamePlayer[]>([]);
 
-  const [selectedPlayers, setSelectedPlayers] = useState<GamePlayer[]>([]);
+  const [selectedPlayers, setSelectedPlayers] = useState<string[]>([]);
 
-  // const [deathsData, setDeathsData] = useState<ChartData>([]);
-  // const [killsData, setKillsData] = useState<ChartData>([]);
-  // const [assistsData, setAssistsData] = useState<ChartData>([]);
+  const [killsData, setKillsData] = useState<ChartData>([]);
+  const [deathsData, setDeathsData] = useState<ChartData>([]);
+  const [assistsData, setAssistsData] = useState<ChartData>([]);
 
   useEffect(() => {
     const orderPlayers = players.filter(player => player.team === "ORDER");
@@ -26,37 +26,41 @@ export default function PlayerComparison({ players }: { players: GamePlayer[] })
 
     setOrderPlayers(orderPlayers);
     setChaosPlayers(chaosPlayers);
+
+    updateData();
   }, [players]);
 
-  const handleSelectPlayer = (player: GamePlayer) => {
+  useEffect(() => {
+    updateData();
+  }, [selectedPlayers]);
 
-    if (selectedPlayers.includes(player)) {
-      setSelectedPlayers(selectedPlayers.filter(selectedPlayer => selectedPlayer !== player));
+  const handleSelectPlayer = (riotId?: string | null) => {
+    if (!riotId) return;
+
+    if (selectedPlayers.findIndex(selectedPlayer => selectedPlayer === riotId) !== -1) {
+      setSelectedPlayers(selectedPlayers.filter(selectedPlayer => selectedPlayer !== riotId));
     } else {
-      setSelectedPlayers([...selectedPlayers, player]);
+      setSelectedPlayers([...selectedPlayers, riotId]);
     }
   }
 
-  const getPlayerKills = (): ChartData => {
-    let data: ChartData = [];
-    selectedPlayers.map(player => {
-      data.push({ name: player.riotIdGameName, value: player.scores.kills, tooltipText: "kills" });
+  const updateData = () => {
+    let killData: ChartData = [];
+    let deathData: ChartData = [];
+    let assistData: ChartData = [];
+
+    selectedPlayers.map(riotId => {
+      const player = players.find(player => player.riotId === riotId);
+      if (!player) return;
+
+      killData.push({ name: player.riotIdGameName, value: player.scores.kills, tooltipText: "kills" });
+      deathData.push({ name: player.riotIdGameName, value: player.scores.deaths, tooltipText: "deaths" });
+      assistData.push({ name: player.riotIdGameName, value: player.scores.assists, tooltipText: "assists" });
     });
-    return data;
-  }
-  const getPlayerDeaths = (): ChartData => {
-    let data: ChartData = [];
-    selectedPlayers.map(player => {
-      data.push({ name: player.riotIdGameName, value: player.scores.deaths, tooltipText: "deaths" });
-    });
-    return data;
-  }
-  const getPlayerAssists = (): ChartData => {
-    let data: ChartData = [];
-    selectedPlayers.map(player => {
-      data.push({ name: player.riotIdGameName, value: player.scores.assists, tooltipText: "assists" });
-    });
-    return data;
+
+    setDeathsData(deathData);
+    setKillsData(killData);
+    setAssistsData(assistData);
   }
   // const getPlayerCreepScore = (): ChartData => {
   //   let data: ChartData = [];
@@ -84,7 +88,7 @@ export default function PlayerComparison({ players }: { players: GamePlayer[] })
         <div className='w-1/3 px-3 min-w-[400px] flex flex-col'>
           <h3 className='font-sans text-xl text-gold'>Kills</h3>
           <ResponsiveContainer width="100%" height={250}>
-            <BarChart layout='vertical' data={getPlayerKills()}>
+            <BarChart layout='vertical' data={killsData}>
               <XAxis type="number" allowDecimals={false} />
               <YAxis type="category" dataKey="name" />
               <Tooltip content={<CustomTooltip />} />
@@ -95,7 +99,7 @@ export default function PlayerComparison({ players }: { players: GamePlayer[] })
         <div className='w-1/3 px-3 min-w-[400px] flex flex-col'>
           <h3 className='font-sans text-xl text-gold'>Deaths</h3>
           <ResponsiveContainer width="100%" height={250}>
-            <BarChart layout='vertical' data={getPlayerDeaths()}>
+            <BarChart layout='vertical' data={deathsData}>
               <XAxis type="number" allowDecimals={false} />
               <YAxis type="category" dataKey="name" />
               <Tooltip content={<CustomTooltip />} />
@@ -106,7 +110,7 @@ export default function PlayerComparison({ players }: { players: GamePlayer[] })
         <div className='w-1/3 px-3 min-w-[400px] flex flex-col'>
           <h3 className='font-sans text-xl text-gold'>Assists</h3>
           <ResponsiveContainer width="100%" height={250}>
-            <BarChart layout='vertical' data={getPlayerAssists()}>
+            <BarChart layout='vertical' data={assistsData}>
               <XAxis type="number" allowDecimals={false} />
               <YAxis type="category" dataKey="name" />
               <Tooltip content={<CustomTooltip />} />
@@ -137,14 +141,14 @@ export default function PlayerComparison({ players }: { players: GamePlayer[] })
             <div key={index} className='flex'>
               <div className='flex flex-col'>
                 {orderPlayers[index] && (
-                  <div data-index={index} onClick={(event) => handleSelectPlayer(orderPlayers[parseInt(event.currentTarget.getAttribute('data-index') ?? '0')])}>
+                  <div data-riot-id={orderPlayers[index].riotId} onClick={(event) => handleSelectPlayer(event.currentTarget.getAttribute('data-riot-id'))}>
                     {orderPlayers[index].riotIdGameName}
                   </div>
                 )}
               </div>
               <div className='flex flex-col'>
                 {chaosPlayers[index] && (
-                  <div data-index={index} onClick={(event) => handleSelectPlayer(chaosPlayers[parseInt(event.currentTarget.getAttribute('data-index') ?? '0')])}>
+                  <div data-riot-id={chaosPlayers[index].riotId} onClick={(event) => handleSelectPlayer(event.currentTarget.getAttribute('data-riot-id'))}>
                     <p>{chaosPlayers[index].riotIdGameName}</p>
                   </div>
                 )}

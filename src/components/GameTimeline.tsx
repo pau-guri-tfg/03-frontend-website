@@ -89,7 +89,7 @@ export default function GameTimeline({ events, players, gameTime }: { events: Ga
       <div className="w-full bg-dark-blue">
         <div className="container">
           <div className="w-full py-2 overflow-x-auto border-l border-r timeline-scroll-div border-gold" ref={scrollDiv} onScroll={updateShownRange}>
-            <div className="relative h-12" ref={scrollContent}>
+            <div className="relative h-12 overflow-hidden" ref={scrollContent}>
               {events.map((event, index) => {
                 if (event.EventName === "ChampionKill" || event.EventName === "Multikill") {
                   return (
