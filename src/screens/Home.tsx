@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import GameTimeline from "../partials/GameTimeline";
 import { DataContext } from "../DataReceiver";
-import PlayerComparison from "../partials/PlayerComparison";
 import GameStats from "../components/GameStats";
 import PlayerList from "../partials/PlayerList";
 

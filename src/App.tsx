@@ -1,5 +1,4 @@
 import './App.css'
-import GameTimeline from './partials/GameTimeline';
 import { DataReceiver } from './DataReceiver';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Home from './screens/Home';

@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import useTeams from '../utils/useTeams';
 import PlayerCard from '../components/PlayerCard';
 
