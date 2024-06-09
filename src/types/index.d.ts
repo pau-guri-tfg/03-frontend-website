@@ -2,6 +2,13 @@ type GameEventName = string | "GameStart" | "GameEnd" | "MinionsSpawning" | "Fir
 type GameTeamName = string | "CHAOS" | "ORDER";
 type GameLane = "TOP" | "MID" | "BOT" | "JUN";
 
+type Game = {
+  _id: any;
+  gameData: GameData;
+  players: GamePlayer[];
+  events: EventsDocument[];
+}
+
 type GameData = {
   _id: any;
   gameMode: string;
