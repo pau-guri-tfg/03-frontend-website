@@ -70,7 +70,7 @@ export function DataReceiver({ children }: { children: React.ReactNode }) {
     //   });
     // }, 1000);
 
-    const url: string = import.meta.env.VITE_BACKEND_URL + "/games/event-stream";
+    const url: string = import.meta.env.VITE_BACKEND_URL + "/games/event-stream?api_key=" + import.meta.env.VITE_BACKEND_API_KEY;
     const eventSource = new EventSource(url);
 
     eventSource.addEventListener("gamedata", (event) => {
