@@ -1,12 +1,12 @@
 import './App.css'
-import GameTimeline from './components/GameTimeline';
+import GameTimeline from './partials/GameTimeline';
 import { DataReceiver } from './DataReceiver';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Home from './screens/Home';
 import Matches from './screens/Matches';
 import Champions from './screens/Champions';
 import Summoner from './screens/Summoner';
-import Header from './components/Header';
+import Header from './partials/Header';
 
 function App() {
 

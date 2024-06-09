@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import useTeams from '../utils/useTeams';
-import { getChampionImage } from '../utils/datadragon';
-import PlayerCard from './PlayerCard';
+import PlayerCard from '../components/PlayerCard';
 
-export default function PlayerStats({ players }: { players: GamePlayer[] }) {
+export default function PlayerList({ players }: { players: GamePlayer[] }) {
   const { orderPlayers, chaosPlayers } = useTeams({ players });
 
   return (

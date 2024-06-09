@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import BlueTurret from '../assets/timeline-icons/tower-blue.png';
 import RedTurret from '../assets/timeline-icons/tower-red.png';
 import identifyBuilding from '../utils/identifyBuilding';
-import { formatDate, formatDuration, formatTime } from '../utils/timeFormatter';
-import useUpdateFlash from '../utils/useUpdateFlash';
+import { formatDuration, formatTime } from '../utils/timeFormatter';
 import Flasher from './Flasher';
 
 export default function GameStats({ players, gamedata, events }: { players: GamePlayer[], gamedata: GameData, events: GameEvent[] }) {

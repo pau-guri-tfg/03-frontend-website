@@ -109,6 +109,11 @@ type GameBuilding = | {
 
 namespace Riot {
   namespace Summoner {
+    type AccountDto = {
+      gameName: string;
+      tagLine: string;
+      puuid: string;
+    }
     type SummonerDto = {
       id: string;
       accountId: string;

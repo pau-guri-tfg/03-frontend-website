@@ -1,20 +1,33 @@
-import React, { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { fetchSummoner } from '../utils/riotApi';
+import { fetchAccount, fetchSummoner } from '../utils/riotApi';
+import SummonerHeader from '../partials/SummonerHeader';
+import { fetchPlayerGames } from '../utils/database';
+import GameList from '../partials/GameList';
 
 export default function Summoner() {
   const { gameName, tagLine } = useParams();
-  const [summoner, setSummoner] = React.useState<Riot.Summoner.SummonerDto | null>(null);
+  const [correctGameName, setCorrectGameName] = useState<string>("");
+  const [summoner, setSummoner] = useState<Riot.Summoner.SummonerDto | null>(null);
 
   useEffect(() => {
     if (!gameName || !tagLine) return;
 
-    fetchSummoner(gameName, tagLine).then(res => {
-      setSummoner(res.data);
+    fetchAccount(gameName, tagLine).then(res => {
+      setCorrectGameName(res.data.gameName ?? gameName);
+
+      fetchSummoner(res.data.puuid).then(res => {
+        setSummoner(res.data);
+      });
     });
+
+
   }, [gameName, tagLine])
 
   return (
-    <div>Summoner</div>
+    <main className='flex flex-col gap-8 pt-14'>
+      <SummonerHeader summoner={summoner} gameName={correctGameName} tagLine={tagLine} />
+      {summoner && <GameList summonerId={summoner.id} />}
+    </main>
   )
 }

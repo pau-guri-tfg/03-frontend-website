@@ -1,10 +1,10 @@
 import axios from "axios";
 
-export async function fetchSummoner(gameName: string, tagLine: string) {
-  const accountFetch = await axios.get(import.meta.env.VITE_BACKEND_URL + `/riot-api/account/${gameName}/${tagLine}`);
-  const accountData = accountFetch.data;
-  const puuid = accountData.puuid;
+export function fetchAccount(gameName: string, tagLine: string) {
+  return axios.get<Riot.Summoner.AccountDto>(import.meta.env.VITE_BACKEND_URL + `/riot-api/account/${gameName}/${tagLine}`);
+}
 
+export async function fetchSummoner(puuid: string) {
   return axios.get<Riot.Summoner.SummonerDto>(import.meta.env.VITE_BACKEND_URL + '/riot-api/summoner/' + puuid);
 }
 

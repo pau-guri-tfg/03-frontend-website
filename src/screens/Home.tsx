@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import GameTimeline from "../components/GameTimeline";
+import GameTimeline from "../partials/GameTimeline";
 import { DataContext } from "../DataReceiver";
-import PlayerComparison from "../components/PlayerComparison";
+import PlayerComparison from "../partials/PlayerComparison";
 import GameStats from "../components/GameStats";
-import PlayerStats from "../components/PlayerStats";
+import PlayerList from "../partials/PlayerList";
 
 export default function Home() {
   const { events, players, gamedata } = useContext(DataContext);
@@ -20,8 +20,7 @@ export default function Home() {
               <GameTimeline events={events} players={players} gameTime={gamedata.gameTime} />
             </>
           }
-          {/* {players && <PlayerComparison players={players} />} */}
-          {players && <PlayerStats players={players} />}
+          {players && <PlayerList players={players} />}
         </>
         :
         <p>No game data available</p>
