@@ -9,7 +9,7 @@ export default function Home() {
   const { events, players, gamedata } = useContext(DataContext);
 
   return (
-    <main className="flex flex-col gap-8 pt-14">
+    <main className="flex flex-col gap-8 py-14">
       {gamedata && players ?
         <>
           {events && players && gamedata &&

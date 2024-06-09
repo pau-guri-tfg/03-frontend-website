@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import { ChangeStreamInsertDocument, ChangeStreamReplaceDocument, ChangeStreamUpdateDocument, Document } from "mongodb";
 import { AxiosResponse } from "axios";
-import { fetchGameEndpoint } from "./utils/database";
+import { fetchGameEndpoint } from "./utils/gamesDatabase";
 
 import SampleGameData from "./sample_data/gamedata.json";
 import SamplePlayers from "./sample_data/players.json";

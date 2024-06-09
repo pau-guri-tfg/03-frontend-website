@@ -1,7 +1,9 @@
-import React from 'react'
+import GameList from '../partials/GameList'
 
 export default function Matches() {
   return (
-    <div>Matches</div>
+    <main className='flex flex-col gap-8 py-14'>
+      <GameList />
+    </main>
   )
 }

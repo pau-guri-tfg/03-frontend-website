@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { fetchAccount, fetchSummoner } from '../utils/riotApi';
 import SummonerHeader from '../partials/SummonerHeader';
-import { fetchPlayerGames } from '../utils/database';
 import GameList from '../partials/GameList';
 
 export default function Summoner() {
@@ -25,7 +24,7 @@ export default function Summoner() {
   }, [gameName, tagLine])
 
   return (
-    <main className='flex flex-col gap-8 pt-14'>
+    <main className='flex flex-col gap-8 py-14'>
       <SummonerHeader summoner={summoner} gameName={correctGameName} tagLine={tagLine} />
       {summoner && <GameList summonerId={summoner.id} />}
     </main>

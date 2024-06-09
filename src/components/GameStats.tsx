@@ -47,7 +47,7 @@ export default function GameStats({ players, gamedata, events }: { players: Game
         </div>
         <div className='flex flex-col items-end'>
           <span className='font-serif text-2xl font-bold'>{formatedGameTime}</span>
-          <span className='text-white/40'>started at {formattedStartTime}</span>
+          <span className='text-right text-white/40'>started at {formattedStartTime}</span>
         </div>
       </div>
       <div className='flex items-center justify-between gap-3 w-full max-w-[400px] mx-auto'>

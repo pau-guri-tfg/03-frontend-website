@@ -1,12 +1,13 @@
 type GameEventName = string | "GameStart" | "GameEnd" | "MinionsSpawning" | "FirstBlood" | "TurretKilled" | "FirstBrick" | "InhibKilled" | "DragonKill" | "HeraldKill" | "BaronKill" | "ChampionKill" | "Multikill" | "Ace";
 type GameTeamName = string | "CHAOS" | "ORDER";
 type GameLane = "TOP" | "MID" | "BOT" | "JUN";
+type GameDatabaseEndpoint = "everything" | "gamedata" | "players" | "events";
 
-type Game = {
+type EverythingDocument = {
   _id: any;
-  gameData: GameData;
+  gamedata: GameData;
   players: GamePlayer[];
-  events: EventsDocument[];
+  events: EventsDocument;
 }
 
 type GameData = {

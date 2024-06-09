@@ -14,3 +14,7 @@ export function formatDate(timestamp: number): string {
   const date = new Date(timestamp);
   return date.toLocaleDateString();
 }
+
+export function formatDateTime(timestamp: number): string {
+  return `${formatDate(timestamp)} ${formatTime(timestamp)}`;
+}

@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import { fetchPlayerGames } from '../utils/database';
 import { fetchSummonerLeague } from '../utils/riotApi';
 import { getProfileIcon } from '../utils/datadragon';
 
