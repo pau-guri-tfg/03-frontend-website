@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import { ChangeStreamInsertDocument, ChangeStreamReplaceDocument, ChangeStreamUpdateDocument, Document } from "mongodb";
 import { AxiosResponse } from "axios";
-import { fetchGameEndpoint } from "./database";
+import { fetchGameEndpoint } from "./utils/database";
 
 import SampleGameData from "./sample_data/gamedata.json";
 import SamplePlayers from "./sample_data/players.json";
@@ -45,6 +45,30 @@ export function DataReceiver({ children }: { children: React.ReactNode }) {
     setGamedata(SampleGameData);
     setPlayers(SamplePlayers);
     setEvents(SampleEvents.Events);
+
+    // setInterval(() => {
+    //   setPlayers((prevPlayers) => {
+    //     if (prevPlayers) {
+    //       const newPlayers = prevPlayers.map((player) => {
+    //         return {
+    //           ...player,
+    //           level: player.level + Math.floor(Math.random() * 2),
+    //           isDead: Math.random() > 0.5,
+    //           scores: {
+    //             ...player.scores,
+    //             kills: player.scores.kills + Math.floor(Math.random() * 2),
+    //             deaths: player.scores.deaths + Math.floor(Math.random() * 2),
+    //             assists: player.scores.assists + Math.floor(Math.random() * 2),
+    //             creepScore: player.scores.creepScore + Math.floor(Math.random() * 2),
+    //             wardScore: player.scores.wardScore + Math.floor(Math.random() * 2),
+    //           }
+    //         }
+    //       });
+    //       return newPlayers;
+    //     }
+    //     return prevPlayers;
+    //   });
+    // }, 1000);
 
     const url: string = import.meta.env.VITE_BACKEND_URL + "/games/event-stream";
     const eventSource = new EventSource(url);

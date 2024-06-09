@@ -3,6 +3,8 @@ import BlueTurret from '../assets/timeline-icons/tower-blue.png';
 import RedTurret from '../assets/timeline-icons/tower-red.png';
 import identifyBuilding from '../utils/identifyBuilding';
 import { formatDate, formatDuration, formatTime } from '../utils/timeFormatter';
+import useUpdateFlash from '../utils/useUpdateFlash';
+import Flasher from './Flasher';
 
 export default function GameStats({ players, gamedata, events }: { players: GamePlayer[], gamedata: GameData, events: GameEvent[] }) {
   const [globalScore, setGlobalScore] = useState<[number, number]>([0, 0]);
@@ -52,21 +54,15 @@ export default function GameStats({ players, gamedata, events }: { players: Game
       <div className='flex items-center justify-between gap-3 w-full max-w-[400px] mx-auto'>
         <div className='flex items-center gap-1'>
           <img src={BlueTurret} alt='blue-turret' className='w-9 h-9' />
-          <span className='font-serif text-2xl font-bold leading-none'>{globalTurretScore[0]}</span>
+          <Flasher className='font-serif text-2xl font-bold leading-none'>{globalTurretScore[0]}</Flasher>
         </div>
         <div className='flex items-center gap-2.5'>
-          <span
-            className='font-serif text-6xl font-bold leading-none text-riot-blue'
-            style={{ textShadow: globalScore[0] > globalScore[1] ? "0px 4px 20px #0096A8AA" : "none" }}
-          >{globalScore[0]}</span>
+          <Flasher className='font-serif text-6xl font-bold leading-none text-riot-blue' flashColor='#0096A8'>{globalScore[0]}</Flasher>
           <span className='text-xl leading-none text-white/40'>vs</span>
-          <span
-            className='font-serif text-6xl font-bold leading-none text-riot-red'
-            style={{ textShadow: globalScore[1] > globalScore[0] ? "0px 4px 20px #C62139AA" : "none" }}
-          >{globalScore[1]}</span>
+          <Flasher className='font-serif text-6xl font-bold leading-none text-riot-red' flashColor='#C62139'>{globalScore[1]}</Flasher>
         </div>
         <div className='flex items-center gap-1'>
-          <span className='font-serif text-2xl font-bold leading-none'>{globalTurretScore[1]}</span>
+          <Flasher className='font-serif text-2xl font-bold leading-none'>{globalTurretScore[1]}</Flasher>
           <img src={RedTurret} alt='blue-turret' className='w-9 h-9' />
         </div>
       </div>
