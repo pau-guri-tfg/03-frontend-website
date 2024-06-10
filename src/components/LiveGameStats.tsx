@@ -5,26 +5,18 @@ import identifyBuilding from '../utils/identifyBuilding';
 import { formatDuration, formatTime } from '../utils/timeFormatter';
 import Flasher from './Flasher';
 import LiveLabel from './LiveLabel';
+import useTeamScore from '../utils/useTeamScore';
 
 export default function LiveGameStats({ players, gamedata, events, lastUpdate }: { players: GamePlayer[], gamedata: GameData, events: GameEvent[], lastUpdate: number }) {
-  const [globalScore, setGlobalScore] = useState<[number, number]>([0, 0]);
+  const { orderScore, chaosScore } = useTeamScore(players);
   const [globalTurretScore, setGlobalTurretScore] = useState<[number, number]>([0, 0]);
   const [formattedStartTime, setFormattedStartTime] = useState<string>("");
   const [formatedGameTime, setFormatedGameTime] = useState<string>("");
 
   useEffect(() => {
-    if (!players || players.length === 0) return;
-
-    const blueTeamScore = players.filter(player => player.team === "ORDER").reduce((acc, player) => acc + player.scores.kills, 0);
-    const redTeamScore = players.filter(player => player.team === "CHAOS").reduce((acc, player) => acc + player.scores.kills, 0);
-    setGlobalScore([blueTeamScore, redTeamScore]);
-  }, [players]);
-
-  useEffect(() => {
     if (!gamedata) return;
 
     setFormattedStartTime(formatTime(gamedata.gameStartTime));
-
     setFormatedGameTime(formatDuration(gamedata.gameTime));
   }, [gamedata]);
 
@@ -54,9 +46,9 @@ export default function LiveGameStats({ players, gamedata, events, lastUpdate }:
           <Flasher className='font-serif text-2xl font-bold leading-none'>{globalTurretScore[0]}</Flasher>
         </div>
         <div className='flex items-center gap-2.5'>
-          <Flasher className='font-serif text-6xl font-bold leading-none text-riot-blue' flashColor='#0096A8'>{globalScore[0]}</Flasher>
+          <Flasher className='font-serif text-6xl font-bold leading-none text-riot-blue' flashColor='#0096A8'>{orderScore}</Flasher>
           <span className='text-xl leading-none text-white/40'>vs</span>
-          <Flasher className='font-serif text-6xl font-bold leading-none text-riot-red' flashColor='#C62139'>{globalScore[1]}</Flasher>
+          <Flasher className='font-serif text-6xl font-bold leading-none text-riot-red' flashColor='#C62139'>{chaosScore}</Flasher>
         </div>
         <div className='flex items-center gap-1'>
           <Flasher className='font-serif text-2xl font-bold leading-none'>{globalTurretScore[1]}</Flasher>
