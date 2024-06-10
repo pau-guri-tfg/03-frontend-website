@@ -10,6 +10,12 @@ export default {
       container: {
         center: true,
         padding: '32px',
+        screens: {
+          'sm': '640px',
+          'md': '768px',
+          'lg': '1024px',
+          'xl': '1280px',
+        }
       },
       colors: {
         'blue': '#0C0C1F',

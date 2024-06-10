@@ -11,13 +11,19 @@ type DataContextType = {
   gamedata: GameData | null;
   players: GamePlayer[] | null;
   events: GameEvent[] | null;
+  lastUpdate: number;
 }
-export const DataContext = createContext<DataContextType>({ gamedata: null, players: null, events: null });
+export const DataContext = createContext<DataContextType>({ gamedata: null, players: null, events: null, lastUpdate: 0 });
 
 export function DataReceiver({ children }: { children: React.ReactNode }) {
   const [gamedata, setGamedata] = useState<GameData | null>(null);
   const [players, setPlayers] = useState<GamePlayer[] | null>(null);
   const [events, setEvents] = useState<GameEvent[] | null>(null);
+  const [lastUpdate, setLastUpdate] = useState<number>(0);
+
+  useEffect(() => {
+    setLastUpdate(Date.now());
+  }, [gamedata, players, events]);
 
   const tryFirstTimeFetch = (gameId: string) => {
     if (gamedata === null) {
@@ -45,6 +51,7 @@ export function DataReceiver({ children }: { children: React.ReactNode }) {
     setGamedata(SampleGameData);
     setPlayers(SamplePlayers);
     setEvents(SampleEvents.Events);
+    setLastUpdate(Date.now());
 
     // setInterval(() => {
     //   setPlayers((prevPlayers) => {
@@ -120,7 +127,7 @@ export function DataReceiver({ children }: { children: React.ReactNode }) {
   }, []);
 
   return (
-    <DataContext.Provider value={{ gamedata, players, events }}>
+    <DataContext.Provider value={{ gamedata, players, events, lastUpdate }}>
       {children}
     </DataContext.Provider>
   )

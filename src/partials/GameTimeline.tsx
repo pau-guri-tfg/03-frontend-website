@@ -78,7 +78,7 @@ export default function GameTimeline({ events, players, gameTime }: { events: Ga
     <div className="flex flex-col w-full gap-3">
       <div className="container flex items-center justify-between w-full gap-6">
         <div className="flex items-center gap-6 py-2">
-          <h2 className="font-serif text-3xl font-semibold leading-none">Timeline</h2>
+          <h2 className="font-serif text-3xl font-semibold leading-none text-gold">Timeline</h2>
           <span className="font-serif text-xl font-semibold text-white/40">{`${shownTimeRange[0]} - ${shownTimeRange[1]}`}</span>
         </div>
         <div className="flex items-center gap-6">

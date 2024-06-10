@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { fetchGamesByPlayerEndpoint, fetchGameEndpoint } from '../utils/gamesDatabase';
 import GameCard from '../components/GameCard';
 
-export default function GameList({ summonerId }: { summonerId?: string }) {
+export default function GameList({ title = "", summonerId }: { title?: string, summonerId?: string }) {
 
   const [games, setGames] = useState<EverythingDocument[]>([]);
 
@@ -23,8 +23,11 @@ export default function GameList({ summonerId }: { summonerId?: string }) {
   }, []);
 
   return (
-    <div className='container flex flex-col gap-3'>
-      {games.map((game, index) => <GameCard key={index} gamedata={game.gamedata} players={game.players} events={game.events.Events} />)}
+    <div className='container flex flex-col gap-6'>
+      {title !== "" && <h2 className='font-serif text-3xl font-semibold text-gold'>{title}</h2>}
+      <div className='flex flex-col w-full gap-3'>
+        {games.map((game, index) => <GameCard key={index} gamedata={game.gamedata} players={game.players} events={game.events.Events} />)}
+      </div>
     </div>
   )
 }

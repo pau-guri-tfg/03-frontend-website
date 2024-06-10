@@ -23,7 +23,7 @@ export default function GameCard({ gamedata, players, events }: { players: GameP
   }, [gamedata]);
 
   return (
-    <div className='flex flex-col w-full max-w-[1200px] gap-3 p-6 mx-auto rounded-3xl bg-dark-blue'>
+    <div className='flex flex-col gap-3 p-6 w-ful rounded-3xl bg-dark-blue'>
       <div className='grid items-center w-full grid-cols-3 gap-6'>
         <h2 className='font-serif text-2xl font-semibold capitalize text-gold'>{gamedata.gameMode.toLowerCase()}</h2>
         <div className='flex justify-center items-center gap-2.5'>

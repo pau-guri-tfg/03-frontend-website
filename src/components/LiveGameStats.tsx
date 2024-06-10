@@ -4,8 +4,9 @@ import RedTurret from '../assets/timeline-icons/tower-red.png';
 import identifyBuilding from '../utils/identifyBuilding';
 import { formatDuration, formatTime } from '../utils/timeFormatter';
 import Flasher from './Flasher';
+import LiveLabel from './LiveLabel';
 
-export default function GameStats({ players, gamedata, events }: { players: GamePlayer[], gamedata: GameData, events: GameEvent[] }) {
+export default function LiveGameStats({ players, gamedata, events, lastUpdate }: { players: GamePlayer[], gamedata: GameData, events: GameEvent[], lastUpdate: number }) {
   const [globalScore, setGlobalScore] = useState<[number, number]>([0, 0]);
   const [globalTurretScore, setGlobalTurretScore] = useState<[number, number]>([0, 0]);
   const [formattedStartTime, setFormattedStartTime] = useState<string>("");
@@ -40,10 +41,7 @@ export default function GameStats({ players, gamedata, events }: { players: Game
       <div className='flex items-center justify-between w-full gap-6'>
         <div className='flex items-center gap-6'>
           <h1 className='font-serif text-5xl font-semibold capitalize text-gold'>{gamedata.gameMode.toLowerCase()}</h1>
-          <div className='flex items-center gap-2.5 border border-purple rounded-full p-3'>
-            <div className='w-3 h-3 rounded-full bg-purple' />
-            <span className='leading-none uppercase text-purple'>LIVE</span>
-          </div>
+          <LiveLabel updateTime={lastUpdate} />
         </div>
         <div className='flex flex-col items-end'>
           <span className='font-serif text-2xl font-bold'>{formatedGameTime}</span>
