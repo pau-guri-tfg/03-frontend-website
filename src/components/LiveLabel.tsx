@@ -1,19 +1,12 @@
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { useRef, useState } from 'react'
-import { formatTime } from '../utils/timeFormatter';
 import { Flip } from 'gsap/all';
+import useBlink from '../utils/useBlink';
 
 export default function LiveLabel({ updateTime }: { updateTime: number }) {
 
-  const liveDot = useRef<HTMLDivElement>(null);
-  useGSAP(() => {
-    if (!liveDot.current) return;
-
-    gsap.timeline({ repeat: -1 })
-      .to(liveDot.current, { opacity: 0, duration: 0.5, delay: 1 })
-      .to(liveDot.current, { opacity: 1, duration: 0.5, delay: 0.5 })
-  }, [liveDot]);
+  const liveDot = useBlink();
 
   const container = useRef<HTMLDivElement>(null);
   gsap.registerPlugin(Flip);
