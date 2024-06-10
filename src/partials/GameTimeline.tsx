@@ -8,7 +8,7 @@ import gsap from "gsap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlassMinus, faMagnifyingGlassPlus } from "@fortawesome/free-solid-svg-icons";
 
-export default function GameTimeline({ events, players, gameTime }: { events: GameEvent[], players: GamePlayer[], gameTime: number }) {
+export default function GameTimeline({ events, players, gameTime, title = "", container = false }: { events: GameEvent[], players: GamePlayer[], gameTime: number, title?: string, container?: boolean }) {
   const zoomLevel = useRef<number>(1);
   const [shownTimeRange, setShownTimeRange] = useState<[string, string]>(["", ""]);
   const scrollDiv = useRef<HTMLDivElement>(null);
@@ -76,9 +76,9 @@ export default function GameTimeline({ events, players, gameTime }: { events: Ga
 
   return (
     <div className="flex flex-col w-full gap-3">
-      <div className="container flex items-center justify-between w-full gap-6">
+      <div className={"flex items-center justify-between w-full gap-6" + (container ? " container" : "")}>
         <div className="flex items-center gap-6 py-2">
-          <h2 className="font-serif text-3xl font-semibold leading-none text-gold">Timeline</h2>
+          {title !== "" && <h2 className="font-serif text-3xl font-semibold leading-none text-gold">Timeline</h2>}
           <span className="font-serif text-xl font-semibold text-white/40">{`${shownTimeRange[0]} - ${shownTimeRange[1]}`}</span>
         </div>
         <div className="flex items-center gap-6">
@@ -87,7 +87,7 @@ export default function GameTimeline({ events, players, gameTime }: { events: Ga
         </div>
       </div>
       <div className="w-full bg-dark-blue">
-        <div className="container">
+        <div className={container ? "container" : ""}>
           <div className="w-full py-2 overflow-x-auto border-l border-r timeline-scroll-div border-gold" ref={scrollDiv} onScroll={updateShownRange}>
             <div className="relative h-12 overflow-hidden" ref={scrollContent}>
               {events.map((event, index) => {

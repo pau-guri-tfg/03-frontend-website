@@ -345,6 +345,16 @@ namespace Riot {
   }
 
   namespace DataDragon {
+    type ImageDto = {
+      full: string;
+      sprite: string;
+      group: string;
+      x: number;
+      y: number;
+      w: number;
+      h: number;
+    };
+
     type ChampionDto = {
       type: string;
       format: string;
@@ -358,18 +368,18 @@ namespace Riot {
       name: string;
       title: string;
       blurb: string;
-      lore: string;
-      allytips: string[];
-      enemytips: string[];
+      lore?: string;
+      allytips?: string[];
+      enemytips?: string[];
       info: ChampionInfoDto;
-      image: ChampionImageDto;
+      image: ImageDto;
       tags: string[];
       partype: string;
       stats: ChampionStatsDto;
-      spells: ChampionSpellDto[];
-      passive: ChampionPassiveDto;
-      skins: ChampionSkinDto[];
-      recommended: any[];
+      spells?: ChampionSpellDto[];
+      passive?: ChampionPassiveDto;
+      skins?: ChampionSkinDto[];
+      recommended?: any[];
     };
 
     type ChampionSkinDto = {
@@ -384,16 +394,6 @@ namespace Riot {
       defense: number;
       magic: number;
       difficulty: number;
-    };
-
-    type ChampionImageDto = {
-      full: string;
-      sprite: string;
-      group: string;
-      x: number;
-      y: number;
-      w: number;
-      h: number;
     };
 
     type ChampionStatsDto = {
@@ -510,7 +510,7 @@ namespace Riot {
       hideFromAll: boolean;
       consumeOnFull: boolean;
       into: string[];
-      image: ItemImageDto;
+      image: ImageDto;
       gold: ItemGoldDto;
       tags: string[];
       maps: { [key: string]: boolean };
@@ -520,15 +520,7 @@ namespace Riot {
       from: string[];
     };
 
-    type ItemImageDto = {
-      full: string;
-      sprite: string;
-      group: string;
-      x: number;
-      y: number;
-      w: number;
-      h: number;
-    };
+
 
     type ItemGoldDto = {
       base: number;
@@ -553,5 +545,33 @@ namespace Riot {
       description: string;
       notes: string;
     }
+
+    type SummonerSpellDto = {
+      type: string;
+      version: string;
+      data: { [key: string]: SummonerSpellDataDto };
+    };
+
+    type SummonerSpellDataDto = {
+      id: string;
+      name: string;
+      description: string;
+      tooltip: string;
+      maxrank: number;
+      cooldown: number[];
+      cooldownBurn: string;
+      cost: number[];
+      costBurn: string;
+      datavalues: any;
+      effect: any[];
+      effectBurn: any[];
+      vars: any[];
+      costType: string;
+      maxammo: string;
+      range: number[];
+      rangeBurn: string;
+      image: ImageDto;
+      resource: string;
+    };
   }
 }
