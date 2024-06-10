@@ -29,7 +29,7 @@ export default function Summoner() {
       <SummonerHeader summoner={summoner} gameName={correctGameName} tagLine={tagLine} />
       <SummonerKDA summoner={summoner} />
       {summoner &&
-        <GameList title='Last matches' summonerId={summoner.id} />
+        <GameList title='Last matches' limit={5} summonerId={summoner.id} />
       }
     </main>
   )

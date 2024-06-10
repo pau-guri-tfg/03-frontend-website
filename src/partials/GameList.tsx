@@ -3,20 +3,20 @@ import { fetchGamesByPlayerEndpoint, fetchGameEndpoint } from '../utils/gamesDat
 import GameCard from '../components/GameCard';
 import Loader from '../components/Loader';
 
-export default function GameList({ title = "", summonerId }: { title?: string, summonerId?: string }) {
+export default function GameList({ title = "", limit = 10, offset = 0, summonerId }: { title?: string, limit?: number, offset?: number, summonerId?: string }) {
 
   const [games, setGames] = useState<EverythingDocument[]>([]);
 
   useEffect(() => {
     if (summonerId) {
       // fetch the player data for the corresponding summonerId, and then fill the rest of the data
-      fetchGamesByPlayerEndpoint(summonerId, "everything", 5).then((res) => {
+      fetchGamesByPlayerEndpoint(summonerId, "everything", limit, offset).then((res) => {
         console.log(res.data);
         setGames(res.data);
       });
     } else {
       // fetch all games, starting with gamedata and then the corresponding players and events
-      fetchGameEndpoint("all", "everything", 5).then((res) => {
+      fetchGameEndpoint("all", "everything", limit, offset).then((res) => {
         console.log(res.data);
         setGames(res.data);
       });

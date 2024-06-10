@@ -1,18 +1,19 @@
 import { useEffect, useState } from 'react'
 import { fetchGamesByPlayerEndpoint } from '../utils/gamesDatabase';
-import { Cell, Pie, PieChart, PieLabel, ResponsiveContainer } from 'recharts';
+import { Cell, Pie, PieChart, PieLabel, ResponsiveContainer, Tooltip } from 'recharts';
 
 type ChartData = {
   name: string,
   value: number | null,
   color: string,
+  tooltipText: string,
 }[];
 
 export default function SummonerKDA({ summoner = null }: { summoner?: Riot.Summoner.SummonerDto | null }) {
   const [chartData, setChartData] = useState<ChartData>([
-    { name: 'Kills', value: null, color: '#0096A8' },
-    { name: 'Deaths', value: null, color: '#C62139' },
-    { name: 'Assists', value: null, color: '#f97316' },
+    { name: 'Kills', value: null, color: '#0096A8', tooltipText: 'kills' },
+    { name: 'Deaths', value: null, color: '#C62139', tooltipText: 'deaths' },
+    { name: 'Assists', value: null, color: '#f97316', tooltipText: 'assists' },
   ]);
 
   useEffect(() => {
@@ -29,9 +30,9 @@ export default function SummonerKDA({ summoner = null }: { summoner?: Riot.Summo
           a += player.scores.assists;
         });
         setChartData([
-          { name: 'Kills', value: k, color: '#0096A8' },
-          { name: 'Deaths', value: d, color: '#C62139' },
-          { name: 'Assists', value: a, color: '#f97316' },
+          { name: 'Kills', value: k, color: '#0096A8', tooltipText: 'kills' },
+          { name: 'Deaths', value: d, color: '#C62139', tooltipText: 'deaths' },
+          { name: 'Assists', value: a, color: '#f97316', tooltipText: 'assists' },
         ]);
       });
   }, [summoner])
@@ -44,7 +45,7 @@ export default function SummonerKDA({ summoner = null }: { summoner?: Riot.Summo
 
     if (percent < 0.05) return null;
     return (
-      <text x={x} y={y} fill="#000" fontSize={20} textAnchor={'middle'} dominantBaseline="central">
+      <text x={x} y={y} fill="#000" fontSize={20} textAnchor={'middle'} dominantBaseline="central" pointerEvents="none">
         {`${(percent * 100).toFixed(0)}%`}
       </text>
     );
@@ -66,6 +67,7 @@ export default function SummonerKDA({ summoner = null }: { summoner?: Riot.Summo
       <div className="w-52 aspect-square">
         <ResponsiveContainer width={'100%'} height={'100%'}>
           <PieChart>
+            <Tooltip content={<CustomTooltip />} />
             <Pie
               data={chartData}
               dataKey="value"
@@ -89,3 +91,18 @@ export default function SummonerKDA({ summoner = null }: { summoner?: Riot.Summo
     </div>
   )
 }
+
+const CustomTooltip = ({ active, payload, label }: any) => {
+  if (active && payload && payload.length) {
+    return (
+      <div className="flex gap-3 p-3 bg-dark-blue rounded-3xl">
+        <span className="label text-white/40">{label}</span>
+        <div>
+          <span className='font-serif text-xl font-bold'>{payload[0].value}</span> <span>{payload[0].payload.tooltipText}</span>
+        </div>
+      </div>
+    );
+  }
+
+  return null;
+};
