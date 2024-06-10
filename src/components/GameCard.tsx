@@ -7,13 +7,12 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import PlayerList from '../partials/PlayerList';
-import { fetchMatch } from '../utils/riotApi';
 
 export default function GameCard({ gamedata, players, events }: { players: GamePlayer[], gamedata: GameData, events: GameEvent[] }) {
   const { orderScore, chaosScore } = useTeamScore(players);
   const [formattedStartTime, setFormattedStartTime] = useState<string>("");
   const [formatedGameTime, setFormatedGameTime] = useState<string>("");
-  const [winner, setWinner] = useState<GameTeamName | null>(null);
+  //const [winner, setWinner] = useState<GameTeamName | null>(null);
 
   useEffect(() => {
     if (!gamedata) return;
@@ -23,13 +22,13 @@ export default function GameCard({ gamedata, players, events }: { players: GameP
   }, [gamedata]);
 
   // fetch Riot API to see who won (xd)
-  useEffect(() => {
-    if (!gamedata) return;
-    fetchMatch(gamedata.gameId).then(res => {
-      console.log(res.data);
-      //setWinner(res.data.info.teams.find(team => team.win)!.teamId as GameTeamName);
-    });
-  }, [gamedata]);
+  // useEffect(() => {
+  //   if (!gamedata) return;
+  //   fetchMatch(gamedata.gameId).then(res => {
+  //     console.log(res.data);
+  //     setWinner(res.data.info.teams.find(team => team.win)!.teamId as GameTeamName);
+  //   });
+  // }, [gamedata]);
 
   const expandable = useRef<HTMLDivElement>(null);
   const expandableChevron = useRef<SVGSVGElement>(null);
