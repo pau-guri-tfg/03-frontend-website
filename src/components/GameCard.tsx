@@ -7,17 +7,28 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import PlayerList from '../partials/PlayerList';
+import { fetchMatch } from '../utils/riotApi';
 
 export default function GameCard({ gamedata, players, events }: { players: GamePlayer[], gamedata: GameData, events: GameEvent[] }) {
   const { orderScore, chaosScore } = useTeamScore(players);
   const [formattedStartTime, setFormattedStartTime] = useState<string>("");
   const [formatedGameTime, setFormatedGameTime] = useState<string>("");
+  const [winner, setWinner] = useState<GameTeamName | null>(null);
 
   useEffect(() => {
     if (!gamedata) return;
 
     setFormattedStartTime(formatDateTime(gamedata.gameStartTime));
     setFormatedGameTime(formatDuration(gamedata.gameTime));
+  }, [gamedata]);
+
+  // fetch Riot API to see who won (xd)
+  useEffect(() => {
+    if (!gamedata) return;
+    fetchMatch(gamedata.gameId).then(res => {
+      console.log(res.data);
+      //setWinner(res.data.info.teams.find(team => team.win)!.teamId as GameTeamName);
+    });
   }, [gamedata]);
 
   const expandable = useRef<HTMLDivElement>(null);
@@ -39,7 +50,10 @@ export default function GameCard({ gamedata, players, events }: { players: GameP
     <div className='flex flex-col p-6 w-ful rounded-3xl bg-dark-blue'>
       <div onClick={() => setIsExpanded((oldIsExpanded) => !oldIsExpanded)} className='grid items-center w-full grid-cols-3 gap-6 select-none group'>
         <div className='flex items-center gap-6'>
-          <h2 className='font-serif text-3xl font-semibold capitalize text-gold'>{gamedata.gameMode.toLowerCase()}</h2>
+          <div className='flex flex-col'>
+            <h2 className='font-serif text-3xl font-semibold capitalize text-gold'>{gamedata.gameMode.toLowerCase()}</h2>
+            <span className='text-xs text-white/20'>ID: {gamedata.gameId}</span>
+          </div>
           <FontAwesomeIcon ref={expandableChevron} icon={faChevronDown} className='text-white transition-colors group-hover:text-gold' />
         </div>
         <div className='flex justify-center items-center gap-2.5'>

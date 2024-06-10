@@ -11,3 +11,7 @@ export async function fetchSummoner(puuid: string) {
 export function fetchSummonerLeague(summonerId: string) {
   return axios.get<Riot.Summoner.LeagueEntryDTO[]>(import.meta.env.VITE_BACKEND_URL + "/riot-api/league/" + summonerId + "?api_key=" + import.meta.env.VITE_BACKEND_API_KEY);
 }
+
+export function fetchMatch(gameId: string) {
+  return axios.get<Riot.Match.MatchDto>(import.meta.env.VITE_BACKEND_URL + "/riot-api/match/" + gameId + "?api_key=" + import.meta.env.VITE_BACKEND_API_KEY);
+}

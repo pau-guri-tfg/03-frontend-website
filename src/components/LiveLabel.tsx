@@ -1,6 +1,6 @@
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
-import { useRef, useState } from 'react'
+import { useCallback, useRef, useState } from 'react'
 import { Flip } from 'gsap/all';
 import useBlink from '../utils/useBlink';
 
@@ -13,11 +13,13 @@ export default function LiveLabel({ updateTime }: { updateTime: number }) {
   let flipState: Flip.FlipState = Flip.getState(container.current);
   const [text, setText] = useState<string>("LIVE");
 
-  const handlePointerEnter = () => {
+  const handlePointerEnter = useCallback(() => {
+    if (updateTime <= 0) return;
+
     flipState = Flip.getState(container.current);
     const date = new Date(updateTime);
     setText('last update ' + date.toLocaleTimeString());
-  }
+  }, [updateTime]);
 
   const handlePointerLeave = () => {
     flipState = Flip.getState(container.current);

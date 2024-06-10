@@ -30,7 +30,7 @@ export default function LiveGameStats({ players, gamedata, events, lastUpdate }:
 
   return (
     <div className='container'>
-      <div className='w-full max-w-[700px] mx-auto rounded-3xl bg-dark-blue p-6 flex flex-col gap-3'>
+      <div className='w-full max-w-[700px] mx-auto rounded-3xl bg-dark-blue p-6 flex flex-col gap-3 shadow-big shadow-purple/30'>
         <div className='flex items-center justify-between w-full gap-6'>
           <div className='flex items-center gap-6'>
             <h1 className='font-serif text-5xl font-semibold capitalize text-gold'>{gamedata.gameMode.toLowerCase()}</h1>

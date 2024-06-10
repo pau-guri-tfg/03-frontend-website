@@ -51,7 +51,6 @@ export function DataReceiver({ children }: { children: React.ReactNode }) {
     setGamedata(SampleGameData);
     setPlayers(SamplePlayers);
     setEvents(SampleEvents.Events);
-    setLastUpdate(Date.now());
 
     // setInterval(() => {
     //   setPlayers((prevPlayers) => {
