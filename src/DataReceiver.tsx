@@ -22,6 +22,7 @@ export function DataReceiver({ children }: { children: React.ReactNode }) {
   const [lastUpdate, setLastUpdate] = useState<number>(0);
 
   useEffect(() => {
+    if (!gamedata && !players && !events) return;
     setLastUpdate(Date.now());
   }, [gamedata, players, events]);
 
