@@ -29,9 +29,13 @@ export default function PlayerCard({ player, boxed = false }: { player: GamePlay
           <span className='text-sm leading-none text-white/40'>{player.championName}</span>
         </div>
       </div>
-      <Flasher className='font-serif text-lg shrink-0'>
-        <span className='font-bold'>{player.scores.kills}</span> / <span className='font-bold'>{player.scores.deaths}</span> / <span className='font-bold'>{player.scores.assists}</span>
-      </Flasher>
+      <div className='flex items-center gap-1 font-serif text-lg shrink-0 w-fit'>
+        <Flasher className='font-bold'>{player.scores.kills}</Flasher>
+        <span>/</span>
+        <Flasher className='font-bold'>{player.scores.deaths}</Flasher>
+        <span>/</span>
+        <Flasher className='font-bold'>{player.scores.assists}</Flasher>
+      </div>
 
       <div className='flex items-center gap-3 shrink-0'>
         <div className='flex flex-col items-center gap-1'>

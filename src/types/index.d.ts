@@ -38,6 +38,8 @@ type GameEvent = {
   VictimName?: string;
   Acer?: string;
   TurretKilled?: string;
+  InhibKilled?: string;
+  Result?: string;
 }
 
 type GamePlayer = {
@@ -76,6 +78,7 @@ type GamePlayer = {
   puuid?: string;
   summonerId?: string;
   profileIconId?: number;
+  isLocalPlayer: boolean;
   gameId: string;
 };
 

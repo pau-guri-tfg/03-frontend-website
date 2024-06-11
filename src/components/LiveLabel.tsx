@@ -10,24 +10,23 @@ export default function LiveLabel({ updateTime }: { updateTime: number }) {
   const container = useRef<HTMLDivElement>(null);
   gsap.registerPlugin(Flip);
   let flipState: Flip.FlipState = Flip.getState(container.current);
-  const [text, setText] = useState<string>("LIVE");
+  const [timeShown, setTimeShown] = useState<boolean>(false);
 
   const handlePointerEnter = useCallback(() => {
     if (updateTime <= 0) return;
 
     flipState = Flip.getState(container.current);
-    const date = new Date(updateTime);
-    setText('last update ' + date.toLocaleTimeString());
+    setTimeShown(true);
   }, [updateTime]);
 
   const handlePointerLeave = () => {
     flipState = Flip.getState(container.current);
-    setText('LIVE');
+    setTimeShown(false);
   }
 
   useGSAP(() => {
     Flip.from(flipState, { duration: 0.3 });
-  }, [text]);
+  }, [timeShown]);
 
   return (
     <div
@@ -37,7 +36,7 @@ export default function LiveLabel({ updateTime }: { updateTime: number }) {
       className='flex items-center gap-2.5 border border-purple rounded-full p-3 select-none overflow-hidden'
     >
       <div ref={liveDot} className={'w-3 h-3 rounded-full border shrink-0' + (updateTime <= 0 ? " border-purple" : " border-transparent bg-purple")} />
-      <span className='leading-none text-purple whitespace-nowrap'>{text}</span>
+      <span className='leading-none text-purple whitespace-nowrap'>{timeShown ? "last update " + new Date(updateTime).toLocaleTimeString() : "LIVE"}</span>
     </div>
   )
 }

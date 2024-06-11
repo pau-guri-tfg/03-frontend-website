@@ -14,7 +14,7 @@ export default function GameTimeline({ events, players, gameTime, title = "", co
   const scrollDiv = useRef<HTMLDivElement>(null);
   const scrollContent = useRef<HTMLDivElement>(null);
 
-  const hiddenEvents = ["GameStart", "MinionsSpawning", "FirstBrick", "FirstBlood"];
+  const hiddenEvents = ["GameStart", "MinionsSpawning", "FirstBrick", "FirstBlood", "InhibRespawned"];
   events = events.filter(event => !hiddenEvents.includes(event.EventName));
 
   const getEventTeam = (event: GameEvent): GameTeamName => {
@@ -23,6 +23,11 @@ export default function GameTimeline({ events, players, gameTime, title = "", co
       const turret = identifyBuilding(event.TurretKilled);
       if (turret) {
         team = turret.team;
+      }
+    } else if (event.InhibKilled) {
+      const inhib = identifyBuilding(event.InhibKilled);
+      if (inhib) {
+        team = inhib.team;
       }
     } else if (event.KillerName) {
       const killer = players.find(player => player.summonerName.split('#')[0] === event.KillerName);

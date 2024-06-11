@@ -1,314 +1,1492 @@
 {
   "_id": {
-    "$oid": "6664470caee2505f0eefaf13"
+    "$oid": "66687773aee2505f0e6734b1"
   },
   "Events": [
     {
       "EventID": 0,
       "EventName": "GameStart",
-      "EventTime": 0.02913830056786537
+      "EventTime": 0.02417450025677681
     },
     {
       "EventID": 1,
       "EventName": "MinionsSpawning",
-      "EventTime": 65.03083038330078
+      "EventTime": 65.06134796142578
     },
     {
-      "Assisters": [],
+      "Assisters": [
+        "Graves Bot"
+      ],
       "EventID": 2,
       "EventName": "ChampionKill",
-      "EventTime": 146.8039093017578,
-      "KillerName": "Taric Bot",
-      "VictimName": "pauX"
+      "EventTime": 376.5032958984375,
+      "KillerName": "Warwick Bot",
+      "VictimName": "Ezreal Bot"
     },
     {
       "EventID": 3,
       "EventName": "FirstBlood",
-      "EventTime": 146.8039093017578,
-      "Recipient": "Taric Bot"
+      "EventTime": 376.5032958984375,
+      "Recipient": "Warwick Bot"
+    },
+    {
+      "Assisters": [
+        "Annie Bot"
+      ],
+      "EventID": 4,
+      "EventName": "ChampionKill",
+      "EventTime": 440.4107360839844,
+      "KillerName": "Ezreal Bot",
+      "VictimName": "Warwick Bot"
+    },
+    {
+      "Assisters": [],
+      "EventID": 5,
+      "EventName": "ChampionKill",
+      "EventTime": 562.2144775390625,
+      "KillerName": "Warwick Bot",
+      "VictimName": "Ezreal Bot"
+    },
+    {
+      "Assisters": [
+        "Graves Bot"
+      ],
+      "EventID": 6,
+      "EventName": "ChampionKill",
+      "EventTime": 638.1717529296875,
+      "KillerName": "Warwick Bot",
+      "VictimName": "Annie Bot"
     },
     {
       "Assisters": [
         "Galio Bot"
       ],
-      "EventID": 4,
-      "EventName": "ChampionKill",
-      "EventTime": 263.3302307128906,
-      "KillerName": "Shyvana Bot",
-      "VictimName": "pauX"
-    },
-    {
-      "Assisters": [
-        "Shyvana Bot"
-      ],
-      "EventID": 5,
-      "EventName": "ChampionKill",
-      "EventTime": 380.9937744140625,
-      "KillerName": "Galio Bot",
-      "VictimName": "pauX"
-    },
-    {
-      "Assisters": [
-        "Veigar Bot"
-      ],
-      "EventID": 6,
-      "EventName": "ChampionKill",
-      "EventTime": 401.3846740722656,
-      "KillerName": "Shen Bot",
-      "VictimName": "Brand Bot"
-    },
-    {
-      "Assisters": [
-        "Morgana Bot"
-      ],
       "EventID": 7,
       "EventName": "ChampionKill",
-      "EventTime": 500.919189453125,
-      "KillerName": "pauX",
-      "VictimName": "Galio Bot"
+      "EventTime": 803.5343627929688,
+      "KillerName": "Caitlyn Bot",
+      "VictimName": "Kayle Bot"
     },
     {
       "Assisters": [
-        "Morgana Bot",
-        "Trundle Bot"
+        "Kayle Bot"
       ],
       "EventID": 8,
       "EventName": "ChampionKill",
-      "EventTime": 552.0975341796875,
-      "KillerName": "pauX",
+      "EventTime": 929.4273071289062,
+      "KillerName": "Alistar Bot",
       "VictimName": "Galio Bot"
     },
     {
       "Assisters": [],
       "EventID": 9,
-      "EventName": "ChampionKill",
-      "EventTime": 743.1469116210938,
-      "KillerName": "Brand Bot",
-      "VictimName": "pauX"
-    },
-    {
-      "Assisters": [],
-      "EventID": 10,
       "EventName": "TurretKilled",
-      "EventTime": 830.702392578125,
-      "KillerName": "Taric Bot",
-      "TurretKilled": "Turret_T1_C_05_A"
+      "EventTime": 1020.447265625,
+      "KillerName": "Minion_T100L2S31N0196",
+      "TurretKilled": "Turret_T2_L_03_A"
     },
     {
-      "EventID": 11,
+      "EventID": 10,
       "EventName": "FirstBrick",
-      "EventTime": 830.702392578125,
-      "KillerName": "Taric Bot"
+      "EventTime": 1020.447265625,
+      "KillerName": "Minion_T100L2S31N0196"
     },
     {
       "Assisters": [
-        "Leona Bot"
+        "Graves Bot"
+      ],
+      "EventID": 11,
+      "EventName": "ChampionKill",
+      "EventTime": 1032.1522216796875,
+      "KillerName": "Warwick Bot",
+      "VictimName": "Ezreal Bot"
+    },
+    {
+      "Assisters": [
+        "Graves Bot"
       ],
       "EventID": 12,
       "EventName": "ChampionKill",
-      "EventTime": 887.5070190429688,
-      "KillerName": "Brand Bot",
-      "VictimName": "pauX"
+      "EventTime": 1039.474609375,
+      "KillerName": "Warwick Bot",
+      "VictimName": "Annie Bot"
     },
     {
-      "Assisters": [
-        "Leona Bot"
-      ],
       "EventID": 13,
-      "EventName": "TurretKilled",
-      "EventTime": 920.888671875,
-      "KillerName": "Minion_T200L0S27N0167",
-      "TurretKilled": "Turret_T1_R_03_A"
+      "EventName": "Multikill",
+      "EventTime": 1039.474609375,
+      "KillStreak": 2,
+      "KillerName": "Warwick Bot"
     },
     {
-      "Assisters": [
-        "Leona Bot"
-      ],
+      "Assisters": [],
       "EventID": 14,
-      "EventName": "ChampionKill",
-      "EventTime": 956.3193359375,
-      "KillerName": "Brand Bot",
-      "VictimName": "pauX"
+      "EventName": "TurretKilled",
+      "EventTime": 1067.9259033203125,
+      "KillerName": "Garen Bot",
+      "TurretKilled": "Turret_T2_C_05_A"
     },
     {
       "Assisters": [],
       "EventID": 15,
       "EventName": "TurretKilled",
-      "EventTime": 1015.8562622070312,
-      "KillerName": "Minion_T100L2S31N0194",
-      "TurretKilled": "Turret_T2_L_03_A"
-    },
-    {
-      "Assisters": [],
-      "EventID": 16,
-      "EventName": "ChampionKill",
-      "EventTime": 1053.7115478515625,
-      "KillerName": "Veigar Bot",
-      "VictimName": "Taric Bot"
+      "EventTime": 1071.8951416015625,
+      "KillerName": "Caitlyn Bot",
+      "TurretKilled": "Turret_T2_R_03_A"
     },
     {
       "Assisters": [
-        "Morgana Bot"
+        "Ezreal Bot",
+        "Kayle Bot"
+      ],
+      "EventID": 16,
+      "EventName": "ChampionKill",
+      "EventTime": 1086.9649658203125,
+      "KillerName": "Annie Bot",
+      "VictimName": "Warwick Bot"
+    },
+    {
+      "Assisters": [
+        "Warwick Bot"
       ],
       "EventID": 17,
       "EventName": "ChampionKill",
-      "EventTime": 1068.4697265625,
-      "KillerName": "Trundle Bot",
-      "VictimName": "Galio Bot"
+      "EventTime": 1156.7193603515625,
+      "KillerName": "Graves Bot",
+      "VictimName": "Annie Bot"
     },
     {
       "Assisters": [
-        "Brand Bot"
+        "Graves Bot"
       ],
       "EventID": 18,
       "EventName": "ChampionKill",
-      "EventTime": 1074.77294921875,
-      "KillerName": "Leona Bot",
-      "VictimName": "pauX"
+      "EventTime": 1162.7518310546875,
+      "KillerName": "Warwick Bot",
+      "VictimName": "Ezreal Bot"
     },
     {
-      "Assisters": [],
+      "Assisters": [
+        "Graves Bot"
+      ],
       "EventID": 19,
+      "EventName": "ChampionKill",
+      "EventTime": 1166.079833984375,
+      "KillerName": "Warwick Bot",
+      "VictimName": "Kayle Bot"
+    },
+    {
+      "EventID": 20,
+      "EventName": "Multikill",
+      "EventTime": 1166.079833984375,
+      "KillStreak": 2,
+      "KillerName": "Warwick Bot"
+    },
+    {
+      "Assisters": [
+        "Graves Bot"
+      ],
+      "EventID": 21,
+      "EventName": "ChampionKill",
+      "EventTime": 1278.3587646484375,
+      "KillerName": "Warwick Bot",
+      "VictimName": "Ezreal Bot"
+    },
+    {
+      "Assisters": [
+        "Graves Bot"
+      ],
+      "EventID": 22,
+      "EventName": "ChampionKill",
+      "EventTime": 1281.7493896484375,
+      "KillerName": "Warwick Bot",
+      "VictimName": "Kayle Bot"
+    },
+    {
+      "EventID": 23,
+      "EventName": "Multikill",
+      "EventTime": 1281.7493896484375,
+      "KillStreak": 2,
+      "KillerName": "Warwick Bot"
+    },
+    {
+      "Assisters": [
+        "pauX",
+        "Ezreal Bot"
+      ],
+      "EventID": 24,
       "EventName": "TurretKilled",
-      "EventTime": 1167.30419921875,
-      "KillerName": "Galio Bot",
+      "EventTime": 1376.62109375,
+      "KillerName": "Minion_T200L2S43N0272",
       "TurretKilled": "Turret_T1_L_03_A"
     },
     {
       "Assisters": [
-        "Brand Bot"
+        "Ezreal Bot",
+        "Kayle Bot"
       ],
-      "EventID": 20,
+      "EventID": 25,
+      "EventName": "ChampionKill",
+      "EventTime": 1386.390380859375,
+      "KillerName": "pauX",
+      "VictimName": "Warwick Bot"
+    },
+    {
+      "Assisters": [],
+      "EventID": 26,
       "EventName": "TurretKilled",
-      "EventTime": 1184.4376220703125,
-      "KillerName": "Taric Bot",
+      "EventTime": 1389.21435546875,
+      "KillerName": "Garen Bot",
+      "TurretKilled": "Turret_T2_C_04_A"
+    },
+    {
+      "Assisters": [],
+      "EventID": 27,
+      "EventName": "TurretKilled",
+      "EventTime": 1397.1363525390625,
+      "KillerName": "Minion_T100L0S43N0274",
+      "TurretKilled": "Turret_T2_R_02_A"
+    },
+    {
+      "Assisters": [
+        "Caitlyn Bot",
+        "Warwick Bot",
+        "Garen Bot",
+        "Galio Bot"
+      ],
+      "EventID": 28,
+      "EventName": "ChampionKill",
+      "EventTime": 1461.616943359375,
+      "KillerName": "Graves Bot",
+      "VictimName": "Alistar Bot"
+    },
+    {
+      "Assisters": [
+        "Alistar Bot",
+        "Kayle Bot",
+        "Annie Bot"
+      ],
+      "EventID": 29,
+      "EventName": "ChampionKill",
+      "EventTime": 1464.7747802734375,
+      "KillerName": "pauX",
+      "VictimName": "Galio Bot"
+    },
+    {
+      "Assisters": [
+        "pauX",
+        "Kayle Bot"
+      ],
+      "EventID": 30,
+      "EventName": "ChampionKill",
+      "EventTime": 1498.1845703125,
+      "KillerName": "Annie Bot",
+      "VictimName": "Warwick Bot"
+    },
+    {
+      "Assisters": [
+        "Warwick Bot",
+        "Garen Bot"
+      ],
+      "EventID": 31,
+      "EventName": "ChampionKill",
+      "EventTime": 1504.89794921875,
+      "KillerName": "Graves Bot",
+      "VictimName": "Annie Bot"
+    },
+    {
+      "Assisters": [
+        "Graves Bot"
+      ],
+      "EventID": 32,
+      "EventName": "ChampionKill",
+      "EventTime": 1509.9454345703125,
+      "KillerName": "Garen Bot",
+      "VictimName": "pauX"
+    },
+    {
+      "Assisters": [
+        "Kayle Bot",
+        "Annie Bot"
+      ],
+      "EventID": 33,
+      "EventName": "ChampionKill",
+      "EventTime": 1558.9267578125,
+      "KillerName": "Ezreal Bot",
+      "VictimName": "Galio Bot"
+    },
+    {
+      "Assisters": [
+        "Caitlyn Bot",
+        "Warwick Bot",
+        "Garen Bot"
+      ],
+      "EventID": 34,
+      "EventName": "ChampionKill",
+      "EventTime": 1560.6505126953125,
+      "KillerName": "Graves Bot",
+      "VictimName": "Annie Bot"
+    },
+    {
+      "Assisters": [
+        "Graves Bot"
+      ],
+      "EventID": 35,
+      "EventName": "ChampionKill",
+      "EventTime": 1560.9873046875,
+      "KillerName": "Caitlyn Bot",
+      "VictimName": "Kayle Bot"
+    },
+    {
+      "Assisters": [
+        "Ezreal Bot"
+      ],
+      "EventID": 36,
+      "EventName": "ChampionKill",
+      "EventTime": 1587.0399169921875,
+      "KillerName": "pauX",
+      "VictimName": "Warwick Bot"
+    },
+    {
+      "Assisters": [
+        "Warwick Bot",
+        "Graves Bot"
+      ],
+      "EventID": 37,
+      "EventName": "ChampionKill",
+      "EventTime": 1587.1063232421875,
+      "KillerName": "Caitlyn Bot",
+      "VictimName": "pauX"
+    },
+    {
+      "Assisters": [
+        "Ezreal Bot"
+      ],
+      "EventID": 38,
+      "EventName": "ChampionKill",
+      "EventTime": 1617.946044921875,
+      "KillerName": "Alistar Bot",
+      "VictimName": "Graves Bot"
+    },
+    {
+      "Assisters": [],
+      "EventID": 39,
+      "EventName": "ChampionKill",
+      "EventTime": 1620.332763671875,
+      "KillerName": "Ezreal Bot",
+      "VictimName": "Caitlyn Bot"
+    },
+    {
+      "Assisters": [
+        "Graves Bot"
+      ],
+      "EventID": 40,
+      "EventName": "TurretKilled",
+      "EventTime": 1714.6614990234375,
+      "KillerName": "Caitlyn Bot",
+      "TurretKilled": "Turret_T2_R_01_A"
+    },
+    {
+      "Assisters": [
+        "Ezreal Bot",
+        "Annie Bot"
+      ],
+      "EventID": 41,
+      "EventName": "ChampionKill",
+      "EventTime": 1725.7706298828125,
+      "KillerName": "Kayle Bot",
+      "VictimName": "Garen Bot"
+    },
+    {
+      "Assisters": [
+        "Ezreal Bot",
+        "Annie Bot"
+      ],
+      "EventID": 42,
+      "EventName": "ChampionKill",
+      "EventTime": 1728.4864501953125,
+      "KillerName": "Kayle Bot",
+      "VictimName": "Caitlyn Bot"
+    },
+    {
+      "EventID": 43,
+      "EventName": "Multikill",
+      "EventTime": 1728.4864501953125,
+      "KillStreak": 2,
+      "KillerName": "Kayle Bot"
+    },
+    {
+      "Assisters": [
+        "Galio Bot"
+      ],
+      "EventID": 44,
+      "EventName": "ChampionKill",
+      "EventTime": 1741.8507080078125,
+      "KillerName": "Warwick Bot",
+      "VictimName": "Alistar Bot"
+    },
+    {
+      "Assisters": [
+        "Annie Bot"
+      ],
+      "EventID": 45,
+      "EventName": "ChampionKill",
+      "EventTime": 1780.908935546875,
+      "KillerName": "pauX",
+      "VictimName": "Warwick Bot"
+    },
+    {
+      "Assisters": [
+        "Kayle Bot"
+      ],
+      "EventID": 46,
+      "EventName": "ChampionKill",
+      "EventTime": 1797.27978515625,
+      "KillerName": "Ezreal Bot",
+      "VictimName": "Galio Bot"
+    },
+    {
+      "Assisters": [],
+      "EventID": 47,
+      "EventName": "ChampionKill",
+      "EventTime": 1814.603515625,
+      "KillerName": "Garen Bot",
+      "VictimName": "Kayle Bot"
+    },
+    {
+      "Assisters": [],
+      "EventID": 48,
+      "EventName": "TurretKilled",
+      "EventTime": 1818.9420166015625,
+      "KillerName": "Minion_T100L1S58N0373",
+      "TurretKilled": "Turret_T2_C_03_A"
+    },
+    {
+      "Assisters": [
+        "Caitlyn Bot"
+      ],
+      "EventID": 49,
+      "EventName": "ChampionKill",
+      "EventTime": 1842.859130859375,
+      "KillerName": "Garen Bot",
+      "VictimName": "Ezreal Bot"
+    },
+    {
+      "Assisters": [],
+      "EventID": 50,
+      "EventName": "TurretKilled",
+      "EventTime": 1869.81689453125,
+      "KillerName": "Minion_T200L1S59N0382",
+      "TurretKilled": "Turret_T1_C_05_A"
+    },
+    {
+      "Assisters": [
+        "Garen Bot"
+      ],
+      "EventID": 51,
+      "EventName": "InhibKilled",
+      "EventTime": 1872.0499267578125,
+      "InhibKilled": "Barracks_T2_R1",
+      "KillerName": "Caitlyn Bot"
+    },
+    {
+      "Assisters": [
+        "Annie Bot"
+      ],
+      "EventID": 52,
+      "EventName": "ChampionKill",
+      "EventTime": 1878.212158203125,
+      "KillerName": "Kayle Bot",
+      "VictimName": "Caitlyn Bot"
+    },
+    {
+      "Assisters": [
+        "Alistar Bot",
+        "Ezreal Bot",
+        "Annie Bot"
+      ],
+      "EventID": 53,
+      "EventName": "ChampionKill",
+      "EventTime": 1896.57861328125,
+      "KillerName": "Kayle Bot",
+      "VictimName": "Garen Bot"
+    },
+    {
+      "Assisters": [
+        "Ezreal Bot",
+        "Kayle Bot",
+        "Annie Bot"
+      ],
+      "EventID": 54,
+      "EventName": "ChampionKill",
+      "EventTime": 1898.674560546875,
+      "KillerName": "Alistar Bot",
+      "VictimName": "Galio Bot"
+    },
+    {
+      "Assisters": [],
+      "EventID": 55,
+      "EventName": "TurretKilled",
+      "EventTime": 1913.7601318359375,
+      "KillerName": "Minion_T200L1S60N0390",
       "TurretKilled": "Turret_T1_C_04_A"
     },
     {
       "Assisters": [
-        "Morgana Bot"
+        "Alistar Bot",
+        "Ezreal Bot",
+        "Kayle Bot"
       ],
-      "EventID": 21,
+      "EventID": 56,
       "EventName": "ChampionKill",
-      "EventTime": 1191.32080078125,
-      "KillerName": "Trundle Bot",
+      "EventTime": 1924.1795654296875,
+      "KillerName": "Annie Bot",
+      "VictimName": "Graves Bot"
+    },
+    {
+      "Assisters": [
+        "Warwick Bot"
+      ],
+      "EventID": 57,
+      "EventName": "ChampionKill",
+      "EventTime": 1977.1407470703125,
+      "KillerName": "Caitlyn Bot",
+      "VictimName": "Kayle Bot"
+    },
+    {
+      "Assisters": [
+        "pauX",
+        "Alistar Bot",
+        "Kayle Bot",
+        "Annie Bot"
+      ],
+      "EventID": 58,
+      "EventName": "ChampionKill",
+      "EventTime": 2035.376708984375,
+      "KillerName": "Ezreal Bot",
+      "VictimName": "Caitlyn Bot"
+    },
+    {
+      "Assisters": [
+        "pauX",
+        "Ezreal Bot",
+        "Kayle Bot",
+        "Annie Bot"
+      ],
+      "EventID": 59,
+      "EventName": "ChampionKill",
+      "EventTime": 2040.2584228515625,
+      "KillerName": "Alistar Bot",
       "VictimName": "Galio Bot"
     },
     {
       "Assisters": [
-        "Leona Bot",
-        "Shyvana Bot"
+        "pauX",
+        "Alistar Bot",
+        "Kayle Bot",
+        "Annie Bot"
       ],
-      "EventID": 22,
+      "EventID": 60,
       "EventName": "ChampionKill",
-      "EventTime": 1239.349853515625,
-      "KillerName": "Taric Bot",
-      "VictimName": "Morgana Bot"
+      "EventTime": 2049.21923828125,
+      "KillerName": "Ezreal Bot",
+      "VictimName": "Warwick Bot"
     },
     {
       "Assisters": [
-        "Leona Bot",
-        "Galio Bot",
-        "Taric Bot",
-        "Shyvana Bot"
+        "Garen Bot"
       ],
-      "EventID": 23,
+      "EventID": 61,
       "EventName": "ChampionKill",
-      "EventTime": 1316.5218505859375,
-      "KillerName": "Brand Bot",
-      "VictimName": "pauX"
-    },
-    {
-      "Assisters": [
-        "Leona Bot",
-        "Taric Bot",
-        "Brand Bot"
-      ],
-      "EventID": 24,
-      "EventName": "ChampionKill",
-      "EventTime": 1372.906005859375,
-      "KillerName": "Galio Bot",
-      "VictimName": "pauX"
-    },
-    {
-      "Assisters": [
-        "Shen Bot",
-        "Veigar Bot"
-      ],
-      "EventID": 25,
-      "EventName": "ChampionKill",
-      "EventTime": 1423.521484375,
-      "KillerName": "Trundle Bot",
-      "VictimName": "Brand Bot"
-    },
-    {
-      "Assisters": [
-        "Shen Bot",
-        "Trundle Bot"
-      ],
-      "EventID": 26,
-      "EventName": "ChampionKill",
-      "EventTime": 1476.3084716796875,
-      "KillerName": "Morgana Bot",
-      "VictimName": "Galio Bot"
-    },
-    {
-      "Assisters": [
-        "Shen Bot"
-      ],
-      "EventID": 27,
-      "EventName": "ChampionKill",
-      "EventTime": 1497.5101318359375,
-      "KillerName": "Morgana Bot",
-      "VictimName": "Brand Bot"
+      "EventTime": 2065.993408203125,
+      "KillerName": "Graves Bot",
+      "VictimName": "Annie Bot"
     },
     {
       "Assisters": [],
-      "EventID": 28,
+      "EventID": 62,
       "EventName": "ChampionKill",
-      "EventTime": 1499.2127685546875,
-      "KillerName": "Shyvana Bot",
-      "VictimName": "pauX"
+      "EventTime": 2126.425537109375,
+      "KillerName": "Caitlyn Bot",
+      "VictimName": "Kayle Bot"
     },
     {
       "Assisters": [
-        "Leona Bot",
+        "Kayle Bot"
+      ],
+      "EventID": 63,
+      "EventName": "ChampionKill",
+      "EventTime": 2127.107177734375,
+      "KillerName": "Ezreal Bot",
+      "VictimName": "Caitlyn Bot"
+    },
+    {
+      "Assisters": [
+        "Garen Bot"
+      ],
+      "EventID": 64,
+      "EventName": "ChampionKill",
+      "EventTime": 2146.8330078125,
+      "KillerName": "Graves Bot",
+      "VictimName": "Annie Bot"
+    },
+    {
+      "Assisters": [],
+      "EventID": 65,
+      "EventName": "ChampionKill",
+      "EventTime": 2157.042724609375,
+      "KillerName": "pauX",
+      "VictimName": "Warwick Bot"
+    },
+    {
+      "Assisters": [
+        "Garen Bot",
         "Galio Bot"
       ],
-      "EventID": 29,
+      "EventID": 66,
       "EventName": "ChampionKill",
-      "EventTime": 1548.00927734375,
-      "KillerName": "Taric Bot",
-      "VictimName": "Shen Bot"
+      "EventTime": 2162.710693359375,
+      "KillerName": "Graves Bot",
+      "VictimName": "Ezreal Bot"
+    },
+    {
+      "EventID": 67,
+      "EventName": "InhibRespawned",
+      "EventTime": 2172.096923828125,
+      "InhibRespawned": "Barracks_T2_R1"
+    },
+    {
+      "Assisters": [
+        "Galio Bot",
+        "Graves Bot"
+      ],
+      "EventID": 68,
+      "EventName": "ChampionKill",
+      "EventTime": 2184.111328125,
+      "KillerName": "Garen Bot",
+      "VictimName": "Alistar Bot"
+    },
+    {
+      "Assisters": [
+        "Garen Bot"
+      ],
+      "EventID": 69,
+      "EventName": "ChampionKill",
+      "EventTime": 2215.88037109375,
+      "KillerName": "Galio Bot",
+      "VictimName": "Annie Bot"
+    },
+    {
+      "Assisters": [
+        "Galio Bot"
+      ],
+      "EventID": 70,
+      "EventName": "InhibKilled",
+      "EventTime": 2224.210205078125,
+      "InhibKilled": "Barracks_T2_R1",
+      "KillerName": "Garen Bot"
+    },
+    {
+      "Assisters": [
+        "Kayle Bot"
+      ],
+      "EventID": 71,
+      "EventName": "ChampionKill",
+      "EventTime": 2233.3759765625,
+      "KillerName": "Ezreal Bot",
+      "VictimName": "Warwick Bot"
     },
     {
       "Assisters": [],
-      "EventID": 30,
+      "EventID": 72,
       "EventName": "TurretKilled",
-      "EventTime": 1554.078369140625,
-      "KillerName": "Shyvana Bot",
+      "EventTime": 2270.055908203125,
+      "KillerName": "Minion_T200L1S73N0479",
+      "TurretKilled": "Turret_T1_C_03_A"
+    },
+    {
+      "Assisters": [],
+      "EventID": 73,
+      "EventName": "InhibKilled",
+      "EventTime": 2299.14892578125,
+      "InhibKilled": "Barracks_T1_C1",
+      "KillerName": "Minion_T200L1S74N0487"
+    },
+    {
+      "Assisters": [
+        "Alistar Bot",
+        "Ezreal Bot",
+        "Kayle Bot"
+      ],
+      "EventID": 74,
+      "EventName": "ChampionKill",
+      "EventTime": 2308.379150390625,
+      "KillerName": "Annie Bot",
+      "VictimName": "Garen Bot"
+    },
+    {
+      "Assisters": [
+        "Garen Bot",
+        "Galio Bot",
+        "Graves Bot"
+      ],
+      "EventID": 75,
+      "EventName": "ChampionKill",
+      "EventTime": 2317.60205078125,
+      "KillerName": "Caitlyn Bot",
+      "VictimName": "Annie Bot"
+    },
+    {
+      "Assisters": [
+        "Alistar Bot",
+        "Kayle Bot",
+        "Annie Bot"
+      ],
+      "EventID": 76,
+      "EventName": "ChampionKill",
+      "EventTime": 2317.662353515625,
+      "KillerName": "Ezreal Bot",
+      "VictimName": "Galio Bot"
+    },
+    {
+      "Assisters": [
+        "Alistar Bot",
+        "Kayle Bot",
+        "Annie Bot"
+      ],
+      "EventID": 77,
+      "EventName": "ChampionKill",
+      "EventTime": 2317.983154296875,
+      "KillerName": "Ezreal Bot",
+      "VictimName": "Graves Bot"
+    },
+    {
+      "EventID": 78,
+      "EventName": "Multikill",
+      "EventTime": 2317.983154296875,
+      "KillStreak": 2,
+      "KillerName": "Ezreal Bot"
+    },
+    {
+      "Assisters": [
+        "Caitlyn Bot",
+        "Garen Bot",
+        "Galio Bot",
+        "Graves Bot"
+      ],
+      "EventID": 79,
+      "EventName": "ChampionKill",
+      "EventTime": 2321.42822265625,
+      "KillerName": "Warwick Bot",
+      "VictimName": "Ezreal Bot"
+    },
+    {
+      "Assisters": [],
+      "EventID": 80,
+      "EventName": "ChampionKill",
+      "EventTime": 2361.12451171875,
+      "KillerName": "Caitlyn Bot",
+      "VictimName": "Kayle Bot"
+    },
+    {
+      "Assisters": [
+        "Alistar Bot"
+      ],
+      "EventID": 81,
+      "EventName": "TurretKilled",
+      "EventTime": 2367.0869140625,
+      "KillerName": "Minion_T200L0S76N0497",
+      "TurretKilled": "Turret_T1_R_03_A"
+    },
+    {
+      "Assisters": [
+        "Caitlyn Bot",
+        "Graves Bot"
+      ],
+      "EventID": 82,
+      "EventName": "ChampionKill",
+      "EventTime": 2424.890380859375,
+      "KillerName": "Warwick Bot",
+      "VictimName": "Annie Bot"
+    },
+    {
+      "Assisters": [
+        "Warwick Bot",
+        "Garen Bot"
+      ],
+      "EventID": 83,
+      "EventName": "ChampionKill",
+      "EventTime": 2436.80419921875,
+      "KillerName": "Graves Bot",
+      "VictimName": "Kayle Bot"
+    },
+    {
+      "Assisters": [
+        "Warwick Bot",
+        "Garen Bot"
+      ],
+      "EventID": 84,
+      "EventName": "ChampionKill",
+      "EventTime": 2438.51611328125,
+      "KillerName": "Graves Bot",
+      "VictimName": "Ezreal Bot"
+    },
+    {
+      "EventID": 85,
+      "EventName": "Multikill",
+      "EventTime": 2438.51611328125,
+      "KillStreak": 2,
+      "KillerName": "Graves Bot"
+    },
+    {
+      "Assisters": [
+        "Warwick Bot",
+        "Garen Bot"
+      ],
+      "EventID": 86,
+      "EventName": "InhibKilled",
+      "EventTime": 2445.610595703125,
+      "InhibKilled": "Barracks_T2_C1",
+      "KillerName": "Graves Bot"
+    },
+    {
+      "Assisters": [],
+      "EventID": 87,
+      "EventName": "ChampionKill",
+      "EventTime": 2454.2548828125,
+      "KillerName": "Alistar Bot",
+      "VictimName": "Caitlyn Bot"
+    },
+    {
+      "Assisters": [
+        "Alistar Bot"
+      ],
+      "EventID": 88,
+      "EventName": "ChampionKill",
+      "EventTime": 2472.524658203125,
+      "KillerName": "pauX",
+      "VictimName": "Warwick Bot"
+    },
+    {
+      "Assisters": [
+        "Ezreal Bot",
+        "Annie Bot"
+      ],
+      "EventID": 89,
+      "EventName": "ChampionKill",
+      "EventTime": 2516.883544921875,
+      "KillerName": "Kayle Bot",
+      "VictimName": "Galio Bot"
+    },
+    {
+      "Assisters": [
+        "Alistar Bot",
+        "Ezreal Bot",
+        "Annie Bot"
+      ],
+      "EventID": 90,
+      "EventName": "ChampionKill",
+      "EventTime": 2522.105712890625,
+      "KillerName": "Kayle Bot",
+      "VictimName": "Garen Bot"
+    },
+    {
+      "EventID": 91,
+      "EventName": "Multikill",
+      "EventTime": 2522.105712890625,
+      "KillStreak": 2,
+      "KillerName": "Kayle Bot"
+    },
+    {
+      "EventID": 92,
+      "EventName": "InhibRespawned",
+      "EventTime": 2524.26611328125,
+      "InhibRespawned": "Barracks_T2_R1"
+    },
+    {
+      "Assisters": [
+        "Warwick Bot",
+        "Graves Bot"
+      ],
+      "EventID": 93,
+      "EventName": "ChampionKill",
+      "EventTime": 2555.96826171875,
+      "KillerName": "Caitlyn Bot",
+      "VictimName": "Annie Bot"
+    },
+    {
+      "Assisters": [
+        "Graves Bot"
+      ],
+      "EventID": 94,
+      "EventName": "ChampionKill",
+      "EventTime": 2558.704345703125,
+      "KillerName": "Warwick Bot",
+      "VictimName": "Ezreal Bot"
+    },
+    {
+      "Assisters": [
+        "pauX"
+      ],
+      "EventID": 95,
+      "EventName": "ChampionKill",
+      "EventTime": 2578.238037109375,
+      "KillerName": "Kayle Bot",
+      "VictimName": "Caitlyn Bot"
+    },
+    {
+      "Assisters": [
+        "pauX"
+      ],
+      "EventID": 96,
+      "EventName": "ChampionKill",
+      "EventTime": 2580.950927734375,
+      "KillerName": "Kayle Bot",
+      "VictimName": "Warwick Bot"
+    },
+    {
+      "EventID": 97,
+      "EventName": "Multikill",
+      "EventTime": 2580.950927734375,
+      "KillStreak": 2,
+      "KillerName": "Kayle Bot"
+    },
+    {
+      "Assisters": [
+        "pauX"
+      ],
+      "EventID": 98,
+      "EventName": "ChampionKill",
+      "EventTime": 2583.221923828125,
+      "KillerName": "Kayle Bot",
+      "VictimName": "Graves Bot"
+    },
+    {
+      "EventID": 99,
+      "EventName": "Multikill",
+      "EventTime": 2583.221923828125,
+      "KillStreak": 3,
+      "KillerName": "Kayle Bot"
+    },
+    {
+      "EventID": 100,
+      "EventName": "InhibRespawned",
+      "EventTime": 2599.18896484375,
+      "InhibRespawned": "Barracks_T1_C1"
+    },
+    {
+      "Assisters": [
+        "Alistar Bot",
+        "Kayle Bot"
+      ],
+      "EventID": 101,
+      "EventName": "ChampionKill",
+      "EventTime": 2619.156982421875,
+      "KillerName": "pauX",
+      "VictimName": "Galio Bot"
+    },
+    {
+      "Assisters": [
+        "pauX",
+        "Alistar Bot",
+        "Kayle Bot"
+      ],
+      "EventID": 102,
+      "EventName": "ChampionKill",
+      "EventTime": 2652.788818359375,
+      "KillerName": "Ezreal Bot",
+      "VictimName": "Warwick Bot"
+    },
+    {
+      "Assisters": [
+        "pauX",
+        "Alistar Bot",
+        "Kayle Bot"
+      ],
+      "EventID": 103,
+      "EventName": "ChampionKill",
+      "EventTime": 2659.195556640625,
+      "KillerName": "Ezreal Bot",
+      "VictimName": "Caitlyn Bot"
+    },
+    {
+      "EventID": 104,
+      "EventName": "Multikill",
+      "EventTime": 2659.195556640625,
+      "KillStreak": 2,
+      "KillerName": "Ezreal Bot"
+    },
+    {
+      "Assisters": [
+        "pauX"
+      ],
+      "EventID": 105,
+      "EventName": "InhibKilled",
+      "EventTime": 2665.697998046875,
+      "InhibKilled": "Barracks_T1_C1",
+      "KillerName": "Ezreal Bot"
+    },
+    {
+      "Assisters": [],
+      "EventID": 106,
+      "EventName": "ChampionKill",
+      "EventTime": 2686.52197265625,
+      "KillerName": "Graves Bot",
+      "VictimName": "Annie Bot"
+    },
+    {
+      "Assisters": [
+        "pauX",
+        "Alistar Bot",
+        "Kayle Bot"
+      ],
+      "EventID": 107,
+      "EventName": "ChampionKill",
+      "EventTime": 2698.522216796875,
+      "KillerName": "Ezreal Bot",
+      "VictimName": "Galio Bot"
+    },
+    {
+      "Assisters": [
+        "Warwick Bot",
+        "Garen Bot"
+      ],
+      "EventID": 108,
+      "EventName": "ChampionKill",
+      "EventTime": 2721.793212890625,
+      "KillerName": "Graves Bot",
+      "VictimName": "Kayle Bot"
+    },
+    {
+      "Assisters": [
+        "Caitlyn Bot",
+        "Garen Bot",
+        "Graves Bot"
+      ],
+      "EventID": 109,
+      "EventName": "ChampionKill",
+      "EventTime": 2728.26220703125,
+      "KillerName": "Warwick Bot",
+      "VictimName": "Alistar Bot"
+    },
+    {
+      "Assisters": [
+        "Caitlyn Bot",
+        "Graves Bot"
+      ],
+      "EventID": 110,
+      "EventName": "ChampionKill",
+      "EventTime": 2743.193359375,
+      "KillerName": "Garen Bot",
+      "VictimName": "pauX"
+    },
+    {
+      "EventID": 111,
+      "EventName": "InhibRespawned",
+      "EventTime": 2745.6591796875,
+      "InhibRespawned": "Barracks_T2_C1"
+    },
+    {
+      "Assisters": [
+        "Graves Bot"
+      ],
+      "EventID": 112,
+      "EventName": "ChampionKill",
+      "EventTime": 2780.786865234375,
+      "KillerName": "Garen Bot",
+      "VictimName": "Annie Bot"
+    },
+    {
+      "Assisters": [
+        "Warwick Bot",
+        "Garen Bot"
+      ],
+      "EventID": 113,
+      "EventName": "ChampionKill",
+      "EventTime": 2782.485107421875,
+      "KillerName": "Graves Bot",
+      "VictimName": "Ezreal Bot"
+    },
+    {
+      "Acer": "Graves Bot",
+      "AcingTeam": "ORDER",
+      "EventID": 114,
+      "EventName": "Ace",
+      "EventTime": 2782.485107421875
+    },
+    {
+      "Assisters": [
+        "Warwick Bot",
+        "Garen Bot",
+        "Graves Bot"
+      ],
+      "EventID": 115,
+      "EventName": "InhibKilled",
+      "EventTime": 2785.26220703125,
+      "InhibKilled": "Barracks_T2_C1",
+      "KillerName": "Caitlyn Bot"
+    },
+    {
+      "Assisters": [
+        "Caitlyn Bot",
+        "Galio Bot"
+      ],
+      "EventID": 116,
+      "EventName": "ChampionKill",
+      "EventTime": 2836.099853515625,
+      "KillerName": "Garen Bot",
+      "VictimName": "Kayle Bot"
+    },
+    {
+      "Assisters": [],
+      "EventID": 117,
+      "EventName": "InhibKilled",
+      "EventTime": 2848.8330078125,
+      "InhibKilled": "Barracks_T2_R1",
+      "KillerName": "Minion_T100L0S92N0610"
+    },
+    {
+      "Assisters": [],
+      "EventID": 118,
+      "EventName": "TurretKilled",
+      "EventTime": 2858.85888671875,
+      "KillerName": "Minion_T100L1S92N0614",
+      "TurretKilled": "Turret_T2_C_01_A"
+    },
+    {
+      "Assisters": [
+        "pauX",
+        "Ezreal Bot",
+        "Annie Bot"
+      ],
+      "EventID": 119,
+      "EventName": "ChampionKill",
+      "EventTime": 2864.664306640625,
+      "KillerName": "Alistar Bot",
+      "VictimName": "Galio Bot"
+    },
+    {
+      "Assisters": [
+        "pauX",
+        "Alistar Bot"
+      ],
+      "EventID": 120,
+      "EventName": "ChampionKill",
+      "EventTime": 2879.23779296875,
+      "KillerName": "Ezreal Bot",
+      "VictimName": "Warwick Bot"
+    },
+    {
+      "Assisters": [],
+      "EventID": 121,
+      "EventName": "ChampionKill",
+      "EventTime": 2880.21826171875,
+      "KillerName": "Ezreal Bot",
+      "VictimName": "Caitlyn Bot"
+    },
+    {
+      "EventID": 122,
+      "EventName": "Multikill",
+      "EventTime": 2880.21826171875,
+      "KillStreak": 2,
+      "KillerName": "Ezreal Bot"
+    },
+    {
+      "Assisters": [
+        "pauX",
+        "Ezreal Bot"
+      ],
+      "EventID": 123,
+      "EventName": "ChampionKill",
+      "EventTime": 2914.76953125,
+      "KillerName": "Alistar Bot",
+      "VictimName": "Graves Bot"
+    },
+    {
+      "Assisters": [
+        "Alistar Bot",
+        "Ezreal Bot",
+        "Kayle Bot"
+      ],
+      "EventID": 124,
+      "EventName": "ChampionKill",
+      "EventTime": 2941.196533203125,
+      "KillerName": "pauX",
+      "VictimName": "Garen Bot"
+    },
+    {
+      "EventID": 125,
+      "EventName": "InhibRespawned",
+      "EventTime": 2965.736572265625,
+      "InhibRespawned": "Barracks_T1_C1"
+    },
+    {
+      "Assisters": [
+        "Alistar Bot",
+        "Ezreal Bot",
+        "Kayle Bot"
+      ],
+      "EventID": 126,
+      "EventName": "ChampionKill",
+      "EventTime": 2975.941162109375,
+      "KillerName": "pauX",
+      "VictimName": "Warwick Bot"
+    },
+    {
+      "Assisters": [],
+      "EventID": 127,
+      "EventName": "TurretKilled",
+      "EventTime": 2983.81005859375,
+      "KillerName": "Minion_T200L2S96N0642",
       "TurretKilled": "Turret_T1_L_02_A"
     },
     {
       "Assisters": [
-        "Leona Bot",
-        "Galio Bot",
-        "Brand Bot"
+        "pauX",
+        "Ezreal Bot"
       ],
-      "EventID": 31,
+      "EventID": 128,
+      "EventName": "InhibKilled",
+      "EventTime": 2986.522705078125,
+      "InhibKilled": "Barracks_T1_C1",
+      "KillerName": "Alistar Bot"
+    },
+    {
+      "Assisters": [
+        "Galio Bot"
+      ],
+      "EventID": 129,
       "EventName": "ChampionKill",
-      "EventTime": 1648.7867431640625,
-      "KillerName": "Taric Bot",
-      "VictimName": "pauX"
+      "EventTime": 2992.401611328125,
+      "KillerName": "Caitlyn Bot",
+      "VictimName": "Alistar Bot"
     },
     {
       "Assisters": [],
-      "EventID": 32,
+      "EventID": 130,
       "EventName": "ChampionKill",
-      "EventTime": 1686.095458984375,
-      "KillerName": "Morgana Bot",
-      "VictimName": "Shyvana Bot"
+      "EventTime": 3029.388671875,
+      "KillerName": "pauX",
+      "VictimName": "Galio Bot"
+    },
+    {
+      "Assisters": [
+        "Annie Bot"
+      ],
+      "EventID": 131,
+      "EventName": "ChampionKill",
+      "EventTime": 3037.875,
+      "KillerName": "Kayle Bot",
+      "VictimName": "Garen Bot"
+    },
+    {
+      "Assisters": [
+        "Kayle Bot",
+        "Annie Bot"
+      ],
+      "EventID": 132,
+      "EventName": "ChampionKill",
+      "EventTime": 3043.713134765625,
+      "KillerName": "pauX",
+      "VictimName": "Graves Bot"
+    },
+    {
+      "Assisters": [
+        "Kayle Bot",
+        "Annie Bot"
+      ],
+      "EventID": 133,
+      "EventName": "ChampionKill",
+      "EventTime": 3057.285400390625,
+      "KillerName": "pauX",
+      "VictimName": "Caitlyn Bot"
+    },
+    {
+      "EventID": 134,
+      "EventName": "InhibRespawned",
+      "EventTime": 3085.321533203125,
+      "InhibRespawned": "Barracks_T2_C1"
+    },
+    {
+      "Assisters": [],
+      "EventID": 135,
+      "EventName": "TurretKilled",
+      "EventTime": 3101.001953125,
+      "KillerName": "pauX",
+      "TurretKilled": "Turret_T1_C_01_A"
+    },
+    {
+      "EventID": 136,
+      "EventName": "InhibRespawned",
+      "EventTime": 3148.87890625,
+      "InhibRespawned": "Barracks_T2_R1"
+    },
+    {
+      "Assisters": [
+        "Caitlyn Bot",
+        "Warwick Bot"
+      ],
+      "EventID": 137,
+      "EventName": "ChampionKill",
+      "EventTime": 3189.83984375,
+      "KillerName": "Galio Bot",
+      "VictimName": "Ezreal Bot"
+    },
+    {
+      "Assisters": [],
+      "EventID": 138,
+      "EventName": "ChampionKill",
+      "EventTime": 3198.913330078125,
+      "KillerName": "Graves Bot",
+      "VictimName": "Kayle Bot"
+    },
+    {
+      "Assisters": [],
+      "EventID": 139,
+      "EventName": "InhibKilled",
+      "EventTime": 3212.032470703125,
+      "InhibKilled": "Barracks_T2_C1",
+      "KillerName": "Caitlyn Bot"
+    },
+    {
+      "Assisters": [],
+      "EventID": 140,
+      "EventName": "ChampionKill",
+      "EventTime": 3217.659912109375,
+      "KillerName": "pauX",
+      "VictimName": "Caitlyn Bot"
+    },
+    {
+      "Assisters": [],
+      "EventID": 141,
+      "EventName": "TurretKilled",
+      "EventTime": 3258.4169921875,
+      "KillerName": "Minion_T200L0S105N0702",
+      "TurretKilled": "Turret_T1_R_02_A"
+    },
+    {
+      "Assisters": [],
+      "EventID": 142,
+      "EventName": "ChampionKill",
+      "EventTime": 3260.562744140625,
+      "KillerName": "pauX",
+      "VictimName": "Galio Bot"
+    },
+    {
+      "EventID": 143,
+      "EventName": "InhibRespawned",
+      "EventTime": 3286.54052734375,
+      "InhibRespawned": "Barracks_T1_C1"
+    },
+    {
+      "Assisters": [
+        "Graves Bot"
+      ],
+      "EventID": 144,
+      "EventName": "ChampionKill",
+      "EventTime": 3294.11865234375,
+      "KillerName": "Warwick Bot",
+      "VictimName": "Annie Bot"
+    },
+    {
+      "Assisters": [
+        "pauX",
+        "Alistar Bot",
+        "Kayle Bot",
+        "Annie Bot"
+      ],
+      "EventID": 145,
+      "EventName": "ChampionKill",
+      "EventTime": 3299.635009765625,
+      "KillerName": "Ezreal Bot",
+      "VictimName": "Warwick Bot"
+    },
+    {
+      "Assisters": [
+        "Garen Bot"
+      ],
+      "EventID": 146,
+      "EventName": "ChampionKill",
+      "EventTime": 3308.0126953125,
+      "KillerName": "Caitlyn Bot",
+      "VictimName": "Alistar Bot"
+    },
+    {
+      "Assisters": [],
+      "EventID": 147,
+      "EventName": "TurretKilled",
+      "EventTime": 3313.8046875,
+      "KillerName": "Minion_T100L2S107N0716",
+      "TurretKilled": "Turret_T2_L_02_A"
+    },
+    {
+      "Assisters": [
+        "pauX",
+        "Alistar Bot",
+        "Ezreal Bot"
+      ],
+      "EventID": 148,
+      "EventName": "ChampionKill",
+      "EventTime": 3321.37646484375,
+      "KillerName": "Kayle Bot",
+      "VictimName": "Caitlyn Bot"
+    },
+    {
+      "Assisters": [
+        "pauX",
+        "Ezreal Bot"
+      ],
+      "EventID": 149,
+      "EventName": "ChampionKill",
+      "EventTime": 3333.93603515625,
+      "KillerName": "Kayle Bot",
+      "VictimName": "Graves Bot"
+    },
+    {
+      "Assisters": [
+        "pauX",
+        "Kayle Bot"
+      ],
+      "EventID": 150,
+      "EventName": "InhibKilled",
+      "EventTime": 3344.216796875,
+      "InhibKilled": "Barracks_T1_C1",
+      "KillerName": "Ezreal Bot"
+    },
+    {
+      "Assisters": [],
+      "EventID": 151,
+      "EventName": "TurretKilled",
+      "EventTime": 3355.820556640625,
+      "KillerName": "Minion_T100L2S108N0725",
+      "TurretKilled": "Turret_T2_L_01_A"
+    },
+    {
+      "Assisters": [
+        "pauX"
+      ],
+      "EventID": 152,
+      "EventName": "TurretKilled",
+      "EventTime": 3365.218994140625,
+      "KillerName": "Ezreal Bot",
+      "TurretKilled": "Turret_T1_C_02_A"
+    },
+    {
+      "Assisters": [
+        "Garen Bot"
+      ],
+      "EventID": 153,
+      "EventName": "ChampionKill",
+      "EventTime": 3385.704833984375,
+      "KillerName": "Warwick Bot",
+      "VictimName": "Ezreal Bot"
+    },
+    {
+      "EventID": 154,
+      "EventName": "GameEnd",
+      "EventTime": 3406.391845703125,
+      "Result": "Win"
     }
   ],
-  "gameId": "6966720372"
+  "gameId": "6970255666"
 }

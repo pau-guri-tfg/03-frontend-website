@@ -19,7 +19,7 @@ export function getTimelineIcon(eventName: GameEventName, teamName: GameTeamName
     case "TurretKilled":
       return teamName === "ORDER" ? towerRed : towerBlue;
     case "InhibKilled":
-      return teamName === "ORDER" ? inhibitorBlue : inhibitorRed;
+      return teamName === "ORDER" ? inhibitorRed : inhibitorBlue;
     case "DragonKill":
       return teamName === "ORDER" ? dragonBlue : dragonRed;
     case "HeraldKill":

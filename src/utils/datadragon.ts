@@ -29,6 +29,9 @@ export function getItemImage(itemId: number) {
 }
 
 export function getSpellImage(spellName: string) {
+  // "Unleashed Teleport" fix
+  if (spellName === "Unleashed Teleport") spellName = "Teleport";
+
   const spellData = Object.values((Spells as Riot.DataDragon.SummonerSpellDto).data).find(spell => spell.name === spellName);
   if (!spellData) return "";
 
