@@ -115,6 +115,12 @@ type GameBuilding = | {
   lane: GameLane;
 };
 
+type ChampionDocument = {
+  championName: string;
+  count: number;
+  players: GamePlayer[];
+}
+
 namespace Riot {
   namespace Summoner {
     type AccountDto = {

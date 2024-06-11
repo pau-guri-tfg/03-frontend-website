@@ -1,5 +1,7 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { getChampionImageFromName, getItemImage, getSpellImage } from '../utils/datadragon';
 import Flasher from './Flasher';
+import { faRobot } from '@fortawesome/free-solid-svg-icons';
 
 export default function PlayerCard({ player, boxed = false }: { player: GamePlayer, boxed?: boolean }) {
   const wardItem = player.items.find(item => item.slot === 6);
@@ -20,7 +22,10 @@ export default function PlayerCard({ player, boxed = false }: { player: GamePlay
           </div>
         </Flasher>
         <div className='flex flex-col gap-1'>
-          <h3 className='text-lg leading-none transition-colors border-b border-transparent group-hover:border-gold group-hover:text-gold'>{player.riotId ? player.riotIdGameName : player.summonerName}</h3>
+          <div className='flex items-center gap-2 w-fit'>
+            <h3 className='text-lg leading-none transition-colors border-b border-transparent group-hover:border-gold group-hover:text-gold'>{player.riotId ? player.riotIdGameName : player.summonerName}</h3>
+            {player.isBot && <FontAwesomeIcon icon={faRobot} title="Bot" className='w-3 h-3 text-white/40' />}
+          </div>
           <span className='text-sm leading-none text-white/40'>{player.championName}</span>
         </div>
       </div>

@@ -5,8 +5,7 @@ import { Flip } from 'gsap/all';
 import useBlink from '../utils/useBlink';
 
 export default function LiveLabel({ updateTime }: { updateTime: number }) {
-
-  const liveDot = useBlink();
+  const liveDot = useBlink(updateTime > 0);
 
   const container = useRef<HTMLDivElement>(null);
   gsap.registerPlugin(Flip);
@@ -37,7 +36,7 @@ export default function LiveLabel({ updateTime }: { updateTime: number }) {
       onPointerLeave={handlePointerLeave}
       className='flex items-center gap-2.5 border border-purple rounded-full p-3 select-none overflow-hidden'
     >
-      <div ref={liveDot} className='w-3 h-3 rounded-full bg-purple shrink-0' />
+      <div ref={liveDot} className={'w-3 h-3 rounded-full border shrink-0' + (updateTime <= 0 ? " border-purple" : " border-transparent bg-purple")} />
       <span className='leading-none text-purple whitespace-nowrap'>{text}</span>
     </div>
   )
