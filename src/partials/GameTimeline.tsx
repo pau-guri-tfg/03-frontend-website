@@ -7,6 +7,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlassMinus, faMagnifyingGlassPlus } from "@fortawesome/free-solid-svg-icons";
+import getWinningTeam from "../utils/getWinningTeam";
 
 export default function GameTimeline({ events, players, gameTime, title = "", container = false }: { events: GameEvent[], players: GamePlayer[], gameTime: number, title?: string, container?: boolean }) {
   const zoomLevel = useRef<number>(1);
@@ -17,9 +18,11 @@ export default function GameTimeline({ events, players, gameTime, title = "", co
   const hiddenEvents = ["GameStart", "MinionsSpawning", "FirstBrick", "FirstBlood", "InhibRespawned"];
   events = events.filter(event => !hiddenEvents.includes(event.EventName));
 
-  const getEventTeam = (event: GameEvent): GameTeamName => {
-    let team: GameTeamName = "ORDER";
-    if (event.TurretKilled) {
+  const getEventTeam = (event: GameEvent): GameTeamName | null => {
+    let team: GameTeamName | null = null;
+    if (event.Result) {
+      team = getWinningTeam(event.Result, players);
+    } else if (event.TurretKilled) {
       const turret = identifyBuilding(event.TurretKilled);
       if (turret) {
         team = turret.team;
@@ -96,14 +99,17 @@ export default function GameTimeline({ events, players, gameTime, title = "", co
           <div className="w-full py-2 overflow-x-auto border-l border-r timeline-scroll-div border-gold" ref={scrollDiv} onScroll={updateShownRange}>
             <div className="relative h-12 overflow-hidden" ref={scrollContent}>
               {events.map((event, index) => {
+                const team = getEventTeam(event);
+                if (!team) return;
+
                 if (event.EventName === "ChampionKill" || event.EventName === "Multikill") {
                   return (
-                    <div key={index} className={("absolute h-full w-px ") + (getEventTeam(event) === "ORDER" ? "bg-riot-blue" : "bg-riot-red")} style={{ left: (event.EventTime / gameTime * 100).toString() + "%" }}></div>
+                    <div key={index} className={("absolute h-full w-px ") + (team === "ORDER" ? "bg-riot-blue" : "bg-riot-red")} style={{ left: (event.EventTime / gameTime * 100).toString() + "%" }}></div>
                   )
                 } else {
                   return (
                     <div key={index} className="absolute w-8 h-8 -translate-x-1/2 top-2" style={{ left: (event.EventTime / gameTime * 100).toString() + "%" }}>
-                      <img src={getTimelineIcon(event.EventName, getEventTeam(event)) ?? ''} alt={event.EventName} />
+                      <img src={getTimelineIcon(event.EventName, team) ?? ''} alt={event.EventName} />
                     </div>
                   )
                 }

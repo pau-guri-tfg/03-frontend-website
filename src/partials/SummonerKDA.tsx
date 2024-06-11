@@ -67,7 +67,7 @@ export default function SummonerKDA({ summoner = null }: { summoner?: Riot.Summo
       <div className="w-52 aspect-square">
         <ResponsiveContainer width={'100%'} height={'100%'}>
           <PieChart>
-            <Tooltip content={<CustomTooltip />} />
+            {/* <Tooltip content={<CustomTooltip />} /> */}
             <Pie
               data={chartData}
               dataKey="value"
@@ -82,7 +82,7 @@ export default function SummonerKDA({ summoner = null }: { summoner?: Riot.Summo
               label={renderCustomLabel}
             >
               {chartData.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={entry.color} />
+                <Cell onPointerEnter={() => console.log("Enter", entry.name)} onPointerLeave={() => console.log("Leave", entry.name)} key={`cell-${index}`} fill={entry.color} />
               ))}
             </Pie>
           </PieChart>
@@ -92,17 +92,17 @@ export default function SummonerKDA({ summoner = null }: { summoner?: Riot.Summo
   )
 }
 
-const CustomTooltip = ({ active, payload, label }: any) => {
-  if (active && payload && payload.length) {
-    return (
-      <div className="flex gap-3 p-3 bg-dark-blue rounded-3xl">
-        <span className="label text-white/40">{label}</span>
-        <div>
-          <span className='font-serif text-xl font-bold'>{payload[0].value}</span> <span>{payload[0].payload.tooltipText}</span>
-        </div>
-      </div>
-    );
-  }
+// const CustomTooltip = ({ active, payload, label }: any) => {
+//   if (active && payload && payload.length) {
+//     return (
+//       <div className="flex gap-3 p-3 bg-dark-blue rounded-3xl">
+//         <span className="label text-white/40">{label}</span>
+//         <div>
+//           <span className='font-serif text-xl font-bold'>{payload[0].value}</span> <span>{payload[0].payload.tooltipText}</span>
+//         </div>
+//       </div>
+//     );
+//   }
 
-  return null;
-};
+//   return null;
+// };

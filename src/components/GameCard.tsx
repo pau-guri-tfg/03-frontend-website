@@ -7,12 +7,13 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import PlayerList from '../partials/PlayerList';
+import getWinningTeam from '../utils/getWinningTeam';
 
 export default function GameCard({ gamedata, players, events }: { players: GamePlayer[], gamedata: GameData, events: GameEvent[] }) {
   const { orderScore, chaosScore } = useTeamScore(players);
   const [formattedStartTime, setFormattedStartTime] = useState<string>("");
   const [formatedGameTime, setFormatedGameTime] = useState<string>("");
-  //const [winner, setWinner] = useState<GameTeamName | null>(null);
+  const [winningTeam, setWinningTeam] = useState<GameTeamName | null>(null);
 
   useEffect(() => {
     if (!gamedata) return;
@@ -21,14 +22,14 @@ export default function GameCard({ gamedata, players, events }: { players: GameP
     setFormatedGameTime(formatDuration(gamedata.gameTime));
   }, [gamedata]);
 
-  // fetch Riot API to see who won (xd)
-  // useEffect(() => {
-  //   if (!gamedata) return;
-  //   fetchMatch(gamedata.gameId).then(res => {
-  //     console.log(res.data);
-  //     setWinner(res.data.info.teams.find(team => team.win)!.teamId as GameTeamName);
-  //   });
-  // }, [gamedata]);
+  useEffect(() => {
+    if (!events || !players) return;
+
+    const gameEndEvent = events.find(event => event.EventName === "GameEnd");
+    if (gameEndEvent && gameEndEvent.Result) {
+      setWinningTeam(getWinningTeam(gameEndEvent.Result, players));
+    }
+  }, [events, players]);
 
   const expandable = useRef<HTMLDivElement>(null);
   const expandableChevron = useRef<SVGSVGElement>(null);
@@ -56,9 +57,9 @@ export default function GameCard({ gamedata, players, events }: { players: GameP
           <FontAwesomeIcon ref={expandableChevron} icon={faChevronDown} className='text-white transition-colors group-hover:text-gold' />
         </div>
         <div className='flex justify-center items-center gap-2.5'>
-          <span className='font-serif text-5xl font-bold leading-none text-riot-blue'>{orderScore}</span>
+          <span className={'font-serif text-5xl font-bold leading-none text-riot-blue' + (winningTeam && winningTeam === "CHAOS" ? ' opacity-40' : '')}>{orderScore}</span>
           <span className='text-lg leading-none text-white/40'>vs</span>
-          <span className='font-serif text-5xl font-bold leading-none text-riot-red'>{chaosScore}</span>
+          <span className={'font-serif text-5xl font-bold leading-none text-riot-red' + (winningTeam && winningTeam === "ORDER" ? ' opacity-40' : '')}>{chaosScore}</span>
         </div>
         <div className='flex flex-col items-end'>
           <span className='font-serif text-xl font-bold'>{formatedGameTime}</span>
