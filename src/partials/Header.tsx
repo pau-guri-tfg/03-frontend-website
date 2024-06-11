@@ -17,7 +17,7 @@ export default function Header() {
               " bg-purple group-hover:bg-gold" + (window.location.pathname === "/" ? " !bg-gold" : "")
             )
           } />
-          <span className={"transition-colors border-b border-transparent hover:border-gold group-hover:text-gold" + (window.location.pathname === "/" ? " !text-gold" : "")}>LIVE MATCH</span>
+          <span className={"transition-colors border-b border-transparent group-hover:border-gold group-hover:text-gold" + (window.location.pathname === "/" ? " !text-gold" : "")}>LIVE MATCH</span>
         </a>
         <a href='/matches' className={'text-white transition-colors border-b border-transparent hover:border-gold hover:text-gold' + (window.location.pathname === "/matches" ? " !text-gold" : "")}>MATCHES</a>
         <a href='/champions' className={'text-white transition-colors border-b border-transparent hover:border-gold hover:text-gold' + (window.location.pathname === "/champions" ? " !text-gold" : "")}>CHAMPIONS</a>
