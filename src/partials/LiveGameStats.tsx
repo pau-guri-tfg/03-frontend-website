@@ -12,15 +12,6 @@ export default function LiveGameStats({ players, gamedata, events, lastUpdate }:
   const { orderScore, chaosScore } = useTeamScore(players);
   const [globalTurretScore, setGlobalTurretScore] = useState<[number, number]>([0, 0]);
   const [winningTeam, setWinningTeam] = useState<GameTeamName | null>(null);
-  const [formattedStartTime, setFormattedStartTime] = useState<string>("");
-  const [formatedGameTime, setFormatedGameTime] = useState<string>("");
-
-  useEffect(() => {
-    if (!gamedata) return;
-
-    setFormattedStartTime(formatTime(gamedata.gameStartTime));
-    setFormatedGameTime(formatDuration(gamedata.gameTime));
-  }, [gamedata]);
 
   useEffect(() => {
     if (!events || events.length === 0) return;
@@ -41,11 +32,11 @@ export default function LiveGameStats({ players, gamedata, events, lastUpdate }:
         <div className='flex items-center justify-between w-full gap-6'>
           <div className='flex items-center gap-6'>
             <h1 className='font-serif text-5xl font-semibold capitalize text-gold'>{gamedata.gameMode.toLowerCase()}</h1>
-            <LiveLabel updateTime={lastUpdate} />
+            <LiveLabel enableHover updateTime={lastUpdate} />
           </div>
           <div className='flex flex-col items-end'>
-            <span className='font-serif text-2xl font-bold'>{formatedGameTime}</span>
-            <span className='text-right text-white/40'>started at {formattedStartTime}</span>
+            <span className='font-serif text-2xl font-bold'>{formatDuration(gamedata.gameTime)}</span>
+            <span className='text-right text-white/40'>started at {formatTime(gamedata.gameStartTime)}</span>
           </div>
         </div>
         <div className='flex items-center justify-between gap-3 w-full max-w-[400px] mx-auto'>

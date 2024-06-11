@@ -4,7 +4,7 @@ import { useCallback, useRef, useState } from 'react'
 import { Flip } from 'gsap/all';
 import useBlink from '../utils/useBlink';
 
-export default function LiveLabel({ updateTime }: { updateTime: number }) {
+export default function LiveLabel({ updateTime, enableHover = false }: { updateTime: number, enableHover?: boolean }) {
   const liveDot = useBlink(updateTime > 0);
 
   const container = useRef<HTMLDivElement>(null);
@@ -13,13 +13,15 @@ export default function LiveLabel({ updateTime }: { updateTime: number }) {
   const [timeShown, setTimeShown] = useState<boolean>(false);
 
   const handlePointerEnter = useCallback(() => {
-    if (updateTime <= 0) return;
+    if (updateTime <= 0 || !enableHover) return;
 
     flipState = Flip.getState(container.current);
     setTimeShown(true);
   }, [updateTime]);
 
   const handlePointerLeave = () => {
+    if (!enableHover) return;
+
     flipState = Flip.getState(container.current);
     setTimeShown(false);
   }

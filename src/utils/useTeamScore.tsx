@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 
-export default function useTeamScore(players: GamePlayer[]) {
+export default function useTeamScore(players?: GamePlayer[] | null) {
   const [orderScore, setOrderScore] = React.useState<number | string>("-");
   const [chaosScore, setChaosScore] = React.useState<number | string>("-");
 
