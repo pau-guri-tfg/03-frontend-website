@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { getChampionDataFromName, getChampionImageFromName } from '../utils/datadragon';
 
 export default function ChampionCard({ champion, totalGames }: { champion: ChampionDocument, totalGames: number }) {

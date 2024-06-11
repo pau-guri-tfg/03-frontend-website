@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react"
-import { fetchGamesByChampionEndpoint } from "../utils/gamesDatabase"
 import ChampionList from "../partials/ChampionList";
 
 export default function Champions() {
