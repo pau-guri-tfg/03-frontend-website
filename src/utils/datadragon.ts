@@ -1,10 +1,16 @@
-import axios from "axios";
 import Spells from "../data/spells.json";
 import Champions from "../data/champions.json";
 
-export async function getChampionData(championId: string) {
-  const response = await axios.get<Riot.DataDragon.ChampionDto>(`https://ddragon.leagueoflegends.com/cdn/${import.meta.env.VITE_DATA_DRAGON_API_VERSION}/data/en_US/champion/${championId}.json`);
-  return response.data;
+export function getChampionDataFromName(championName: string) {
+  const championData = Object.values((Champions as Riot.DataDragon.ChampionDto).data).find(champion => champion.name === championName);
+  if (!championData) return null;
+  return championData;
+}
+
+export function getChampionDataFromId(championId: string) {
+  const championData = Object.values((Champions as Riot.DataDragon.ChampionDto).data).find(champion => champion.key === championId);
+  if (!championData) return null;
+  return championData;
 }
 
 export function getChampionImageFromId(championId: string) {

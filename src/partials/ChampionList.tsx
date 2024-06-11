@@ -8,7 +8,7 @@ export default function ChampionList({ title = "" }: { title?: string }) {
   const [totalGames, setTotalGames] = useState<number>(0);
 
   useEffect(() => {
-    fetchGamesByChampionEndpoint("all", "players").then((res) => {
+    fetchGamesByChampionEndpoint("all", "players", 20).then((res) => {
       setChampions(res.data);
     });
     fetchGameEndpoint("all", "gamedata").then((res) => {

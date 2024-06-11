@@ -11,9 +11,9 @@ type ChartData = {
 
 export default function SummonerKDA({ summoner = null }: { summoner?: Riot.Summoner.SummonerDto | null }) {
   const [chartData, setChartData] = useState<ChartData>([
-    { name: 'Kills', value: null, color: '#0096A8', tooltipText: 'kills' },
-    { name: 'Deaths', value: null, color: '#C62139', tooltipText: 'deaths' },
-    { name: 'Assists', value: null, color: '#f97316', tooltipText: 'assists' },
+    { name: 'kills', value: null, color: '#0096A8', tooltipText: 'kills' },
+    { name: 'deaths', value: null, color: '#C62139', tooltipText: 'deaths' },
+    { name: 'assists', value: null, color: '#f97316', tooltipText: 'assists' },
   ]);
 
   useEffect(() => {
@@ -30,9 +30,9 @@ export default function SummonerKDA({ summoner = null }: { summoner?: Riot.Summo
           a += player.scores.assists;
         });
         setChartData([
-          { name: 'Kills', value: k, color: '#0096A8', tooltipText: 'kills' },
-          { name: 'Deaths', value: d, color: '#C62139', tooltipText: 'deaths' },
-          { name: 'Assists', value: a, color: '#f97316', tooltipText: 'assists' },
+          { name: 'kills', value: k, color: '#0096A8', tooltipText: 'kills' },
+          { name: 'deaths', value: d, color: '#C62139', tooltipText: 'deaths' },
+          { name: 'assists', value: a, color: '#f97316', tooltipText: 'assists' },
         ]);
       });
   }, [summoner])
