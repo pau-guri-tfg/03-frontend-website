@@ -44,7 +44,7 @@ export default function PlayerCard({ player, boxed = false }: { player: GamePlay
         </div>
         <div className='flex flex-col items-center gap-1'>
           <span className='text-sm text-white/40'>VS</span>
-          <Flasher className='font-serif text-lg font-bold leading-none'>{player.scores.wardScore}</Flasher>
+          <Flasher className='font-serif text-lg font-bold leading-none'>{Math.round(player.scores.wardScore)}</Flasher>
         </div>
       </div>
 

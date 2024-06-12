@@ -78,7 +78,7 @@ type GamePlayer = {
   puuid?: string;
   summonerId?: string;
   profileIconId?: number;
-  isLocalPlayer: boolean;
+  isLocalPlayer?: boolean;
   gameId: string;
 };
 
