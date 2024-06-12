@@ -6,6 +6,8 @@ import GameList from '../partials/GameList';
 import SummonerKDA from '../partials/SummonerKDA';
 import LiveGamePopup from '../components/LiveGamePopup';
 import { registerVisit } from '../utils/visitorsDatabase';
+import Header from '../partials/Header';
+import { DataReceiver } from '../DataReceiver';
 
 export default function Summoner() {
   const { gameName, tagLine } = useParams();
@@ -33,13 +35,16 @@ export default function Summoner() {
   }, [gameName, tagLine])
 
   return (
-    <main className='flex flex-col gap-8 py-14'>
-      <SummonerHeader summoner={summoner} gameName={correctGameName} tagLine={tagLine} />
-      <SummonerKDA summoner={summoner} />
-      {summoner &&
-        <GameList title='Last matches' limit={5} summonerId={summoner.id} />
-      }
-      <LiveGamePopup />
-    </main>
+    <DataReceiver>
+      <Header />
+      <main className='flex flex-col gap-8 py-14'>
+        <SummonerHeader summoner={summoner} gameName={correctGameName} tagLine={tagLine} />
+        <SummonerKDA summoner={summoner} />
+        {summoner &&
+          <GameList title='Last matches' limit={5} summonerId={summoner.id} />
+        }
+        <LiveGamePopup />
+      </main>
+    </DataReceiver>
   )
 }

@@ -1,11 +1,10 @@
 import './App.css'
-import { DataReceiver } from './DataReceiver';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Home from './screens/Home';
 import Matches from './screens/Matches';
 import Champions from './screens/Champions';
 import Summoner from './screens/Summoner';
-import Header from './partials/Header';
+import AdminHome from './screens/AdminHome';
 
 function App() {
 
@@ -25,17 +24,15 @@ function App() {
     {
       path: '/summoner/:gameName/:tagLine',
       element: <Summoner />,
+    },
+    {
+      path: '/admin',
+      element: <AdminHome />,
     }
   ])
 
   return (
-    <DataReceiver>
-      <Header />
-      <RouterProvider router={router} />
-      {/* <main>
-        <GameTimeline events={Events.Events as GameEvent[]} players={[]} gameTime={1363} />
-      </main> */}
-    </DataReceiver>
+    <RouterProvider router={router} />
   )
 }
 

@@ -24,6 +24,9 @@ export default {
         'riot-red': '#C62139',
         'gold': '#FDC80C',
         'purple': '#A45EFF',
+        'gray': '#E5E5E5',
+        'dark-gray': '#555555',
+        'black': '#1A1A1A',
       },
       fontFamily: {
         sans: ['Kanit', 'sans-serif'],

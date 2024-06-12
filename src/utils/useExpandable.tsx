@@ -8,6 +8,8 @@ export default function useExpandable() {
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
 
   useGSAP(() => {
+    if (!expandable.current || !expandableChevron.current) return;
+
     if (isExpanded) {
       gsap.to(expandable.current, { height: "auto", duration: 0.3 });
       gsap.to(expandableChevron.current, { rotate: 180, duration: 0.3 });
@@ -16,7 +18,7 @@ export default function useExpandable() {
       gsap.set(expandableChevron.current, { rotate: '*=-1' });
       gsap.to(expandableChevron.current, { rotate: 0, duration: 0.3 });
     }
-  }, [isExpanded])
+  }, [isExpanded, expandable, expandableChevron])
 
   return { expandable, expandableChevron, isExpanded, setIsExpanded };
 }
