@@ -124,6 +124,31 @@ type ChampionDocument = {
   players: GamePlayer[];
 }
 
+namespace Visitors {
+  type Visit = {
+    timestamp: number;
+  }
+
+  type LiveVisit = Visit & {
+    screen: "live",
+    gameId: string;
+  }
+
+  type MatchesVisit = Visit & {
+    screen: "matches",
+  }
+
+  type ChampionsVisit = Visit & {
+    screen: "champions",
+  }
+
+  type SummonerVisit = Visit & {
+    screen: "summoner",
+    riotIdGameName: string;
+    riotIdTagLine: string;
+  }
+}
+
 namespace Riot {
   namespace Summoner {
     type AccountDto = {

@@ -54,27 +54,36 @@ export function DataReceiver({ children }: { children: React.ReactNode }) {
     // setEvents(SampleEvents.Events);
 
     // setInterval(() => {
-    //   setPlayers((prevPlayers) => {
-    //     if (prevPlayers) {
-    //       const newPlayers = prevPlayers.map((player) => {
-    //         return {
-    //           ...player,
-    //           level: player.level + Math.floor(Math.random() * 2),
-    //           isDead: Math.random() > 0.5,
-    //           scores: {
-    //             ...player.scores,
-    //             kills: player.scores.kills + Math.floor(Math.random() * 2),
-    //             deaths: player.scores.deaths + Math.floor(Math.random() * 2),
-    //             assists: player.scores.assists + Math.floor(Math.random() * 2),
-    //             creepScore: player.scores.creepScore + Math.floor(Math.random() * 2),
-    //             wardScore: player.scores.wardScore + Math.floor(Math.random() * 2),
-    //           }
+    // setPlayers((prevPlayers) => {
+    //   if (prevPlayers) {
+    //     const newPlayers = prevPlayers.map((player) => {
+    //       return {
+    //         ...player,
+    //         level: player.level + Math.floor(Math.random() * 2),
+    //         isDead: Math.random() > 0.5,
+    //         scores: {
+    //           ...player.scores,
+    //           kills: player.scores.kills + Math.floor(Math.random() * 2),
+    //           deaths: player.scores.deaths + Math.floor(Math.random() * 2),
+    //           assists: player.scores.assists + Math.floor(Math.random() * 2),
+    //           creepScore: player.scores.creepScore + Math.floor(Math.random() * 2),
+    //           wardScore: player.scores.wardScore + Math.floor(Math.random() * 2),
     //         }
-    //       });
-    //       return newPlayers;
+    //       }
+    //     });
+    //     return newPlayers;
+    //   }
+    //   return prevPlayers;
+    // });
+    // setGamedata((prevGamedata) => {
+    //   if (prevGamedata) {
+    //     return {
+    //       ...prevGamedata,
+    //       gameTime: prevGamedata.gameTime + 1
     //     }
-    //     return prevPlayers;
-    //   });
+    //   }
+    //   return prevGamedata;
+    // });
     // }, 1000);
 
     const url: string = import.meta.env.VITE_BACKEND_URL + "/games/event-stream?api_key=" + import.meta.env.VITE_BACKEND_API_KEY;

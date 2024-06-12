@@ -1,9 +1,10 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import GameTimeline from "../partials/GameTimeline";
 import { DataContext } from "../DataReceiver";
 import PlayerList from "../partials/PlayerList";
 import LiveGameStats from "../partials/LiveGameStats";
 import Loader from "../components/Loader";
+import { registerVisit } from "../utils/visitorsDatabase";
 
 export default function Home() {
   const { events, players, gamedata, lastUpdate } = useContext(DataContext);
@@ -14,6 +15,19 @@ export default function Home() {
       setWaitingForData(false);
     }, 7000);
   }, []);
+
+  // visitor tracking
+  const visitRegistered = useRef(false);
+  useEffect(() => {
+    if (!gamedata || visitRegistered.current) return;
+
+    registerVisit({
+      screen: "live",
+      timestamp: Date.now(),
+      gameId: gamedata.gameId
+    });
+    visitRegistered.current = true;
+  }, [gamedata]);
 
   return (
     <main className="flex flex-col gap-8 py-14">

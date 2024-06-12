@@ -34,7 +34,7 @@ export default function GameCard({ gamedata, players, events }: { players: GameP
   }, [events, players]);
 
   return (
-    <div className='flex flex-col p-6 w-ful rounded-3xl bg-dark-blue'>
+    <div id={gamedata.gameId} className='flex flex-col p-6 w-ful rounded-3xl bg-dark-blue'>
       <div onClick={() => setIsExpanded((oldIsExpanded) => !oldIsExpanded)} className='grid items-center w-full grid-cols-3 gap-6 cursor-pointer select-none group'>
         <div className='flex items-center gap-6'>
           <div className='flex flex-col'>

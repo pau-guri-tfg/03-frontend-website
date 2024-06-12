@@ -5,6 +5,7 @@ import SummonerHeader from '../partials/SummonerHeader';
 import GameList from '../partials/GameList';
 import SummonerKDA from '../partials/SummonerKDA';
 import LiveGamePopup from '../components/LiveGamePopup';
+import { registerVisit } from '../utils/visitorsDatabase';
 
 export default function Summoner() {
   const { gameName, tagLine } = useParams();
@@ -20,9 +21,15 @@ export default function Summoner() {
       fetchSummoner(res.data.puuid).then(res => {
         setSummoner(res.data);
       });
+
+      // visitor tracking
+      registerVisit({
+        screen: "summoner",
+        riotIdGameName: res.data.gameName ?? gameName,
+        riotIdTagLine: tagLine,
+        timestamp: Date.now()
+      });
     });
-
-
   }, [gameName, tagLine])
 
   return (

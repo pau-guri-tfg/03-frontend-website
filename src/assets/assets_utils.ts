@@ -23,11 +23,12 @@ export function getTimelineIcon(eventName: GameEventName, teamName: GameTeamName
     case "DragonKill":
       return teamName === "ORDER" ? dragonBlue : dragonRed;
     case "HeraldKill":
+    case "HordeKill": // we will treat it as herald
       return teamName === "ORDER" ? heraldBlue : heraldRed;
     case "BaronKill":
       return teamName === "ORDER" ? baronBlue : baronRed;
     case "Ace":
-      return teamName === "ORDER" ? deadRed : deadBlue;
+      return teamName === "ORDER" ? deadBlue : deadRed;
     default:
       return null;
   }
