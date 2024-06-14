@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react'
-import { DataContext } from '../DataReceiver'
+import { DataContext } from '../PublicWrapper'
 import LiveLabel from './LiveLabel';
 import { formatDuration } from '../utils/timeFormatter';
 import Flasher from './Flasher';

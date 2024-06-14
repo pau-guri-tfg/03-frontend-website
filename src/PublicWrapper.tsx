@@ -6,6 +6,7 @@ import { fetchGameEndpoint } from "./utils/gamesDatabase";
 import SampleGameData from "./sample_data/gamedata.json";
 import SamplePlayers from "./sample_data/players.json";
 import SampleEvents from "./sample_data/events.json";
+import Header from "./partials/Header";
 
 type DataContextType = {
   gamedata: GameData | null;
@@ -15,7 +16,7 @@ type DataContextType = {
 }
 export const DataContext = createContext<DataContextType>({ gamedata: null, players: null, events: null, lastUpdate: 0 });
 
-export function DataReceiver({ children }: { children: React.ReactNode }) {
+export function PublicWrapper({ children }: { children: React.ReactNode }) {
   const [gamedata, setGamedata] = useState<GameData | null>(null);
   const [players, setPlayers] = useState<GamePlayer[] | null>(null);
   const [events, setEvents] = useState<GameEvent[] | null>(null);
@@ -49,9 +50,9 @@ export function DataReceiver({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     // ? sample data
-    // setGamedata(SampleGameData);
-    // setPlayers(SamplePlayers);
-    // setEvents(SampleEvents.Events);
+    setGamedata(SampleGameData);
+    setPlayers(SamplePlayers);
+    setEvents(SampleEvents.Events);
 
     // setInterval(() => {
     // setPlayers((prevPlayers) => {
@@ -137,6 +138,7 @@ export function DataReceiver({ children }: { children: React.ReactNode }) {
 
   return (
     <DataContext.Provider value={{ gamedata, players, events, lastUpdate }}>
+      <Header />
       {children}
     </DataContext.Provider>
   )

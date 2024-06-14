@@ -1,3 +1,5 @@
+import moment from "moment";
+
 export function formatDuration(duration: number): string {
   const gameMinutes = Math.floor(duration / 60);
   const gameSeconds = Math.floor(duration % 60);
@@ -5,16 +7,13 @@ export function formatDuration(duration: number): string {
 }
 
 export function formatTime(timestamp: number): string {
-  const date = new Date(timestamp);
-  // format as hour:minutes
-  return `${date.getHours().toString().padStart(2, "0")}:${date.getMinutes().toString().padStart(2, "0")}`;
+  return moment(timestamp).format("HH:mm");
 }
 
 export function formatDate(timestamp: number): string {
-  const date = new Date(timestamp);
-  return date.toLocaleDateString();
+  return moment(timestamp).format("DD/MM/YYYY");
 }
 
 export function formatDateTime(timestamp: number): string {
-  return `${formatDate(timestamp)} ${formatTime(timestamp)}`;
+  return moment(timestamp).format("DD/MM/YYYY HH:mm");
 }

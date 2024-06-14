@@ -3,6 +3,7 @@ import { useGSAP } from '@gsap/react';
 import { useCallback, useRef, useState } from 'react'
 import { Flip } from 'gsap/all';
 import useBlink from '../utils/useBlink';
+import moment from 'moment';
 
 export default function LiveLabel({ updateTime, enableHover = false }: { updateTime: number, enableHover?: boolean }) {
   const liveDot = useBlink(updateTime > 0);
@@ -38,7 +39,7 @@ export default function LiveLabel({ updateTime, enableHover = false }: { updateT
       className='flex items-center gap-2.5 border border-purple rounded-full p-3 select-none overflow-hidden'
     >
       <div ref={liveDot} className={'w-3 h-3 rounded-full border shrink-0' + (updateTime <= 0 ? " border-purple" : " border-transparent bg-purple")} />
-      <span className='leading-none text-purple whitespace-nowrap'>{timeShown ? "last update " + new Date(updateTime).toLocaleTimeString() : "LIVE"}</span>
+      <span className='leading-none text-purple whitespace-nowrap'>{timeShown ? "updated " + moment(updateTime).fromNow() : "LIVE"}</span>
     </div>
   )
 }

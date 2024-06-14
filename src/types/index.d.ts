@@ -125,6 +125,9 @@ type ChampionDocument = {
 }
 
 namespace Visitors {
+  type DatabaseEndpoint = "everything" | "live" | "matches" | "champions" | "summoner";
+  type DatabaseTimeframe = "month" | "year";
+
   type Visit = {
     timestamp: number;
   }
@@ -146,6 +149,11 @@ namespace Visitors {
     screen: "summoner",
     riotIdGameName: string;
     riotIdTagLine: string;
+  }
+
+  type VisitGroup = {
+    timestamp: number;
+    count: number;
   }
 }
 

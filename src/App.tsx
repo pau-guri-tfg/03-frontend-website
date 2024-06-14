@@ -5,6 +5,11 @@ import Matches from './screens/Matches';
 import Champions from './screens/Champions';
 import Summoner from './screens/Summoner';
 import AdminHome from './screens/AdminHome';
+import AdminLive from './screens/AdminLive';
+import AdminMatches from './screens/AdminMatches';
+import AdminChampions from './screens/AdminChampions';
+import AdminSummoners from './screens/AdminSummoners';
+import moment from 'moment';
 
 function App() {
 
@@ -28,8 +33,46 @@ function App() {
     {
       path: '/admin',
       element: <AdminHome />,
+    },
+    {
+      path: '/admin/live',
+      element: <AdminLive />,
+    },
+    {
+      path: '/admin/matches',
+      element: <AdminMatches />,
+    },
+    {
+      path: '/admin/champions',
+      element: <AdminChampions />,
+    },
+    {
+      path: '/admin/summoners',
+      element: <AdminSummoners />,
     }
   ])
+
+  moment.locale('en');
+  moment.updateLocale('en', {
+    relativeTime: {
+      future: 'in %s',
+      past: '%s ago',
+      s: '%d seconds',
+      ss: '%d seconds',
+      m: 'a minute',
+      mm: '%d minutes',
+      h: 'an hour',
+      hh: '%d hours',
+      d: 'a day',
+      dd: '%d days',
+      w: 'a week',
+      ww: '%d weeks',
+      M: 'a month',
+      MM: '%d months',
+      y: 'a year',
+      yy: '%d years'
+    }
+  });
 
   return (
     <RouterProvider router={router} />

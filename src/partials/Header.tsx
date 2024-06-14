@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import useBlink from "../utils/useBlink"
-import { DataContext } from "../DataReceiver";
+import { DataContext } from "../PublicWrapper";
 
 export default function Header() {
   const { lastUpdate } = useContext(DataContext);

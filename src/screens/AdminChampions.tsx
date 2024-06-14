@@ -1,19 +1,19 @@
-import AdminWrapper from "../AdminWrapper";
-import { fetchAllVisits } from "../utils/visitorsDatabase";
 import { useEffect, useState } from "react";
+import AdminWrapper from "../AdminWrapper";
+import { fetchChampionsVisits } from "../utils/visitorsDatabase";
 import AdminMonthlyVisits from "../partials/AdminMonthlyVisits";
 import AdminYearlyVisits from "../partials/AdminYearlyVisits";
 
-export default function AdminHome() {
+export default function AdminChampions() {
   const [monthVisitGroups, setMonthVisitGroups] = useState<Visitors.VisitGroup[]>([]);
   const [yearVisitGroups, setYearVisitGroups] = useState<Visitors.VisitGroup[]>([]);
 
   useEffect(() => {
-    fetchAllVisits("month", Date.now())
+    fetchChampionsVisits("month", Date.now())
       .then((res) => {
         setMonthVisitGroups(res.data);
       });
-    fetchAllVisits("year", Date.now())
+    fetchChampionsVisits("year", Date.now())
       .then((res) => {
         setYearVisitGroups(res.data);
       });
@@ -22,7 +22,7 @@ export default function AdminHome() {
   return (
     <AdminWrapper>
       <main className="w-full px-8 py-14 max-w-[800px] mx-auto flex flex-col gap-8">
-        <h1 className="text-3xl font-semibold">Global visits</h1>
+        <h1 className="text-3xl font-semibold">"Champions" page visits</h1>
         <AdminMonthlyVisits visitGroups={monthVisitGroups} />
         <AdminYearlyVisits visitGroups={yearVisitGroups} />
       </main>
