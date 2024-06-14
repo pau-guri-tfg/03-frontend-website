@@ -130,6 +130,7 @@ namespace Visitors {
 
   type Visit = {
     timestamp: number;
+    timezone: string;
   }
 
   type LiveVisit = Visit & {

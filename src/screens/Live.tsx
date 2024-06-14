@@ -24,6 +24,7 @@ export default function Live() {
     registerVisit({
       screen: "live",
       timestamp: Date.now(),
+      timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
       gameId: gamedata.gameId
     });
     visitRegistered.current = true;

@@ -10,7 +10,8 @@ export default function Champions() {
   useEffect(() => {
     registerVisit({
       screen: "champions",
-      timestamp: Date.now()
+      timestamp: Date.now(),
+      timezone: Intl.DateTimeFormat().resolvedOptions().timeZone
     });
   }, []);
 

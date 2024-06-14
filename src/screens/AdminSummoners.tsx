@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import AdminWrapper from "../AdminWrapper";
 import AdminMonthlyVisits from "../partials/AdminMonthlyVisits";
 import AdminYearlyVisits from "../partials/AdminYearlyVisits";
-import { fetchAllVisits, fetchSummonerVisits } from "../utils/visitorsDatabase";
+import { fetchSummonerVisits } from "../utils/visitorsDatabase";
 
 export default function AdminSummoner() {
   const [monthVisitGroups, setMonthVisitGroups] = useState<Visitors.VisitGroup[]>([]);

@@ -10,7 +10,8 @@ export default function Matches() {
   useEffect(() => {
     registerVisit({
       screen: "matches",
-      timestamp: Date.now()
+      timestamp: Date.now(),
+      timezone: Intl.DateTimeFormat().resolvedOptions().timeZone
     });
   }, []);
 

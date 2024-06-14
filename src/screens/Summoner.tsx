@@ -28,7 +28,8 @@ export default function Summoner() {
         screen: "summoner",
         riotIdGameName: res.data.gameName ?? gameName,
         riotIdTagLine: tagLine,
-        timestamp: Date.now()
+        timestamp: Date.now(),
+        timezone: Intl.DateTimeFormat().resolvedOptions().timeZone
       });
     });
   }, [gameName, tagLine])
