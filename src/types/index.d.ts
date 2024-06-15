@@ -124,6 +124,19 @@ type ChampionDocument = {
   players: GamePlayer[];
 }
 
+type ChartData = {
+  name: string;
+  tooltipText: string;
+  value: any;
+}[];
+
+type ColoredChartData = {
+  name: string;
+  tooltipText: string;
+  value: any;
+  color: string;
+}[];
+
 namespace Visitors {
   type DatabaseEndpoint = "everything" | "live" | "matches" | "champions" | "summoner";
   type DatabaseTimeframe = "month" | "year";

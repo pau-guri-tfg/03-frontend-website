@@ -8,8 +8,8 @@ import AdminHome from './screens/AdminHome';
 import AdminLive from './screens/AdminLive';
 import AdminMatches from './screens/AdminMatches';
 import AdminChampions from './screens/AdminChampions';
-import AdminSummoners from './screens/AdminSummoners';
 import moment from 'moment';
+import AdminSummoner from './screens/AdminSummoner';
 
 function App() {
 
@@ -47,8 +47,8 @@ function App() {
       element: <AdminChampions />,
     },
     {
-      path: '/admin/summoners',
-      element: <AdminSummoners />,
+      path: '/admin/summoner',
+      element: <AdminSummoner />,
     }
   ])
 

@@ -2,15 +2,8 @@ import { useEffect, useState } from 'react'
 import { fetchGamesByPlayerEndpoint } from '../utils/gamesDatabase';
 import { Cell, Pie, PieChart, PieLabel, ResponsiveContainer, Tooltip } from 'recharts';
 
-type ChartData = {
-  name: string,
-  value: number | null,
-  color: string,
-  tooltipText: string,
-}[];
-
 export default function SummonerKDA({ summoner = null }: { summoner?: Riot.Summoner.SummonerDto | null }) {
-  const [chartData, setChartData] = useState<ChartData>([
+  const [chartData, setChartData] = useState<ColoredChartData>([
     { name: 'kills', value: null, color: '#0096A8', tooltipText: 'kills' },
     { name: 'deaths', value: null, color: '#C62139', tooltipText: 'deaths' },
     { name: 'assists', value: null, color: '#f97316', tooltipText: 'assists' },
@@ -67,7 +60,6 @@ export default function SummonerKDA({ summoner = null }: { summoner?: Riot.Summo
       <div className="w-52 aspect-square">
         <ResponsiveContainer width={'100%'} height={'100%'}>
           <PieChart>
-            {/* <Tooltip content={<CustomTooltip />} /> */}
             <Pie
               data={chartData}
               dataKey="value"
@@ -91,18 +83,3 @@ export default function SummonerKDA({ summoner = null }: { summoner?: Riot.Summo
     </div>
   )
 }
-
-// const CustomTooltip = ({ active, payload, label }: any) => {
-//   if (active && payload && payload.length) {
-//     return (
-//       <div className="flex gap-3 p-3 bg-dark-blue rounded-3xl">
-//         <span className="label text-white/40">{label}</span>
-//         <div>
-//           <span className='font-serif text-xl font-bold'>{payload[0].value}</span> <span>{payload[0].payload.tooltipText}</span>
-//         </div>
-//       </div>
-//     );
-//   }
-
-//   return null;
-// };

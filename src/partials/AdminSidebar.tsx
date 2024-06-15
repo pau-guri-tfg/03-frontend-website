@@ -9,7 +9,7 @@ export default function AdminSidebar() {
           <a href='/admin/live' className='underline'>Live Match</a>
           <a href='/admin/matches' className='underline'>Matches</a>
           <a href='/admin/champions' className='underline'>Champions</a>
-          <a href='/admin/summoners' className='underline'>Summoners</a>
+          <a href='/admin/summoner' className='underline'>Summoner</a>
         </nav>
       </div>
     </aside>

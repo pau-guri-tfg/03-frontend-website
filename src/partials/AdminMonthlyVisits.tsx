@@ -1,41 +1,51 @@
 import moment from 'moment';
-import { useEffect, useState } from 'react'
-import { Bar, BarChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
-import AdminChartTooltip from '../components/AdminChartTooltip';
+import { useEffect, useRef, useState } from 'react'
+import { fetchVisitsByTime } from '../utils/visitorsDatabase';
+import AdminBarChart from '../components/AdminBarChart';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faRotate } from '@fortawesome/free-solid-svg-icons';
+import gsap from 'gsap';
 
-type ChartData = {
-  name: string;
-  tooltipText: string;
-  visits: number;
-}[];
-
-export default function AdminMonthlyVisits({ visitGroups }: { visitGroups: Visitors.VisitGroup[] }) {
+export default function AdminMonthlyVisits({ endpoint }: { endpoint: Visitors.DatabaseEndpoint }) {
   const [visits, setVisits] = useState<ChartData>([]);
+  const updateIcon = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
-    if (visitGroups.length === 0) return;
+    updateVisits();
+  }, []);
 
-    const currentMoment = moment();
-    let month = [];
-    for (let i = 30; i >= 0; i--) {
-      const currentDay = moment(currentMoment).subtract(i, "days");
-      const visits = visitGroups.find((visit: Visitors.VisitGroup) => moment(visit.timestamp).isSame(currentDay, "day"))?.count || 0;
-      month.push({ name: currentDay.format("MMM D"), visits, tooltipText: currentDay.format("MMMM D, YYYY") });
+  const updateVisits = () => {
+    fetchVisitsByTime(endpoint, "month", Date.now())
+      .then((res) => {
+        const visitGroups = res.data;
+        if (visitGroups.length === 0) return;
+
+        const currentMoment = moment();
+        let month = [];
+        for (let i = 30; i >= 0; i--) {
+          const currentDay = moment(currentMoment).subtract(i, "days");
+          const visits = visitGroups.find((visit: Visitors.VisitGroup) => moment(visit.timestamp).isSame(currentDay, "day"))?.count || 0;
+          month.push({ name: currentDay.format("MMM D"), value: visits, tooltipText: currentDay.format("MMMM D, YYYY") });
+        }
+        setVisits(month);
+      });
+
+    // rotate update icon
+    if (updateIcon.current) {
+      gsap.to(updateIcon.current, { rotation: '+=360', duration: 0.5 })
     }
-    setVisits(month);
-  }, [visitGroups]);
+  }
 
   return (
     <div className="flex flex-col gap-4">
-      <h2 className="text-2xl font-semibold">Last month</h2>
-      <ResponsiveContainer width="100%" height={300}>
-        <BarChart data={visits}>
-          <Tooltip content={<AdminChartTooltip />} />
-          <XAxis dataKey="name" />
-          <YAxis dataKey="visits" />
-          <Bar dataKey="visits" fill="#1A1A1A" />
-        </BarChart>
-      </ResponsiveContainer>
+      <div className='flex items-center justify-between gap-4'>
+        <h2 className="text-2xl font-semibold">Last month</h2>
+        <button ref={updateIcon} onClick={updateVisits}>
+          <FontAwesomeIcon icon={faRotate} title='Refresh data' />
+        </button>
+      </div>
+
+      <AdminBarChart data={visits} />
     </div>
   )
 }
