@@ -6,7 +6,7 @@ import Flasher from './Flasher';
 import useTeamScore from '../utils/useTeamScore';
 import getWinningTeam from '../utils/getWinningTeam';
 import useExpandable from '../utils/useExpandable';
-import { faChevronDown, faExternalLink } from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown, faExpand } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function LiveGamePopup() {
@@ -35,7 +35,7 @@ export default function LiveGamePopup() {
             <FontAwesomeIcon ref={expandableChevron} icon={faChevronDown} className='w-6 h-6 text-white transition-colors group-hover:text-gold' />
           </div>
           <a href='/' className='group'>
-            <FontAwesomeIcon icon={faExternalLink} className='w-5 h-5 text-white transition-colors group-hover:text-gold' />
+            <FontAwesomeIcon icon={faExpand} className='w-5 h-5 text-white transition-colors group-hover:text-gold' />
           </a>
         </div>
         <div ref={expandable} className='w-full h-0 overflow-hidden'>

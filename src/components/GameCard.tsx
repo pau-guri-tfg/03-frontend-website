@@ -10,12 +10,16 @@ import PlayerList from '../partials/PlayerList';
 import getWinningTeam from '../utils/getWinningTeam';
 import useExpandable from '../utils/useExpandable';
 
-export default function GameCard({ gamedata, players, events }: { players: GamePlayer[], gamedata: GameData, events: GameEvent[] }) {
+export default function GameCard({ gamedata, players, events, isExpanded = false }: { players: GamePlayer[], gamedata: GameData, events: GameEvent[], isExpanded?: boolean }) {
   const { expandable, expandableChevron, setIsExpanded } = useExpandable();
   const { orderScore, chaosScore } = useTeamScore(players);
   const [formattedStartTime, setFormattedStartTime] = useState<string>("");
   const [formatedGameTime, setFormatedGameTime] = useState<string>("");
   const [winningTeam, setWinningTeam] = useState<GameTeamName | null>(null);
+
+  useEffect(() => {
+    setIsExpanded(isExpanded);
+  }, [isExpanded]);
 
   useEffect(() => {
     if (!gamedata) return;
