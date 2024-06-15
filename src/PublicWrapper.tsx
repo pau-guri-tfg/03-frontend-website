@@ -50,9 +50,9 @@ export function PublicWrapper({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     // ? sample data
-    // setGamedata(SampleGameData);
-    // setPlayers(SamplePlayers);
-    // setEvents(SampleEvents.Events);
+    setGamedata(SampleGameData);
+    setPlayers(SamplePlayers);
+    setEvents(SampleEvents.Events);
 
     // setInterval(() => {
     // setPlayers((prevPlayers) => {

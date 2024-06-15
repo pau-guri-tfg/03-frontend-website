@@ -5,10 +5,12 @@ import AdminYearlyVisits from "../partials/AdminYearlyVisits";
 export default function AdminSummoner() {
   return (
     <AdminWrapper>
-      <main className="w-full px-8 py-14 max-w-[800px] mx-auto flex flex-col gap-8">
-        <h1 className="text-3xl font-semibold">"Summoner" pages visits</h1>
-        <AdminMonthlyVisits endpoint="summoner" />
-        <AdminYearlyVisits endpoint="summoner" />
+      <main className="w-full px-8 py-14 max-w-[800px] mx-auto flex flex-col gap-16">
+        <div className="flex flex-col gap-6">
+          <h2 className="text-3xl font-semibold">Total "Summoner" pages visits</h2>
+          <AdminMonthlyVisits endpoint="summoner" />
+          <AdminYearlyVisits endpoint="summoner" />
+        </div>
       </main>
     </AdminWrapper>
   )

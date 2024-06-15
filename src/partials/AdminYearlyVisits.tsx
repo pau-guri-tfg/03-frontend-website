@@ -27,7 +27,7 @@ export default function AdminYearlyVisits({ endpoint }: { endpoint: Visitors.Dat
         let year = [];
         for (let i = 11; i >= 0; i--) {
           const currentMonth = moment(currentMoment).subtract(i, "months");
-          const visits = visitGroups.find((visit: Visitors.VisitGroup) => moment(visit.timestamp).isSame(currentMonth, "month"))?.count || 0;
+          const visits = visitGroups.find((visit: Visitors.TimeVisitGroup) => moment(visit.timestamp).isSame(currentMonth, "month"))?.count || 0;
           year.push({ name: currentMonth.format("MMM"), value: visits, tooltipText: currentMonth.format("MMMM YYYY") });
         }
         setVisits(year);

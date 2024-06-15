@@ -165,8 +165,21 @@ namespace Visitors {
     riotIdTagLine: string;
   }
 
-  type VisitGroup = {
+  type TimeVisitGroup = {
     timestamp: number;
+    count: number;
+  }
+
+  type GameVisitGroup = {
+    gameId: string;
+    timestamps: number[];
+    count: number;
+  }
+
+  type SummonerVisitGroup = {
+    riotIdGameName: string;
+    riotIdTagLine: string;
+    timestamps: number[];
     count: number;
   }
 }

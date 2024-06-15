@@ -24,7 +24,7 @@ export default function AdminMonthlyVisits({ endpoint }: { endpoint: Visitors.Da
         let month = [];
         for (let i = 30; i >= 0; i--) {
           const currentDay = moment(currentMoment).subtract(i, "days");
-          const visits = visitGroups.find((visit: Visitors.VisitGroup) => moment(visit.timestamp).isSame(currentDay, "day"))?.count || 0;
+          const visits = visitGroups.find((visit: Visitors.TimeVisitGroup) => moment(visit.timestamp).isSame(currentDay, "day"))?.count || 0;
           month.push({ name: currentDay.format("MMM D"), value: visits, tooltipText: currentDay.format("MMMM D, YYYY") });
         }
         setVisits(month);
@@ -44,7 +44,6 @@ export default function AdminMonthlyVisits({ endpoint }: { endpoint: Visitors.Da
           <FontAwesomeIcon icon={faRotate} title='Refresh data' />
         </button>
       </div>
-
       <AdminBarChart data={visits} />
     </div>
   )

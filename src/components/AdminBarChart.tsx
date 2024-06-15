@@ -1,4 +1,4 @@
-import { Bar, BarChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
+import { Bar, BarChart, Brush, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import AdminChartTooltip from './AdminChartTooltip'
 
 export default function AdminBarChart({ data }: { data: ChartData }) {
@@ -9,6 +9,7 @@ export default function AdminBarChart({ data }: { data: ChartData }) {
         <XAxis dataKey="name" />
         <YAxis dataKey="value" />
         <Bar dataKey="value" fill="#1A1A1A" />
+        <Brush dataKey="name" height={30} stroke="#1A1A1A" />
       </BarChart>
     </ResponsiveContainer>
   )
