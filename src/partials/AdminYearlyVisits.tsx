@@ -6,6 +6,7 @@ import { faRotate } from '@fortawesome/free-solid-svg-icons';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import AdminBarChart from '../components/AdminBarChart';
+import UpdateButton from '../components/UpdateButton';
 
 export default function AdminYearlyVisits({ endpoint }: { endpoint: Visitors.DatabaseEndpoint }) {
   const [visits, setVisits] = useState<ChartData>([]);
@@ -43,9 +44,7 @@ export default function AdminYearlyVisits({ endpoint }: { endpoint: Visitors.Dat
     <div className="flex flex-col gap-4">
       <div className='flex items-center justify-between gap-4'>
         <h2 className="text-2xl font-semibold">Last year</h2>
-        <button ref={updateIcon} onClick={updateVisits}>
-          <FontAwesomeIcon icon={faRotate} title='Refresh data' />
-        </button>
+        <UpdateButton onClick={updateVisits} />
       </div>
       <AdminBarChart data={visits} />
     </div>

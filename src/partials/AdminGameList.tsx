@@ -1,9 +1,8 @@
-import React, { createRef, useEffect, useState } from 'react'
+import { createRef, useEffect, useState } from 'react'
 import { fetchLiveVisitsByGame } from '../utils/visitorsDatabase';
 import AdminGameCard from '../components/AdminGameCard';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRotate } from '@fortawesome/free-solid-svg-icons';
 import gsap from 'gsap';
+import UpdateButton from '../components/UpdateButton';
 
 export default function AdminGameList() {
   const [liveGames, setLiveGames] = useState<Visitors.GameVisitGroup[]>([]);
@@ -27,9 +26,7 @@ export default function AdminGameList() {
     <div className="flex flex-col gap-6">
       <div className='flex items-center justify-between gap-4'>
         <h2 className="text-3xl font-semibold">Most visited matches</h2>
-        <button ref={updateIcon} onClick={updateVisits}>
-          <FontAwesomeIcon icon={faRotate} title='Refresh data' />
-        </button>
+        <UpdateButton onClick={updateVisits} />
       </div>
       <div className='flex flex-col w-full gap-1'>
         {liveGames.map((game, index) => <AdminGameCard key={index} gameVisitGroup={game} />)}

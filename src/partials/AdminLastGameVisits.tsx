@@ -1,13 +1,12 @@
-import { faExternalLink, faRotate } from '@fortawesome/free-solid-svg-icons';
+import { faExternalLink } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import moment, { Moment } from 'moment';
 import { useEffect, useRef, useState } from 'react'
-import { Brush, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
-import AdminChartTooltip from '../components/AdminChartTooltip';
 import { fetchGameEndpoint } from '../utils/gamesDatabase';
 import { fetchLiveVisitsByGame } from '../utils/visitorsDatabase';
 import gsap from 'gsap';
 import AdminLineChart from '../components/AdminLineChart';
+import UpdateButton from '../components/UpdateButton';
 
 export default function AdminLastGameVisits() {
   const [game, setGame] = useState<GameData | null>(null);
@@ -69,9 +68,7 @@ export default function AdminLastGameVisits() {
             </a>
           }
         </div>
-        <button ref={updateIcon} onClick={updateVisits}>
-          <FontAwesomeIcon icon={faRotate} title='Refresh data' />
-        </button>
+        <UpdateButton onClick={updateVisits} />
       </div>
 
       {visits ?

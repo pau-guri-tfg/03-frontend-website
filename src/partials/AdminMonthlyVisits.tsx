@@ -2,9 +2,8 @@ import moment from 'moment';
 import { useEffect, useRef, useState } from 'react'
 import { fetchVisitsByTime } from '../utils/visitorsDatabase';
 import AdminBarChart from '../components/AdminBarChart';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRotate } from '@fortawesome/free-solid-svg-icons';
 import gsap from 'gsap';
+import UpdateButton from '../components/UpdateButton';
 
 export default function AdminMonthlyVisits({ endpoint }: { endpoint: Visitors.DatabaseEndpoint }) {
   const [visits, setVisits] = useState<ChartData>([]);
@@ -40,9 +39,7 @@ export default function AdminMonthlyVisits({ endpoint }: { endpoint: Visitors.Da
     <div className="flex flex-col gap-4">
       <div className='flex items-center justify-between gap-4'>
         <h2 className="text-2xl font-semibold">Last month</h2>
-        <button ref={updateIcon} onClick={updateVisits}>
-          <FontAwesomeIcon icon={faRotate} title='Refresh data' />
-        </button>
+        <UpdateButton onClick={updateVisits} />
       </div>
       <AdminBarChart data={visits} />
     </div>

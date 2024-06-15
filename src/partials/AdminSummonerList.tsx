@@ -5,6 +5,7 @@ import { faArrowRight, faRotate } from '@fortawesome/free-solid-svg-icons';
 import AdminLineChart from '../components/AdminLineChart';
 import moment, { Moment } from 'moment';
 import gsap from 'gsap';
+import UpdateButton from '../components/UpdateButton';
 
 export default function AdminSummonerList() {
   const [summoners, setSummoners] = useState<Visitors.SummonerVisitGroup[]>([]);
@@ -58,9 +59,7 @@ export default function AdminSummonerList() {
     <div className="flex flex-col gap-6">
       <div className='flex items-center justify-between gap-4'>
         <h2 className="text-3xl font-semibold">Most visited summoners</h2>
-        <button ref={updateIcon} onClick={updateVisits}>
-          <FontAwesomeIcon icon={faRotate} title='Refresh data' />
-        </button>
+        <UpdateButton onClick={updateVisits} />
       </div>
       <div className='flex'>
         <div className='flex flex-col w-full gap-1 max-w-40'>

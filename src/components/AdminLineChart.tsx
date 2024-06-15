@@ -1,5 +1,5 @@
 import moment from "moment"
-import { ResponsiveContainer, LineChart, Tooltip, XAxis, YAxis, Line } from "recharts"
+import { ResponsiveContainer, LineChart, Tooltip, XAxis, YAxis, Line, Brush } from "recharts"
 import AdminChartTooltip from "./AdminChartTooltip"
 
 export default function AdminLineChart({ data, tickFormat }: { data: ChartData, tickFormat: string }) {
@@ -18,7 +18,7 @@ export default function AdminLineChart({ data, tickFormat }: { data: ChartData, 
         <XAxis dataKey="name" type='number' domain={['dataMin', 'dataMax']} padding={{ left: 16, right: 16 }} tick={<CustomTick />} />
         <YAxis dataKey="value" allowDecimals={false} />
         <Line dataKey="value" type="monotone" stroke="#1A1A1A" />
-        {/* <Brush dataKey="name" height={30} stroke="#1A1A1A" tickFormatter={() => ""} /> */}
+        <Brush dataKey="name" height={30} stroke="#1A1A1A" tickFormatter={(value) => moment(value).format(tickFormat)} />
       </LineChart>
     </ResponsiveContainer>
   )
