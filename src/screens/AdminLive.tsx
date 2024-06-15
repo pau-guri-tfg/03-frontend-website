@@ -12,10 +12,7 @@ export default function AdminLive() {
           <h2 className="text-3xl font-semibold">Last live match</h2>
           <AdminLastGameVisits />
         </div>
-        <div className="flex flex-col gap-6">
-          <h2 className="text-3xl font-semibold">Most visited matches</h2>
-          <AdminGameList />
-        </div>
+        <AdminGameList />
         <div className="flex flex-col gap-6">
           <h2 className="text-3xl font-semibold">Total "Live Match" page visits</h2>
           <AdminMonthlyVisits endpoint="live" />

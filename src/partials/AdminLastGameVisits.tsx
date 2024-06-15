@@ -7,6 +7,7 @@ import AdminChartTooltip from '../components/AdminChartTooltip';
 import { fetchGameEndpoint } from '../utils/gamesDatabase';
 import { fetchLiveVisitsByGame } from '../utils/visitorsDatabase';
 import gsap from 'gsap';
+import AdminLineChart from '../components/AdminLineChart';
 
 export default function AdminLastGameVisits() {
   const [game, setGame] = useState<GameData | null>(null);
@@ -22,7 +23,6 @@ export default function AdminLastGameVisits() {
     if (updateIcon.current) {
       gsap.to(updateIcon.current, { rotation: '+=360', duration: 0.5 })
     }
-    setVisits([]);
 
     const gameRes = await fetchGameEndpoint("all", "gamedata", 1);
     const gameData = gameRes.data;
@@ -49,8 +49,8 @@ export default function AdminLastGameVisits() {
         }
       });
 
-      const chartData = normalizedMoments.map((item) => (
-        { name: item.moment.format("HH:mm"), value: item.count, tooltipText: item.moment.format("MMM D HH:mm") }
+      const chartData: ChartData = normalizedMoments.map((item) => (
+        { name: item.moment.valueOf(), value: item.count, tooltipText: item.moment.format("MMMM D HH:mm") }
       ));
       setVisits(chartData);
     } catch (error) {
@@ -75,15 +75,7 @@ export default function AdminLastGameVisits() {
       </div>
 
       {visits ?
-        <ResponsiveContainer width="100%" height={300}>
-          <LineChart data={visits}>
-            <Tooltip content={<AdminChartTooltip />} />
-            <XAxis dataKey="name" />
-            <YAxis dataKey="value" />
-            <Line dataKey="value" type="monotone" stroke="#1A1A1A" />
-            <Brush dataKey="name" height={30} stroke="#1A1A1A" />
-          </LineChart>
-        </ResponsiveContainer>
+        <AdminLineChart data={visits} tickFormat="HH:mm" />
         :
         <p>This match has no visits.</p>
       }

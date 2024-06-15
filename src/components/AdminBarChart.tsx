@@ -7,7 +7,7 @@ export default function AdminBarChart({ data }: { data: ChartData }) {
       <BarChart data={data}>
         <Tooltip content={<AdminChartTooltip />} />
         <XAxis dataKey="name" />
-        <YAxis dataKey="value" />
+        <YAxis dataKey="value" allowDecimals={false} />
         <Bar dataKey="value" fill="#1A1A1A" />
         <Brush dataKey="name" height={30} stroke="#1A1A1A" />
       </BarChart>

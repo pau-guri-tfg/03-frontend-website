@@ -125,7 +125,7 @@ type ChampionDocument = {
 }
 
 type ChartData = {
-  name: string;
+  name: any;
   tooltipText: string;
   value: any;
 }[];

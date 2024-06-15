@@ -20,7 +20,7 @@ export function fetchLiveVisitsByGame(gameId: string, limit?: number, offset?: n
   );
 }
 
-export function fetchSummonerVisitsBySummoner(riotIdGameName: string, riotIdTagLine?: string, limit?: number, offset?: number) {
+export function fetchSummonerVisitsBySummoner(riotIdGameName: string, riotIdTagLine?: string | null, limit?: number, offset?: number) {
   return axios.get(
     `${import.meta.env.VITE_BACKEND_URL}/visitors/summoner/${riotIdGameName}` + (riotIdTagLine ? `/${riotIdTagLine}` : "") + `?api_key=${import.meta.env.VITE_BACKEND_API_KEY}` + (limit ? `&limit=${limit}` : "") + (offset ? `&offset=${offset}` : "")
   );
