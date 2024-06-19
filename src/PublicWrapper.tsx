@@ -54,6 +54,7 @@ export function PublicWrapper({ children }: { children: React.ReactNode }) {
     // setPlayers(SamplePlayers);
     // setEvents(SampleEvents.Events);
 
+
     // setInterval(() => {
     // setPlayers((prevPlayers) => {
     //   if (prevPlayers) {
