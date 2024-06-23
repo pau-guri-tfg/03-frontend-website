@@ -20,7 +20,7 @@ export default function AdminGameCard({ gameVisitGroup }: { gameVisitGroup: Visi
       <div className="flex items-center gap-2">
         <FontAwesomeIcon icon={faExternalLink} className="w-3 h-3" />
         <span>ID {gameVisitGroup.gameId}:</span>
-        <span className="text-lg font-semibold">{gameVisitGroup.count}</span>
+        <span className="text-lg font-semibold">{gameVisitGroup.count} visits</span>
       </div>
       <span>{earliestTime && earliestTime.format("MMM D HH:mm")} - {latestTime && latestTime.format(earliestTime?.isSame(latestTime, 'day') ? "HH:mm" : "MMM D HH:mm")}</span>
     </a>

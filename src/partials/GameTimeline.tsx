@@ -96,25 +96,32 @@ export default function GameTimeline({ events, players, gameTime, title = "", co
       </div>
       <div className="w-full bg-dark-blue">
         <div className={container ? "container" : ""}>
-          <div className="w-full py-2 overflow-x-auto border-l border-r timeline-scroll-div border-gold" ref={scrollDiv} onScroll={updateShownRange}>
-            <div className="relative h-12 overflow-hidden" ref={scrollContent}>
-              {events.map((event, index) => {
-                const team = getEventTeam(event);
-                if (!team) return;
+          <div className="w-full overflow-x-auto border-l border-r timeline-scroll-div border-gold" ref={scrollDiv} onScroll={updateShownRange}>
+            <div className="pt-2 overflow-hidden" ref={scrollContent}>
+              <div className="relative w-full h-12 overflow-hidden">
+                {events.map((event, index) => {
+                  const team = getEventTeam(event);
+                  if (!team) return;
 
-                if (event.EventName === "ChampionKill" || event.EventName === "Multikill") {
-                  return (
-                    <div key={index} className={("absolute h-full w-px ") + (team === "ORDER" ? "bg-riot-blue" : "bg-riot-red")} style={{ left: (event.EventTime / gameTime * 100).toString() + "%" }}></div>
-                  )
-                } else {
-                  return (
-                    <div key={index} className="absolute w-8 h-8 -translate-x-1/2 top-2" style={{ left: (event.EventTime / gameTime * 100).toString() + "%" }}>
-                      <img src={getTimelineIcon(event.EventName, team) ?? ''} alt={event.EventName} />
-                    </div>
-                  )
+                  if (event.EventName === "ChampionKill" || event.EventName === "Multikill") {
+                    return (
+                      <div key={index} className={("absolute h-full w-px ") + (team === "ORDER" ? "bg-riot-blue" : "bg-riot-red")} style={{ left: (event.EventTime / gameTime * 100).toString() + "%" }}></div>
+                    )
+                  } else {
+                    return (
+                      <div key={index} className="absolute w-8 h-8 -translate-x-1/2 top-2" style={{ left: (event.EventTime / gameTime * 100).toString() + "%" }}>
+                        <img src={getTimelineIcon(event.EventName, team) ?? ''} alt={event.EventName} />
+                      </div>
+                    )
+                  }
                 }
-              }
-              )}
+                )}
+              </div>
+              <div className="relative w-full h-2 overflow-hidden">
+                {gameTime > 60 && Array.from({ length: gameTime / 60 }).map((_, index) => (
+                  <div key={index} className="absolute w-px h-full bg-gold" style={{ left: ((index + 1) * 60 / gameTime * 100).toString() + "%" }}></div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
