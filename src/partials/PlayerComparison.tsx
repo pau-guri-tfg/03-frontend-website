@@ -8,6 +8,7 @@ type ChartData = {
   value: number;
 }[];
 
+// ! THIS COMPONENT IS UNUSED AND IS ONLY HERE FOR REFERENCE
 export default function PlayerComparison({ players }: { players: GamePlayer[] }) {
   const { orderPlayers, chaosPlayers } = useTeams({ players });
 
